@@ -1,6 +1,4 @@
 
-<
-src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 C
 src/pages/index.jsx,a/c/acc81c36557d8229ae7d4d064f6bdca7a69078ca
 Q
@@ -13,8 +11,6 @@ G
 src/styles/Chatbox.scss,1/e/1e140481f6ae4bc55de62e7644ced654aa6e73e6
 H
 src/styles/Register.scss,a/6/a6ad8d09af5f66cc1fcd8bebe239418b34ae5f79
-L
-src/styles/Landing_Page.scss,8/c/8cd87cb7fb7cca502f0cef596b8813ce317fa9d9
 F
 src/pages/Register.jsx,5/f/5f336b5f29199b2d1790dde0fbca619b330b20a9
 C
