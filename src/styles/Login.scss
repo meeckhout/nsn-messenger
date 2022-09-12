@@ -1,5 +1,5 @@
-@import 'abstracts/typography';
-@import 'abstracts/colors';
+@import '_abstracts/typograhpy.scss';
+@import 'abstracts/colors.scss';
 
 .login-body {
   overflow-y: hidden; /* Hide vertical scrollbar */
