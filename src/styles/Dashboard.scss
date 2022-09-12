@@ -1,2 +1,53 @@
 @import '_abstracts/typograhpy.scss';
 @import '_abstracts/colors.scss';
+
+body {
+  background: linear-gradient(0deg, $primary-white, #B7D9F7 80%, $primary-blue) no-repeat fixed;
+}
+
+.container-logo {
+  height: 30px;
+
+  img {
+    height: 25px;
+    margin-left: 10px;
+  }
+}
+
+.label-online {
+  margin-left: 10px;
+}
+
+.container-toolbar {
+  background-color: #F4F4F4;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.container-userInfo {
+  height: 90px;
+  border: 1px solid lightgrey;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.profile-box {
+  height: 80px;
+  width: 70px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 5px 20px;
+}
+
+form {
+  margin: 40px 20px;
+
+  .status-friends {
+
+  }
+
+
+}

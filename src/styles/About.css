@@ -1,3 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.about-container {
+  background-color: #F4F4F4;
+  font-family: "Roboto", sans-serif;
+  color: #2D2D2D;
+  font-weight: 300;
+  height: 100vh;
+  width: 100%;
+}
 
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+  letter-spacing: 0.3rem;
+}
+.title .alt {
+  font-family: "VT323", monospace;
+  color: #FF00F5;
+  text-transform: capitalize;
+}
+.title .player {
+  font-family: "VT323", monospace;
+  font-size: 3.5rem;
+  color: #2D2D2D;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.about-img .img-team {
+  box-sizing: content-box;
+  border-width: 1rem;
+  border-radius: 0.8rem;
+  border-style: solid;
+  border-image: linear-gradient(to right bottom, #FF00F5, #f4f4f4);
+  border-image-slice: 1;
+  margin-bottom: 0.5rem;
+}
+.about-img .bio-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about-img .bio-team .bio {
+  font-size: 1.4rem;
+  font-family: "VT323", monospace;
+  margin-bottom: 1rem;
+}
+.about-img .bio-team .text {
+  width: 18rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title-xsmall {
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 0.7rem;
+}
+.title-xsmall .alt-xsmall {
+  font-size: 2rem;
+  margin: 0 0.6rem 0 0.6rem;
+}
+
+.img-team-xsmall {
+  width: 125px;
+  height: 150px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.title-xlarge {
+  margin: 2rem 0 2rem 0;
+  font-size: 2.9rem;
+}
+.title-xlarge .alt-xlarge {
+  font-size: 8rem;
+  margin: 0 2.3rem 0 2.3rem;
+}
+
+.img-team-xlarge {
+  width: 300px;
+  height: 100%;
+}
 
 /*# sourceMappingURL=About.css.map */

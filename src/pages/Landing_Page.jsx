@@ -3,12 +3,14 @@ import { Breakpoint } from 'react-socks'
 import {Navbar, Footer} from '../components'
 import '../styles/Landing_Page.scss';
 import msnLogo from '../assets/images/msnLogo.png';
+import {Link} from "react-router-dom";
+
 
 const Landing_Page = () => {
     return (
-        <div>
+        <>
             <Breakpoint xsmall>
-                <Navbar />
+                < Navbar />
                 <div className="container-landing xsmall">
                     <div className="tagline">
                         <span className="tagline1-xsmall">Guess who's</span>
@@ -83,14 +85,16 @@ const Landing_Page = () => {
                     <div className="tagline">
                         <span className="tagline1">Guess who's</span>
                         <span className="tagline2 tagline2-xlarge">back?</span>
-                        <button className="btn-xlarge">Get started</button>
+                        <Link to='/Login'>
+                            <button className="btn-xlarge">Get started</button>
+                        </Link>
                         <button className="btn-xlarge">Log in</button>
                     </div>
                     <img className="msnTest-xlarge" src={msnLogo} alt="Two figures"/>
                     <Footer/>
                 </div>
             </Breakpoint>
-        </div>
+        </>
     )
 }
 

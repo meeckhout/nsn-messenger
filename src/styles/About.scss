@@ -1,0 +1,113 @@
+@import '_abstracts/typograhpy.scss';
+@import '_abstracts/colors.scss';
+
+.about-container {
+  background-color: $primary-white;
+  font-family: $heading-font-family;
+  color: $text-black;
+  font-weight: 300;
+  height: 100vh;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+  letter-spacing: .3rem;
+
+  .alt {
+    font-family: $accent-font;
+    color: $accent-pink;
+    text-transform: capitalize;
+  }
+
+  .player {
+    font-family: $accent-font;
+    font-size: 3.5rem;
+    color: $text-black;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.about-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  .img-team {
+    box-sizing: content-box;
+    border-width: 1rem;
+    border-radius: .8rem;
+    border-style: solid;
+    border-image: linear-gradient(to right bottom, #FF00F5, #f4f4f4);
+    border-image-slice: 1;
+    margin-bottom: .5rem;
+  }
+
+  .bio-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .bio {
+      font-size: 1.4rem;
+      font-family: $accent-font;
+      margin-bottom: 1rem;
+    }
+
+    .text {
+      width: 18rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// XSMALL SCREEN
+
+.title-xsmall {
+  margin: .5rem 0 .5rem 0;
+  font-size: .7rem;
+
+  .alt-xsmall {
+    font-size: 2rem;
+    margin: 0 .6rem 0 .6rem;
+
+  }
+}
+
+.img-team-xsmall {
+  width: 125px;
+  height: 150px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+// XLARGE SCREEN
+
+.title-xlarge {
+  margin: 2rem 0 2rem 0;
+  font-size: 2.9rem;
+
+  .alt-xlarge {
+    font-size: 8rem;
+    margin: 0 2.3rem 0 2.3rem;
+  }
+}
+
+.img-team-xlarge {
+  width: 300px;
+  height: 100%;
+}
