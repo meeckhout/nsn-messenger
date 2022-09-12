@@ -10,7 +10,7 @@ const Landing_Page = () => {
     return (
         <>
             <Breakpoint xsmall>
-                < Navbar />
+                <Navbar />
                 <div className="container-landing xsmall">
                     <div className="tagline">
                         <span className="tagline1-xsmall">Guess who's</span>

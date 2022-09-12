@@ -1,4 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.footer {
+  font-family: "VT323", monospace;
+  font-size: 0.8rem;
+  color: #FF00F5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.soc-med {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #2D2D2D;
+}
+
+.soc-med-xsmall {
+  margin: 2rem 0 2rem 2rem;
+  width: 20%;
+  font-size: 1.1rem;
+}
+
+.footer-xsmall {
+  font-size: 0.5rem;
+}
+
+.soc-med-large {
+  margin: 2rem 0 2rem 2rem;
+  width: 20%;
+  font-size: 1.5rem;
+}
+
+.footer-large {
+  font-size: 0.7rem;
+}
+
+.soc-med-xlarge {
+  margin: 2rem 0 2rem 2rem;
+  width: 20%;
+  font-size: 2rem;
+}
+
+.footer-xlarge {
+  font-size: 1rem;
+}
 
 /*# sourceMappingURL=Footer.css.map */

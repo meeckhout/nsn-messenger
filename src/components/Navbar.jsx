@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <>
             <Breakpoint xsmall only>
-                <div className="container">
+                <div className="container-navbar">
                     <div className="navbar-xsmall navbar">
                         <Link to="/">
                             <img className="img img-xsmall" src={Logo} alt="NSN Messenger"/>
@@ -24,7 +24,7 @@ const Navbar = () => {
             </Breakpoint>
 
             <Breakpoint small only>
-                <div className="container">
+                <div className="container-navbar">
                     <div className="navbar-xsmall navbar">
                         <img className="img img-xsmall" src={Logo} alt="NSN Messenger"/>
                         <nav>
@@ -39,7 +39,7 @@ const Navbar = () => {
             </Breakpoint>
 
             <Breakpoint medium only>
-                <div className="container">
+                <div className="container-navbar">
                     <div className="navbar-xsmall navbar">
                         <img className="img img-xsmall" src={Logo} alt="NSN Messenger"/>
                         <nav>
@@ -54,7 +54,7 @@ const Navbar = () => {
             </Breakpoint>
 
             <Breakpoint large only>
-                <div className="container">
+                <div className="container-navbar">
                     <div className="navbar-large navbar">
                         <img className="img img-xlarge" src={Logo} alt="NSN Messenger"/>
                         <nav>
@@ -69,7 +69,7 @@ const Navbar = () => {
             </Breakpoint>
 
             <Breakpoint xlarge only>
-                <div className="container">
+                <div className="container-navbar">
                     <div className="navbar-xlarge navbar">
                         <Link to="/">
                             <img className="img img-xlarge" src={Logo} alt="NSN Messenger"/>
