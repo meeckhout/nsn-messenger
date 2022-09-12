@@ -1,2 +1,58 @@
 @import '_abstracts/typograhpy.scss';
 @import '_abstracts/colors.scss';
+
+.footer {
+  font-family: $accent-font;
+  font-size: .8rem;
+  color: $accent-pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.soc-med {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $text-black;
+}
+
+// XSMALL SCREEN
+
+.soc-med-xsmall {
+  margin: 2rem 0 2rem 2rem;
+  width: 20%;
+  font-size: 1.1rem;
+}
+
+.footer-xsmall {
+  font-size: .5rem;
+}
+
+// XLARGE SCREEN
+
+.soc-med-large {
+  margin: 2rem 0 2rem 2rem;
+  width: 20%;
+  font-size: 1.5rem;
+}
+
+.footer-large {
+  font-size: .7rem;
+}
+
+// XLARGE SCREEN
+
+.soc-med-xlarge {
+  margin: 2rem 0 2rem 2rem;
+  width: 20%;
+  font-size: 2rem;
+}
+
+.footer-xlarge {
+  font-size: 1rem;
+}

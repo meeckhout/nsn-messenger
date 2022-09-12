@@ -1,4 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.container-navbar {
+  background-color: #F4F4F4;
+}
+.container-navbar .navbar {
+  display: flex;
+  flex-direction: row;
+  font-family: "VT323", monospace;
+  justify-content: space-between;
+}
+.container-navbar .navbar .img {
+  margin: 0.6rem 0 0 2rem;
+}
+.container-navbar .navbar ul {
+  list-style-type: none;
+  margin: 1rem 2rem 0 0;
+}
+.container-navbar .navbar ul a {
+  text-decoration: none;
+  color: #FF00F5;
+}
+
+.navbar-xsmall {
+  font-size: 1.2rem;
+  gap: 3em;
+}
+
+.img-xsmall {
+  width: 35%;
+}
+
+.navbar-xlarge {
+  font-size: 1.8rem;
+  gap: 3em;
+}
 
 /*# sourceMappingURL=Navbar.css.map */
