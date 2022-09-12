@@ -1,4 +1,163 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.container-landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #2D2D2D;
+  background-color: #F4F4F4;
+  height: 100vh;
+  width: 100%;
+}
+.container-landing .tagline {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0 0 2rem;
+}
+.container-landing .tagline .tagline2 {
+  font-weight: 700;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #0F8CFF;
+  color: #F4F4F4;
+  text-transform: lowercase;
+  border: none;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2D2D2D;
+  transition: 0.7s;
+}
+
+.xsmall {
+  font-size: 3rem;
+}
+
+.tagline2-small {
+  font-size: 4rem;
+}
+
+.msnTest-xsmall {
+  position: absolute;
+  right: 0;
+  height: 200px;
+  width: 300px;
+}
+
+.btn-xsmall {
+  width: 90px;
+  height: 30px;
+  border-radius: 12px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.small {
+  font-size: 7rem;
+}
+
+.tagline2-small {
+  font-size: 15rem;
+}
+
+.msnTest-small {
+  position: absolute;
+  right: 0;
+  height: 800px;
+  width: 1200px;
+}
+
+.btn-small {
+  width: 90px;
+  height: 30px;
+  border-radius: 12px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.medium {
+  font-size: 5rem;
+}
+
+.tagline2-medium {
+  font-size: 15rem;
+}
+
+.msnTest-medium {
+  position: absolute;
+  right: 0;
+  height: 300px;
+  width: 500px;
+}
+
+.btn-medium {
+  width: 90px;
+  height: 30px;
+  border-radius: 12px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.large {
+  font-size: 7.5rem;
+}
+
+.tagline2-large {
+  font-size: 12.5rem;
+}
+
+.msnTest-large {
+  position: absolute;
+  right: 0;
+  height: 500px;
+  width: 700px;
+}
+
+.btn-large {
+  width: 90px;
+  height: 30px;
+  border-radius: 12px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.xlarge {
+  font-size: 10rem;
+}
+
+.tagline {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0 0 2rem;
+}
+
+.tagline2-xlarge {
+  font-size: 15rem;
+}
+
+.msnTest-xlarge {
+  position: absolute;
+  right: 0;
+  height: 800px;
+  width: 1200px;
+}
+
+.btn-xlarge {
+  width: 250px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
 
 /*# sourceMappingURL=Landing_Page.css.map */
