@@ -1,8 +1,6 @@
 
 Q
 !src/styles/_abstracts/colors.scss,f/4/f47cc89322357b51f03b7bfabb5a086b1e54c207
-E
-src/styles/About.scss,d/d/ddf9fa93fe05a4a88d63f80ab135bdb979c20c53
 G
 src/styles/Chatbox.scss,1/e/1e140481f6ae4bc55de62e7644ced654aa6e73e6
 H

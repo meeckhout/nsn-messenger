@@ -1,11 +1,10 @@
 import React from 'react';
 import '../styles/About.scss';
-import {Navbar, Footer} from '../components'
+import {Navbar, Footer, songtitle} from '../components'
 import {Breakpoint} from 'react-socks';
 import NmJgg from '../assets/images/NmJgg.jpg';
 import NmJggM from '../assets/images/NmJggM.jpg';
 import sanderrr from '../assets/images/sanderrr.jpg';
-import {Link} from 'react-router-dom'
 
 const About = () => {
     return (
@@ -122,7 +121,7 @@ const About = () => {
                     <div className="about-img">
                         <div className="bio-team Franziska Franziska-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJgg} alt="Team member" />
-                            <span className="bio bio-xlarge">kzjkljdfkdljfklsdfsd</span>
+                            <span className="bio bio-xlarge">Franziska</span>
                             <span className="text">
                                 Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra.
                                 Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.
@@ -133,6 +132,7 @@ const About = () => {
                             <img className="img-team img-team-xlarge" src={NmJggM} alt="Team member" />
                             <span className="bio bio-xlarge">Master of Disaster and Design</span>
                             <span className="text">
+                                <songtitle />
                                 Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra.
                                 Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.
                             </span>
@@ -149,7 +149,7 @@ const About = () => {
 
                         <div className="bio-team Gio Gio-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJgg} alt="Team member" />
-                            <span className="bio bio-xlarge">dkfljkdljflkdsjkl</span>
+                            <span className="bio bio-xlarge">Giovanni</span>
                             <span className="text">
                                 Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra.
                                 Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.
