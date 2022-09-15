@@ -1,7 +1,7 @@
 @import '_abstracts/typography';
 @import '_abstracts/colors.scss';
 
-body {
+.container-body {
   background: linear-gradient(0deg, $primary-white, #B7D9F7 80%, $primary-blue) no-repeat fixed;
 }
 
