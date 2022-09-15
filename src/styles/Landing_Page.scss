@@ -1,4 +1,4 @@
-@import '_abstracts/typograhpy.scss';
+@import '_abstracts/typography.scss';
 @import '_abstracts/colors.scss';
 
 .container-landing {
@@ -11,15 +11,33 @@
   background-color: $primary-white;
   height: 100vh;
   width: 100%;
+  
 
   .tagline {
     display: flex;
     flex-direction: column;
-    margin: 2rem 0 0 2rem;
+    width: fit-content;
+    letter-spacing: -0.25rem;
+    margin-left: 3vw;
+    line-height: 130%;
+    align-items: center;
 
+
+    .tagline1{
+      font-weight: 500;
+    }
     .tagline2 {
       font-weight: 700;
+      text-align: center;
     }
+   
+    a{
+      text-decoration: none;
+    }
+    .landing-button {
+      margin-top: 5vh;
+    }
+
   }
 }
 
@@ -35,6 +53,7 @@ button {
   border: none;
   font-weight: 300;
   cursor: pointer;
+  
 }
 
 button:hover {
@@ -42,9 +61,10 @@ button:hover {
   transition: .7s;
 }
 
-// XSMALL SCREEN
+//XSMALL SCREEN////XSMALL SCREEN////XSMALL SCREEN////XSMALL SCREEN//
 
 .xsmall {
+  background-color: darkseagreen;
   font-size: 3rem;
 }
 
@@ -67,9 +87,10 @@ button:hover {
   letter-spacing: .1rem;
 }
 
-// SMALL SCREEN
+//SMALL SCREEN1////SMALL SCREEN1////SMALL SCREEN1////SMALL SCREEN1////SMALL SCREEN1//
 
 .small {
+  background-color: darksalmon;
   font-size: 7rem;
 }
 
@@ -92,8 +113,9 @@ button:hover {
   letter-spacing: .1rem;
 }
 
-// MEDIUM SCREEN
+//MEDIUM SCREEN////MEDIUM SCREEN////MEDIUM SCREEN////MEDIUM SCREEN//
 .medium {
+  background-color: chocolate;
   font-size: 5rem;
 }
 
@@ -116,8 +138,9 @@ button:hover {
   letter-spacing: .1rem;
 }
 
-// LARGE SCREEN
+//LARGE SCREEN////LARGE SCREEN////LARGE SCREEN////LARGE SCREEN//
 .large {
+  background-color:mediumpurple;
   font-size: 7.5rem;
 }
 
@@ -140,33 +163,39 @@ button:hover {
   letter-spacing: .1rem;
 }
 
-// XLARGE SCREEN
+//XLARGE SCREEN////XLARGE SCREEN////XLARGE SCREEN////XLARGE SCREEN//
 
 .xlarge {
-  font-size: 10rem;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background-color: darkcyan;
+  font-size: 6rem;
 }
 
 .tagline {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0 0 2rem;
+  
+  
 }
 
 .tagline2-xlarge {
-  font-size: 15rem;
+  font-size: 9.4rem;
 }
 
 .msnTest-xlarge {
   position: absolute;
-  right: 0;
-  height: 800px;
-  width: 1200px;
+  right: -6vw;
+  width: 70vw;
+  height: auto;
+  margin-top: 3vh;
 }
 
 .btn-xlarge {
-  width: 250px;
-  height: 50px;
+  width: 15.6rem;
+  height: 3.1rem;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   letter-spacing: .1rem;
+}
+.btn-log-in{
+  width: 12rem;
 }

@@ -18,8 +18,8 @@ const Landing_Page = () => {
                         <button className="btn-xsmall">Get started</button>
                         <button className="btn-xsmall">Log in</button>
                     </div>
-                    <img className="msnTest-xsmall" src={msnLogo} alt="Two figures"/>
-                    <Footer/>
+                    <img className="msnTest-xsmall" src={msnLogo} alt="Two figures" />
+                    <Footer />
                 </div>
             </Breakpoint>
 
@@ -32,8 +32,8 @@ const Landing_Page = () => {
                         <button className="btn-small">Get started</button>
                         <button className="btn-small">Log in</button>
                     </div>
-                    <img className="msnTest-small" src={msnLogo} alt="Two figures"/>
-                    <Footer/>
+                    <img className="msnTest-small" src={msnLogo} alt="Two figures" />
+                    <Footer />
                 </div>
             </Breakpoint>
 
@@ -46,8 +46,8 @@ const Landing_Page = () => {
                         <button className="btn-medium">Get started</button>
                         <button className="btn-medium">Log in</button>
                     </div>
-                    <img className="msnTest-medium" src={msnLogo} alt="Two figures"/>
-                    <Footer/>
+                    <img className="msnTest-medium" src={msnLogo} alt="Two figures" />
+                    <Footer />
                 </div>
             </Breakpoint>
 
@@ -60,8 +60,8 @@ const Landing_Page = () => {
                         <button className="btn-medium">Get started</button>
                         <button className="btn-medium">Log in</button>
                     </div>
-                    <img className="msnTest-medium" src={msnLogo} alt="Two figures"/>
-                    <Footer/>
+                    <img className="msnTest-medium" src={msnLogo} alt="Two figures" />
+                    <Footer />
                 </div>
             </Breakpoint>
 
@@ -74,8 +74,8 @@ const Landing_Page = () => {
                         <button className="btn-large">Get started</button>
                         <button className="btn-large">Log in</button>
                     </div>
-                    <img className="msnTest-large" src={msnLogo} alt="Two figures"/>
-                    <Footer/>
+                    <img className="msnTest-large" src={msnLogo} alt="Two figures" />
+                    <Footer />
                 </div>
             </Breakpoint>
 
@@ -85,17 +85,19 @@ const Landing_Page = () => {
                     <div className="tagline">
                         <span className="tagline1">Guess who's</span>
                         <span className="tagline2 tagline2-xlarge">back?</span>
-                        <Link to='/Login'>
-                            <button className="btn-xlarge">Get started</button>
-                        </Link>
-                        <button className="btn-xlarge">Log in</button>
+                        <div className="landing-button">
+                            <Link to="/Register">
+                                <button className="btn-xlarge">Get started</button>
+                            </Link>
+                            <button className="btn-xlarge btn-log-in">Log in</button>
+                        </div>
                     </div>
-                    <img className="msnTest-xlarge" src={msnLogo} alt="Two figures"/>
-                    <Footer/>
+                    <img className="msnTest-xlarge" src={msnLogo} alt="Two figures" />
+                    <Footer />
                 </div>
             </Breakpoint>
         </>
-    )
+    );
 }
 
 export default Landing_Page;
