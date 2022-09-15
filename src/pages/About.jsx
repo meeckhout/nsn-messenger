@@ -1,12 +1,15 @@
 import React from 'react';
 import '../styles/About.scss';
-import {Navbar, Footer, songtitle} from '../components'
+import {Navbar, Footer, LastFmData} from '../components'
 import {Breakpoint} from 'react-socks';
 import NmJgg from '../assets/images/NmJgg.jpg';
 import NmJggM from '../assets/images/NmJggM.jpg';
 import sanderrr from '../assets/images/sanderrr.jpg';
 
 const About = () => {
+    const apiKey = process.env.REACT_APP_API_KEY;
+    console.log(process.env.REACT_APP_API_KEY);
+    console.log('monkey')
     return (
         <>
             <Breakpoint xsmall>
@@ -131,8 +134,12 @@ const About = () => {
                         <div className="bio-team Marthe Marthe-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJggM} alt="Team member" />
                             <span className="bio bio-xlarge">Master of Disaster and Design</span>
+                            <button >Add song</button>
+                            <LastFmData
+                                userName={'pityparty-'}
+                                apiKey={'$apiKey'}
+                            />
                             <span className="text">
-                                <songtitle />
                                 Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra.
                                 Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.
                             </span>

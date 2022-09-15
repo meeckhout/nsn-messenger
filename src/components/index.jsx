@@ -1,9 +1,9 @@
 import {Footer} from './Footer';
 import {Navbar} from './Navbar';
-import {songtitle} from './Songtitle';
+import {LastFmData} from './LastFmData';
 
 export {
     Footer,
     Navbar,
-    songtitle
+    LastFmData
 }
