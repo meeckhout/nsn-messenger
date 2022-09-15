@@ -85,7 +85,7 @@ const Landing_Page = () => {
                     <div className="tagline">
                         <span className="tagline1">Guess who's</span>
                         <span className="tagline2 tagline2-xlarge">back?</span>
-                        <Link to='/Login'>
+                        <Link to='/Chatbox'>
                             <button className="btn-xlarge">Get started</button>
                         </Link>
                         <button className="btn-xlarge">Log in</button>
