@@ -6,10 +6,15 @@ import NmJgg from '../assets/images/NmJgg.jpg';
 import NmJggM from '../assets/images/NmJggM.jpg';
 import sanderrr from '../assets/images/sanderrr.jpg';
 
-const About = () => {
+class About extends React.Component {
+    state = { showing: true };
+    render() {
     const apiKey = process.env.REACT_APP_API_KEY;
+    const onClick = () => console.log('hi');
     console.log(process.env.REACT_APP_API_KEY);
-    console.log('monkey')
+    console.log('monkey');
+    const { showing } = this.state;
+
     return (
         <>
             <Breakpoint xsmall>
@@ -134,11 +139,17 @@ const About = () => {
                         <div className="bio-team Marthe Marthe-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJggM} alt="Team member" />
                             <span className="bio bio-xlarge">Master of Disaster and Design</span>
-                            <button >Add song</button>
-                            <LastFmData
-                                userName={'pityparty-'}
-                                apiKey={'$apiKey'}
-                            />
+                            <button onClick={() => this.setState({ showing: !showing })}>add music</button>
+                            { showing
+                                ? <div className="lastfm">
+                                    <LastFmData
+                                        userName={'pityparty-'}
+                                        apiKey={'$apiKey'}
+                                    />
+                                </div>
+                                : null
+                            }
+
                             <span className="text">
                                 Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra.
                                 Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.
@@ -168,6 +179,7 @@ const About = () => {
             </Breakpoint>
         </>
     )
+}
 }
 
 export default About;
