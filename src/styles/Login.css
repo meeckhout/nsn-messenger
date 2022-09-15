@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-body {
-  overflow-y: hidden;
-  /* Hide vertical scrollbar */
-  overflow-x: hidden;
-  /* Hide horizontal scrollbar */
+.login-body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .container-login {
@@ -205,17 +203,17 @@ body {
   margin-right: 2rem;
 }
 
-.taskbar-xsmall {
+.taskbar-small {
   background-color: #0F8CFF;
 }
-.taskbar-xsmall .img-xsmall {
+.taskbar-small .img-small {
   height: 1.2rem;
   width: auto;
   display: block;
   margin: 0.3rem;
 }
 
-.menu-bar-xsmall ul {
+.menu-bar-small ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -223,23 +221,23 @@ body {
   background-color: #E1E0E0;
   font-size: 0.8rem;
 }
-.menu-bar-xsmall li {
+.menu-bar-small li {
   float: left;
 }
-.menu-bar-xsmall li a, .menu-bar-xsmall .drop-button {
+.menu-bar-small li a, .menu-bar-small .drop-button {
   display: inline-block;
   color: #2D2D2D;
   text-align: center;
   padding: 0.2rem 0.5rem;
   text-decoration: none;
 }
-.menu-bar-xsmall li a:hover, .menu-bar-xsmall .dropdown-menu:hover .drop-button {
+.menu-bar-small li a:hover, .menu-bar-small .dropdown-menu:hover .drop-button {
   border-style: inset;
 }
-.menu-bar-xsmall li.dropdown-menu {
+.menu-bar-small li.dropdown-menu {
   display: inline-block;
 }
-.menu-bar-xsmall .dropdown-content {
+.menu-bar-small .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -247,37 +245,37 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-.menu-bar-xsmall .dropdown-content a {
+.menu-bar-small .dropdown-content a {
   color: black;
   padding: 0.3rem 0.5rem;
   text-decoration: none;
   display: block;
   text-align: left;
 }
-.menu-bar-xsmall .dropdown-content a:hover {
+.menu-bar-small .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
-.menu-bar-xsmall .dropdown-menu:hover .dropdown-content {
+.menu-bar-small .dropdown-menu:hover .dropdown-content {
   display: block;
 }
 
-.main-page-xsmall {
+.main-page-small {
   background-color: #F4F4F4;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.main-page-xsmall .nsn-text {
+.main-page-small .nsn-text {
   color: #0F8CFF;
   font-size: 0.77rem;
   margin-left: 0.5rem;
 }
-.main-page-xsmall .nsn-text span {
+.main-page-small .nsn-text span {
   font-weight: 900;
   font-size: 1.1rem;
 }
-.main-page-xsmall .profile-picture {
-  width: 32vw;
+.main-page-small .profile-picture {
+  width: 28vw;
   aspect-ratio: 1/1;
   object-fit: cover;
   margin-left: auto;
@@ -288,77 +286,77 @@ body {
   border-radius: 12px;
   border-width: 1px;
 }
-.main-page-xsmall .login-input {
+.main-page-small .login-input {
   display: flex;
   flex-direction: column;
   color: #0F8CFF;
   font-size: 0.8rem;
   margin-top: 1.6vh;
   gap: 0.2vh;
-  width: 50vw;
+  width: 40vw;
   margin-left: auto;
   margin-right: auto;
 }
-.main-page-xsmall .login-input .email-input {
+.main-page-small .login-input .email-input {
   display: flex;
   flex-direction: row;
-  width: 50vw;
+  width: 40vw;
   margin-bottom: 1vh;
 }
-.main-page-xsmall .login-input .email-input input {
+.main-page-small .login-input .email-input input {
   width: 100%;
   border-color: #0F8CFF;
   border-style: solid;
   border-width: 1px;
 }
-.main-page-xsmall .login-input .email-input select {
+.main-page-small .login-input .email-input select {
   border-color: #0F8CFF;
   color: #0F8CFF;
   border-style: solid;
 }
-.main-page-xsmall .login-input .password-input {
-  width: 50vw;
+.main-page-small .login-input .password-input {
+  width: 40vw;
   border-color: #0F8CFF;
 }
-.main-page-xsmall .login-input .password-input input {
+.main-page-small .login-input .password-input input {
   width: 100%;
   border-color: #0F8CFF;
   border-style: solid;
   border-width: 1px;
 }
-.main-page-xsmall .select-status {
+.main-page-small .select-status {
   font-size: 0.8rem;
-  width: 50vw;
+  width: 40vw;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.7vh;
   color: #0F8CFF;
 }
-.main-page-xsmall .select-status select {
+.main-page-small .select-status select {
   border: none;
   color: #0F8CFF;
   margin-left: 1vw;
   background-color: transparent;
 }
-.main-page-xsmall .checkbox-area {
+.main-page-small .checkbox-area {
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   color: #0F8CFF;
   margin-top: 3vh;
   gap: 1vh;
-  width: 50vw;
+  width: 40vw;
   margin-left: auto;
   margin-right: auto;
 }
-.main-page-xsmall .checkbox-area .remember-me, .main-page-xsmall .checkbox-area .remember-password, .main-page-xsmall .checkbox-area .sign-me-in-auto {
+.main-page-small .checkbox-area .remember-me, .main-page-small .checkbox-area .remember-password, .main-page-small .checkbox-area .sign-me-in-auto {
   display: flex;
   flex-direction: row;
 }
-.main-page-xsmall .checkbox-area .remember-me label, .main-page-xsmall .checkbox-area .remember-password label, .main-page-xsmall .checkbox-area .sign-me-in-auto label {
+.main-page-small .checkbox-area .remember-me label, .main-page-small .checkbox-area .remember-password label, .main-page-small .checkbox-area .sign-me-in-auto label {
   margin-left: 1vw;
 }
-.main-page-xsmall button {
+.main-page-small button {
   height: 1.9rem;
   width: 7rem;
   justify-content: center;
@@ -368,7 +366,7 @@ body {
   margin-top: 3vh;
   border-radius: 12px;
 }
-.main-page-xsmall .login-footer {
+.main-page-small .login-footer {
   font-size: 0.8rem;
   position: absolute;
   bottom: 0;
@@ -377,28 +375,405 @@ body {
   width: 100%;
   color: #0F8CFF;
 }
-.main-page-xsmall .login-footer a {
+.main-page-small .login-footer a {
   color: #0F8CFF;
 }
-.main-page-xsmall .login-footer nav {
+.main-page-small .login-footer nav {
   margin-top: 2vh;
   display: flex;
   flex-direction: row;
 }
-.main-page-xsmall .login-footer nav p {
+.main-page-small .login-footer nav p {
   text-align: left;
 }
-.main-page-xsmall .login-footer nav a {
+.main-page-small .login-footer nav a {
   position: absolute;
   right: 0;
   margin-right: 2rem;
 }
 
-.taskbar {
+.taskbar-medium {
   background-color: #0F8CFF;
 }
-.taskbar .img-xlarge {
+.taskbar-medium .img-medium {
+  height: 1.2rem;
+  width: auto;
+  display: block;
+  margin: 0.3rem;
+}
+
+.menu-bar-medium ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #E1E0E0;
+  font-size: 0.8rem;
+}
+.menu-bar-medium li {
+  float: left;
+}
+.menu-bar-medium li a, .menu-bar-medium .drop-button {
+  display: inline-block;
+  color: #2D2D2D;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+}
+.menu-bar-medium li a:hover, .menu-bar-medium .dropdown-menu:hover .drop-button {
+  border-style: inset;
+}
+.menu-bar-medium li.dropdown-menu {
+  display: inline-block;
+}
+.menu-bar-medium .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.menu-bar-medium .dropdown-content a {
+  color: black;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.menu-bar-medium .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.menu-bar-medium .dropdown-menu:hover .dropdown-content {
+  display: block;
+}
+
+.main-page-medium {
+  background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.main-page-medium .nsn-text {
+  color: #0F8CFF;
+  font-size: 0.77rem;
+  margin-left: 0.5rem;
+}
+.main-page-medium .nsn-text span {
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.main-page-medium .profile-picture {
+  width: 18vw;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  border-style: solid;
+  border-color: #0F8CFF;
+  border-radius: 12px;
+  border-width: 1px;
+}
+.main-page-medium .login-input {
+  display: flex;
+  flex-direction: column;
+  color: #0F8CFF;
+  font-size: 0.8rem;
+  margin-top: 1.6vh;
+  gap: 0.2vh;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-page-medium .login-input .email-input {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  margin-bottom: 1vh;
+}
+.main-page-medium .login-input .email-input input {
+  width: 100%;
+  border-color: #0F8CFF;
+  border-style: solid;
+  border-width: 1px;
+}
+.main-page-medium .login-input .email-input select {
+  border-color: #0F8CFF;
+  color: #0F8CFF;
+  border-style: solid;
+}
+.main-page-medium .login-input .password-input {
+  width: 30vw;
+  border-color: #0F8CFF;
+}
+.main-page-medium .login-input .password-input input {
+  width: 100%;
+  border-color: #0F8CFF;
+  border-style: solid;
+  border-width: 1px;
+}
+.main-page-medium .select-status {
+  font-size: 0.8rem;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.7vh;
+  color: #0F8CFF;
+}
+.main-page-medium .select-status select {
+  border: none;
+  color: #0F8CFF;
+  margin-left: 1vw;
+  background-color: transparent;
+}
+.main-page-medium .checkbox-area {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  color: #0F8CFF;
+  margin-top: 3vh;
+  gap: 1vh;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-page-medium .checkbox-area .remember-me, .main-page-medium .checkbox-area .remember-password, .main-page-medium .checkbox-area .sign-me-in-auto {
+  display: flex;
+  flex-direction: row;
+}
+.main-page-medium .checkbox-area .remember-me label, .main-page-medium .checkbox-area .remember-password label, .main-page-medium .checkbox-area .sign-me-in-auto label {
+  margin-left: 1vw;
+}
+.main-page-medium button {
+  height: 1.9rem;
+  width: 7rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  border-radius: 12px;
+}
+.main-page-medium .login-footer {
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2vh;
+  margin-left: 1rem;
+  width: 100%;
+  color: #0F8CFF;
+}
+.main-page-medium .login-footer a {
+  color: #0F8CFF;
+}
+.main-page-medium .login-footer nav {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+}
+.main-page-medium .login-footer nav p {
+  text-align: left;
+}
+.main-page-medium .login-footer nav a {
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+}
+
+.taskbar-large {
+  background-color: #0F8CFF;
+}
+.taskbar-large .img-large {
+  height: 1.4rem;
+  width: auto;
+  display: block;
+  margin: 0.3rem;
+  margin-left: 0.7rem;
+}
+
+.menu-bar-large ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.2rem;
+  overflow: hidden;
+  background-color: #E1E0E0;
+  font-size: 0.8rem;
+}
+.menu-bar-large li {
+  float: left;
+}
+.menu-bar-large li a, .menu-bar-large .drop-button {
+  display: inline-block;
+  color: #2D2D2D;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+}
+.menu-bar-large li a:hover, .menu-bar-large .dropdown-menu:hover .drop-button {
+  border-style: inset;
+}
+.menu-bar-large li.dropdown-menu {
+  display: inline-block;
+}
+.menu-bar-large .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.menu-bar-large .dropdown-content a {
+  color: black;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.menu-bar-large .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.menu-bar-large .dropdown-menu:hover .dropdown-content {
+  display: block;
+}
+
+.main-page-large {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.main-page-large .nsn-text {
+  color: #0F8CFF;
+  font-size: 1rem;
+  margin-left: 0.7rem;
+}
+.main-page-large .nsn-text span {
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+.main-page-large .profile-picture {
+  width: 12vw;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  border-style: solid;
+  border-color: #0F8CFF;
+  border-radius: 12px;
+  border-width: 2px;
+}
+.main-page-large .login-input {
+  display: flex;
+  flex-direction: column;
+  color: #0F8CFF;
+  font-size: 0.9rem;
+  margin-top: 2vh;
+  gap: 0.2vh;
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-page-large .login-input .email-input {
+  display: flex;
+  flex-direction: row;
+  width: 20vw;
+  margin-bottom: 1vh;
+}
+.main-page-large .login-input .email-input input {
+  width: 100%;
+  border-color: #0F8CFF;
+  border-style: solid;
+  border-width: 1px;
+}
+.main-page-large .login-input .email-input select {
+  border-color: #0F8CFF;
+  color: #0F8CFF;
+  border-style: solid;
+}
+.main-page-large .login-input .password-input {
+  width: 20vw;
+  border-color: #0F8CFF;
+}
+.main-page-large .login-input .password-input input {
+  width: 100%;
+  border-color: #0F8CFF;
+  border-style: solid;
+  border-width: 1px;
+}
+.main-page-large .select-status {
+  font-size: 0.9rem;
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  color: #0F8CFF;
+}
+.main-page-large .select-status select {
+  border: none;
+  color: #0F8CFF;
+  margin-left: 1vw;
+  background-color: transparent;
+}
+.main-page-large .checkbox-area {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  color: #0F8CFF;
+  margin-top: 3vh;
+  gap: 1vh;
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-page-large .checkbox-area .remember-me, .main-page-large .checkbox-area .remember-password, .main-page-large .checkbox-area .sign-me-in-auto {
+  display: flex;
+  flex-direction: row;
+}
+.main-page-large button {
+  height: 1.9rem;
+  width: 7rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  border-radius: 12px;
+}
+.main-page-large .login-footer {
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2vh;
+  margin-left: 1rem;
+  width: 100%;
+  color: #0F8CFF;
+}
+.main-page-large .login-footer a {
+  color: #0F8CFF;
+}
+.main-page-large .login-footer nav {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+}
+.main-page-large .login-footer nav p {
+  text-align: left;
+}
+.main-page-large .login-footer nav a {
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+}
+
+.taskbar-xlarge {
+  background-color: #0F8CFF;
+}
+.taskbar-xlarge .img-xlarge {
   height: 1.5rem;
+  width: auto;
   display: block;
   margin: 0.5rem;
   margin-left: 1rem;
@@ -451,23 +826,23 @@ body {
   display: block;
 }
 
-.main-page {
+.main-page-xlarge {
   background-color: #F4F4F4;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.main-page .nsn-text {
+.main-page-xlarge .nsn-text {
   color: #0F8CFF;
   font-size: 1rem;
   margin-left: 1rem;
   margin-top: 0.4rem;
 }
-.main-page .nsn-text span {
+.main-page-xlarge .nsn-text span {
   font-weight: 900;
   font-size: 1.3rem;
 }
-.main-page .profile-picture {
+.main-page-xlarge .profile-picture {
   width: 10vw;
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -479,7 +854,7 @@ body {
   border-radius: 12px;
   border-width: 2px;
 }
-.main-page .login-input {
+.main-page-xlarge .login-input {
   display: flex;
   flex-direction: column;
   color: #0F8CFF;
@@ -490,34 +865,34 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.main-page .login-input .email-input {
+.main-page-xlarge .login-input .email-input {
   display: flex;
   flex-direction: row;
   width: 15vw;
   margin-bottom: 1vh;
 }
-.main-page .login-input .email-input input {
+.main-page-xlarge .login-input .email-input input {
   width: 100%;
   border-color: #0F8CFF;
   border-style: solid;
   border-width: 1px;
 }
-.main-page .login-input .email-input select {
+.main-page-xlarge .login-input .email-input select {
   border-color: #0F8CFF;
   color: #0F8CFF;
   border-style: solid;
 }
-.main-page .login-input .password-input {
+.main-page-xlarge .login-input .password-input {
   width: 15vw;
   border-color: #0F8CFF;
 }
-.main-page .login-input .password-input input {
+.main-page-xlarge .login-input .password-input input {
   width: 100%;
   border-color: #0F8CFF;
   border-style: solid;
   border-width: 1px;
 }
-.main-page .select-status {
+.main-page-xlarge .select-status {
   font-size: 1rem;
   width: 15vw;
   margin-left: auto;
@@ -525,13 +900,13 @@ body {
   margin-top: 3vh;
   color: #0F8CFF;
 }
-.main-page .select-status select {
+.main-page-xlarge .select-status select {
   border: none;
   color: #0F8CFF;
   margin-left: 1vw;
   background-color: transparent;
 }
-.main-page .checkbox-area {
+.main-page-xlarge .checkbox-area {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
@@ -542,11 +917,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.main-page .checkbox-area .remember-me, .main-page .checkbox-area .remember-password, .main-page .checkbox-area .sign-me-in-auto {
+.main-page-xlarge .checkbox-area .remember-me, .main-page-xlarge .checkbox-area .remember-password, .main-page-xlarge .checkbox-area .sign-me-in-auto {
   display: flex;
   flex-direction: row;
 }
-.main-page button {
+.main-page-xlarge button {
   height: 1.9rem;
   width: 7rem;
   justify-content: center;
@@ -556,7 +931,7 @@ body {
   margin-top: 3vh;
   border-radius: 12px;
 }
-.main-page .login-footer {
+.main-page-xlarge .login-footer {
   font-size: 0.8rem;
   position: absolute;
   bottom: 0;
@@ -565,18 +940,18 @@ body {
   width: 100%;
   color: #0F8CFF;
 }
-.main-page .login-footer a {
+.main-page-xlarge .login-footer a {
   color: #0F8CFF;
 }
-.main-page .login-footer nav {
+.main-page-xlarge .login-footer nav {
   margin-top: 2vh;
   display: flex;
   flex-direction: row;
 }
-.main-page .login-footer nav p {
+.main-page-xlarge .login-footer nav p {
   text-align: left;
 }
-.main-page .login-footer nav a {
+.main-page-xlarge .login-footer nav a {
   position: absolute;
   right: 0;
   margin-right: 2rem;
