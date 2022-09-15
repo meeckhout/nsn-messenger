@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 const Landing_Page = () => {
     return (
-        <>
+        <div className="landing-body">
             <Breakpoint xsmall>
                 <Navbar />
                 <div className="container-landing xsmall">
@@ -96,7 +96,7 @@ const Landing_Page = () => {
                     <Footer />
                 </div>
             </Breakpoint>
-        </>
+        </div>
     );
 }
 
