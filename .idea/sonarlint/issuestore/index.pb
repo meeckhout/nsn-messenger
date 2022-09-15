@@ -27,8 +27,6 @@ E
 src/pages/Chatbox.jsx,7/e/7eef0aa4e37597211dbee6bc76411124ea416104
 I
 src/components/Footer.jsx,8/2/8292f64d2de4032e9c7b7614534e68315052f34a
-E
-src/styles/Login.scss,3/8/3811d631a2428bdc9cf7dd6ee036528ce5442c81
 C
 src/pages/Login.jsx,0/e/0e659cbf848793b2a4261f495400d7e6b21ec5a8
 E
