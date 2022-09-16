@@ -34,7 +34,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
 }
 .about-img .img-team {
   box-sizing: content-box;
@@ -84,6 +83,57 @@
   margin-bottom: 5rem;
 }
 
+.title-small {
+  margin: 2rem 0 2rem 0;
+  font-size: 2rem;
+}
+.title-small .alt-small {
+  font-size: 6rem;
+  margin: 0 2.3rem 0 2.3rem;
+}
+
+.img-team-small {
+  width: 200px;
+  height: 100%;
+}
+
+.title-medium {
+  margin: 2rem 0 2rem 0;
+  font-size: 2rem;
+}
+.title-medium .alt-medium {
+  font-size: 6rem;
+  margin: 0 2.3rem 0 2.3rem;
+}
+
+.img-team-medium {
+  width: 200px;
+  height: 100%;
+}
+
+.title-large {
+  margin: 2rem 0 2rem 0;
+  font-size: 2rem;
+}
+.title-large .alt-large {
+  font-size: 6rem;
+  margin: 0 2.3rem 0 2.3rem;
+}
+
+.img-team-large {
+  width: 200px;
+}
+
+.bio-large {
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.text-large {
+  display: flex;
+  flex-direction: column;
+}
+
 .title-xlarge {
   margin: 2rem 0 2rem 0;
   font-size: 2.9rem;
@@ -96,6 +146,10 @@
 .img-team-xlarge {
   width: 300px;
   height: 100%;
+}
+
+.about-img {
+  gap: 3rem;
 }
 
 /*# sourceMappingURL=About.css.map */

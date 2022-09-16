@@ -1,4 +1,4 @@
-@import '_abstracts/typography';
+@import '_abstracts/typography.scss';
 @import '_abstracts/colors.scss';
 
 .about-container {
@@ -37,7 +37,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
 
   .img-team {
     box-sizing: content-box;
@@ -95,6 +94,64 @@
   margin-bottom: 5rem;
 }
 
+// SMALL SCREEN
+.title-small {
+  margin: 2rem 0 2rem 0;
+  font-size: 2rem;
+
+  .alt-small {
+    font-size: 6rem;
+    margin: 0 2.3rem 0 2.3rem;
+  }
+}
+
+.img-team-small {
+  width: 200px;
+  height: 100%;
+}
+
+// MEDIUM SCREEN
+.title-medium {
+  margin: 2rem 0 2rem 0;
+  font-size: 2rem;
+
+  .alt-medium {
+    font-size: 6rem;
+    margin: 0 2.3rem 0 2.3rem;
+  }
+}
+
+.img-team-medium {
+  width: 200px;
+  height: 100%;
+}
+
+// LARGE SCREEN
+.title-large {
+  margin: 2rem 0 2rem 0;
+  font-size: 2rem;
+
+  .alt-large {
+    font-size: 6rem;
+    margin: 0 2.3rem 0 2.3rem;
+  }
+}
+
+.img-team-large {
+  width: 200px;
+}
+
+.bio-large {
+  font-size: .8rem;
+  margin-bottom: .8rem;
+}
+
+.text-large {
+  display: flex;
+  flex-direction: column;
+
+}
+
 // XLARGE SCREEN
 
 .title-xlarge {
@@ -111,3 +168,7 @@
   width: 300px;
   height: 100%;
 }
+
+.about-img {
+  gap: 3rem;
+ }
