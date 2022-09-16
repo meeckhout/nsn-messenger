@@ -41,7 +41,8 @@
   border-width: 1rem;
   border-radius: 0.8rem;
   border-style: solid;
-  border-image: linear-gradient(to right bottom, #FF00F5, #f4f4f4);
+  -o-border-image: linear-gradient(to right bottom, #FF00F5, #f4f4f4);
+     border-image: linear-gradient(to right bottom, #FF00F5, #f4f4f4);
   border-image-slice: 1;
   margin-bottom: 0.5rem;
 }
@@ -96,6 +97,4 @@
 .img-team-xlarge {
   width: 300px;
   height: 100%;
-}
-
-/*# sourceMappingURL=About.css.map */
+}/*# sourceMappingURL=About.css.map */

@@ -74,13 +74,11 @@ const Navbar = () => {
                         <Link to="/">
                             <img className="img img-xlarge" src={Logo} alt="NSN Messenger"/>
                         </Link>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <Link to='/About'>About</Link>
-                                </li>
-                            </ul>
-                        </nav>
+                        <ul>
+                            <li>
+                                <Link to='/About'>About</Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </Breakpoint>
