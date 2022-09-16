@@ -90,7 +90,8 @@
 .main-page-xsmall .profile-picture {
   width: 32vw;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3vh;
@@ -279,7 +280,8 @@
 .main-page-small .profile-picture {
   width: 28vw;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3vh;
@@ -468,7 +470,8 @@
 .main-page-medium .profile-picture {
   width: 18vw;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3vh;
@@ -658,7 +661,8 @@
 .main-page-large .profile-picture {
   width: 12vw;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3vh;
@@ -847,7 +851,8 @@
 .main-page-xlarge .profile-picture {
   width: 10vw;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-left: auto;
   margin-right: auto;
   margin-top: 4vh;
@@ -957,6 +962,4 @@
   position: absolute;
   right: 0;
   margin-right: 2rem;
-}
-
-/*# sourceMappingURL=Login.css.map */
+}/*# sourceMappingURL=Login.css.map */

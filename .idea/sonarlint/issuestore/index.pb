@@ -45,8 +45,6 @@ J
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 J
 src/pages/Landing_Page.jsx,5/6/5626b306b95327a7c96d508680c77629dfeed83e
-L
-src/styles/Landing_Page.scss,8/c/8cd87cb7fb7cca502f0cef596b8813ce317fa9d9
 E
 src/styles/Login.scss,3/8/3811d631a2428bdc9cf7dd6ee036528ce5442c81
 H
@@ -57,11 +55,3 @@ N
 src/components/currentSong.jsx,9/a/9a03784d4af0d5a99fc5800299cb34e327abc48e
 M
 src/components/LastFmData.jsx,f/f/ffcb85d0be71fccb78efc9b5ba1e8f1af49b7b0d
-F
-src/styles/Navbar.scss,7/3/73c0023a6f4428fa6fc522c028b63af33043e658
-I
-src/components/Navbar.jsx,d/1/d1eb1e252fd507134cfc95e08757d087da9b650a
-C
-src/pages/About.jsx,f/c/fcad63f0891a8395b39928f4961bb065edb79c37
-E
-src/styles/About.scss,d/d/ddf9fa93fe05a4a88d63f80ab135bdb979c20c53
