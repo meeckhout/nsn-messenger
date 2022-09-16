@@ -2,9 +2,9 @@
 @import '_abstracts/colors.scss';
 
 .landing-body{
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
 }
 .container-landing {
   display: flex;
@@ -17,7 +17,6 @@
   height: 100vh;
   width: 100%;
   
-  
 
   .tagline {
     display: flex;
@@ -25,6 +24,7 @@
     width: fit-content;
     letter-spacing: -0.25rem;
     margin-left: 3vw;
+    //margin-top: -3vh;
     line-height: 130%;
     align-items: center;
 
@@ -41,7 +41,7 @@
       text-decoration: none;
     }
     .landing-button {
-      margin-top: 5vh;
+      margin-top: 7vh;
     }
 
   }
@@ -172,28 +172,26 @@ button:hover {
 //XLARGE SCREEN////XLARGE SCREEN////XLARGE SCREEN////XLARGE SCREEN//
 
 .xlarge {
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
   background-color: darkcyan;
   font-size: 6rem;
-}
-
-.tagline {
-  
-  
 }
 
 .tagline2-xlarge {
   font-size: 9.4rem;
 }
 
-.msnTest-xlarge {
+.landing-nsn-image {
   position: absolute;
-  right: -6vw;
-  width: 70vw;
-  height: auto;
+  right: 0vw;
   margin-top: 3vh;
+  overflow: hidden;
+    .msnTest-xlarge {
+      width: 70vw;
+      height: auto;
+      margin-right: -6vw;
+    }
 }
+
 
 .btn-xlarge {
   width: 15.6rem;

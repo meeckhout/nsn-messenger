@@ -5,7 +5,6 @@ import '../styles/Landing_Page.scss';
 import msnLogo from '../assets/images/msnLogo.png';
 import {Link} from "react-router-dom";
 
-
 const Landing_Page = () => {
     return (
         <div className="landing-body">
@@ -87,12 +86,16 @@ const Landing_Page = () => {
                         <span className="tagline2 tagline2-xlarge">back?</span>
                         <div className="landing-button">
                             <Link to="/Register">
-                                <button className="btn-xlarge">Get started</button>
+                                <button className="btn-xlarge">Get started ⟶</button>
                             </Link>
-                            <button className="btn-xlarge btn-log-in">Log in</button>
+                            <Link to="/Login">
+                                <button className="btn-xlarge btn-log-in">Log in</button>
+                            </Link>
                         </div>
                     </div>
-                    <img className="msnTest-xlarge" src={msnLogo} alt="Two figures" />
+                    <div className="landing-nsn-image">
+                        <img className="msnTest-xlarge" src={msnLogo} alt="Two figures" />
+                    </div>
                     <Footer />
                 </div>
             </Breakpoint>

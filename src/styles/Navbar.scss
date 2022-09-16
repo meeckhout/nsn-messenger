@@ -6,7 +6,7 @@
   overflow: hidden;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   
 
   .navbar {
@@ -37,16 +37,18 @@
 
 .navbar-xsmall {
   font-size: 1.2rem;
-  gap: 3em;
+  margin-top: 1vh;
+  height: 6vh;
 }
 
 .img-xsmall {
-  width: 35%;
+  height: 5vh;
 }
 
 // XLARGE SCREEN
 
 .navbar-xlarge {
+  background-color: darkcyan;
   font-size: 1.8rem;
   gap: 3em;
 }
