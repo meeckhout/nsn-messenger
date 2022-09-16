@@ -1,7 +1,7 @@
 @import '_abstracts/typography.scss';
 @import '_abstracts/colors.scss';
 
-body {
+.container-body {
   background: linear-gradient(0deg, $primary-white, #B7D9F7 80%, $primary-blue) no-repeat fixed;
 }
 
@@ -33,430 +33,169 @@ footer {
   margin: 15px 20px;
 }
 
-//Breakpoint Xsmall!!!
-.chat-display-xsmall {
-  height: 300px;
-  width: 400px;
+.chat-display {
   background: linear-gradient(0deg, $primary-white 75%, #B7D9F7 85%, $primary-blue 90%) no-repeat fixed;
   border: 1px solid gray;
   margin-left: 20px;
   margin-top: 15px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  height: 300px;
 }
 
-.friend-profile-outer-xsmall {
+.friend-profile-outer {
   position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
   background: $primary-blue;
   border: 1px solid gray;
   border-radius: 30px;
+  margin: 15px;
+  height: 115px;
+  width: 120px;
 }
 
-.friend-profile-inner-xsmall {
+.friend-profile-inner {
   position: relative;
-  height: 80px;
-  width: 90px;
+  background: #A7C7E5;
+  border: 1px solid gray;
+  border-radius: 10px;
   top: 30px;
   left: 30px;
+  height: 80px;
+  width: 90px;
+}
+
+.footer-chatwindow {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+}
+
+.footer-menu {
+  border: 1px solid gray;
+  background: #C6DFF6;
+  height: 30px;
+}
+
+.footer-tekst {
+  height: 190px;
+}
+
+.footer-message {
+  border: 1px solid gray;
+  background: #C6DFF6;
+  height: 30px;
+}
+
+.self-profile-outer {
+  background: $primary-blue;
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  border-radius: 30px;
+  margin: 15px;
+  position: fixed;
+  height: 115px;
+  width: 120px;
+}
+
+.self-profile-inner {
   background: #A7C7E5;
   border-style: solid;
   border-width: 1px;
   border-color: gray;
   border-radius: 10px;
+  top: 30px;
+  left: 30px;
+  position: relative;
+  height: 80px;
+  width: 90px;
+}
+
+//Breakpoint Xsmall!!!
+.chat-display-xsmall {
+  width: 400px;
 }
 
 .footer-chatwindow-xsmall {
-  display: flex;
-  flex-direction: column;
-  height: 250px;
   width: 400px;
 }
 
 .footer-menu-xsmall {
-  border: 1px solid gray;
-  height: 30px;
   width: 400px;
-  background: #C6DFF6;
-}
-
-.footer-tekst-xsmall {
-  height: 190px;
 }
 
 .footer-message-xsmall {
-  border: 1px solid gray;
-  height: 30px;
   width: 400px;
-  background: #C6DFF6;
-}
-
-.self-profile-outer-xsmall {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-}
-
-.self-profile-inner-xsmall {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 //Breakpoint Small
 .chat-display-small {
-  height: 300px;
   width: 600px;
-  background: linear-gradient(0deg, $primary-white 75%, #B7D9F7 85%, $primary-blue 90%) no-repeat fixed;
-  border: 1px solid gray;
-  margin-left: 20px;
-  margin-top: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.friend-profile-outer-small {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border: 1px solid gray;
-  border-radius: 30px;
-}
-
-.friend-profile-inner-small {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 .footer-chatwindow-small {
-  display: flex;
-  flex-direction: column;
-  height: 250px;
   width: 600px;
 }
 
 .footer-menu-small {
-  border: 1px solid gray;
-  height: 30px;
   width: 600px;
-  background: #C6DFF6;
-}
-
-.footer-tekst-small {
-  height: 190px;
 }
 
 .footer-message-small {
-  border: 1px solid gray;
-  height: 30px;
   width: 600px;
-  background: #C6DFF6;
-}
-
-.self-profile-outer-small {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-}
-
-.self-profile-inner-small {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 //Breakpoint Medium
 .chat-display-medium {
-  height: 300px;
   width: 810px;
-  background: linear-gradient(0deg, $primary-white 75%, #B7D9F7 85%, $primary-blue 90%) no-repeat fixed;
-  border: 1px solid gray;
-  margin-left: 20px;
-  margin-top: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.friend-profile-outer-medium {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border: 1px solid gray;
-  border-radius: 30px;
-}
-
-.friend-profile-inner-medium {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 .footer-chatwindow-medium {
-  display: flex;
-  flex-direction: column;
   height: 250px;
   width: 810px;
 }
 
 .footer-menu-medium {
-  border: 1px solid gray;
-  height: 30px;
   width: 810px;
-  background: #C6DFF6;
-}
-
-.footer-tekst-medium {
-  height: 190px;
 }
 
 .footer-message-medium {
-  border: 1px solid gray;
-  height: 30px;
   width: 810px;
-  background: #C6DFF6;
-}
-
-.self-profile-outer-medium {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-}
-
-.self-profile-inner-medium {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 //Breakpoint Large
 .chat-display-large {
-  height: 300px;
   width: 1020px;
-  background: linear-gradient(0deg, $primary-white 75%, #B7D9F7 85%, $primary-blue 90%) no-repeat fixed;
-  border: 1px solid gray;
-  margin-left: 20px;
-  margin-top: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.friend-profile-outer-large {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border: 1px solid gray;
-  border-radius: 30px;
-}
-
-.friend-profile-inner-large {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 .footer-chatwindow-large {
-  display: flex;
-  flex-direction: column;
-  height: 250px;
   width: 1020px;
 }
 
 .footer-menu-large {
-  border: 1px solid gray;
   height: 30px;
   width: 1020px;
-  background: #C6DFF6;
-}
-
-.footer-tekst-large {
-  height: 190px;
 }
 
 .footer-message-large {
-  border: 1px solid gray;
-  height: 30px;
   width: 1020px;
-  background: #C6DFF6;
-}
-
-.self-profile-outer-large {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-}
-
-.self-profile-inner-large {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 //Breakpoint Xlarge
-
 .chat-display-xlarge {
-  height: 300px;
   width: 1220px;
-  background: linear-gradient(0deg, $primary-white 75%, #B7D9F7 85%, $primary-blue 90%) no-repeat fixed;
-  border: 1px solid gray;
-  margin-left: 20px;
-  margin-top: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.friend-profile-outer-xlarge {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border: 1px solid gray;
-  border-radius: 30px;
-}
-
-.friend-profile-inner-xlarge {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 .footer-chatwindow-xlarge {
-  display: flex;
-  flex-direction: column;
-  height: 250px;
   width: 1220px;
 }
 
 .footer-menu-xlarge {
-  border: 1px solid gray;
-  height: 30px;
   width: 1220px;
-  background: #C6DFF6;
-}
-
-.footer-tekst-xlarge {
-  height: 190px;
 }
 
 .footer-message-xlarge {
-  border: 1px solid gray;
-  height: 30px;
   width: 1220px;
-  background: #C6DFF6;
-}
-
-.self-profile-outer-xlarge {
-  position: fixed;
-  height: 115px;
-  width: 120px;
-  margin: 15px;
-  background: $primary-blue;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-}
-
-.self-profile-inner-xlarge {
-  position: relative;
-  height: 80px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  background: #A7C7E5;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 10px;
 }
 
 
