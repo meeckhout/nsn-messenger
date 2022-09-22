@@ -174,27 +174,28 @@
       border-radius: 12px;
     }
     .login-footer {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       position: absolute;
       bottom: 0;
-      margin-bottom: 2vh;
-      margin-left: 1rem;
       width: 100%;
       color: $primary-blue;
       a{
+        margin-left: 2vw;
         color: $primary-blue;
       }
       nav {
-        margin-top: 2vh;
         display: flex;
         flex-direction: row;
+        align-items: center;
         p{
+          margin-left: 2vw;
           text-align: left;
+          font-size: 0.9rem;
         }
         a{
+          margin-right: 2vw;
           position: absolute;
           right: 0;
-          margin-right: 2rem;
         }
       }
     }
@@ -276,6 +277,14 @@
       font-size: 0.8rem;
       width: 40vw;
     }
+    .login-footer {
+      font-size: 0.8rem;
+      nav { 
+        p{
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
 
@@ -290,10 +299,10 @@
       }
     }
     .profile-picture{
-        width: 18vw;
+        width: 20vw;
     }
     .login-input{
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-top: 1.6vh;
       width: 30vw;
       .email-input{
@@ -304,19 +313,28 @@
       }
     }
     .select-status {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       width: 30vw;
       margin-top: 1.7vh;
     }
     .checkbox-area{
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       width: 30vw;
+    }
+    .login-footer {
+      font-size: 0.8rem;
+      nav { 
+        p{
+          font-size: 1rem;
+        }
+      }
     }
   }
 }
 
 // LARGE SCREEN//////////////////////////////////////////////////////////////////////////////////////////////////////////
 .large{
+  background-color: burlywood;
   .taskbar-large{
     .img-large{
       height: 1.4rem;
@@ -342,29 +360,42 @@
       }
     }
     .profile-picture{
-        width: 12vw;
+        width: 14vw;
         border-width: 2px;
     }
     .login-input{
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-top: 2vh;
-      width: 20vw;
+      width: 22vw;
       .email-input{
-        width: 20vw;
+        width: 22vw;
       }
       .password-input{
-        width: 20vw;
+        width: 22vw;
       }
     }
     .select-status {
-      font-size: 0.9rem;
-      width: 20vw;
+      font-size: 1rem;
+      width: 22vw;
       margin-top: 3vh;
     }
     .checkbox-area{
-      font-size: 0.9rem;
-      width: 20vw;
+      font-size: 1rem;
+      width: 22vw;
     }  
+    button {
+      height: 2.2rem;
+      width: 7rem;
+      font-size: 1rem;
+    }
+    .login-footer {
+      font-size: 0.9rem;
+      nav { 
+        p{
+          font-size: 1.1rem;
+        }
+      }
+    }
   }
 }
 
@@ -372,7 +403,7 @@
 .xlarge {
   .taskbar-xlarge{
     .img-xlarge{
-      height: 1.5rem;
+      height: 1.4rem;
       margin: 0.5rem;
       margin-left: 1rem;
     }
@@ -420,6 +451,19 @@
     .checkbox-area{
       font-size: 1rem;
       width: 15vw;
+    }
+    button {
+      height: 2.2rem;
+      width: 7rem;
+      font-size: 1rem;
+    }
+    .login-footer {
+      font-size: 0.9rem;
+      nav { 
+        p{
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }
