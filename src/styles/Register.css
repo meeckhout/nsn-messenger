@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-body {
+.register-body {
   margin: 0;
   padding: 0;
 }
@@ -37,7 +37,6 @@ p {
   margin-left: auto;
   margin-right: auto;
   margin-top: -5vh;
-  margin-bottom: -1vh;
 }
 
 .register-input {
@@ -49,7 +48,8 @@ p {
   gap: 2vh;
   margin-bottom: 2vh;
 }
-.register-input .register-email-input, .register-input .register-password-input {
+.register-input .register-email-input,
+.register-input .register-password-input {
   position: relative;
   display: flex;
   align-items: center;
@@ -63,6 +63,12 @@ p {
   width: 100%;
   padding-left: 3rem;
   font-size: 1.2rem;
+}
+.register-input input.register-mail-adress::-moz-placeholder, .register-input input.register-password::-moz-placeholder {
+  color: #F4F4F4;
+}
+.register-input input.register-mail-adress:-ms-input-placeholder, .register-input input.register-password:-ms-input-placeholder {
+  color: #F4F4F4;
 }
 .register-input input.register-mail-adress::placeholder,
 .register-input input.register-password::placeholder {
@@ -82,9 +88,11 @@ p {
   margin-right: auto;
   border-radius: 12px;
   font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .register-user-log-in {
+  margin-top: 2vh;
   font-weight: bold;
   font-size: 0.8rem;
 }
@@ -92,8 +100,143 @@ p {
   color: #2D2D2D;
 }
 
-.register-google-sign-up {
-  font-weight: bold;
+.register-google-sign-up-container {
+  position: relative;
+  flex: 1;
+}
+.register-google-sign-up-container .register-google-sign-up {
+  width: 100vw;
+  position: absolute;
+  bottom: 1vh;
+  font-weight: 500;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+.register-google-sign-up-container .register-google-sign-up a {
+  text-decoration: none;
+  font-weight: 900;
+  color: #2D2D2D;
 }
 
-/*# sourceMappingURL=Register.css.map */
+.google-icon {
+  margin-right: 0.6vw;
+  font-size: 1.2rem;
+}
+
+.xlarge {
+  background-color: aqua;
+}
+
+.large {
+  background-color: blueviolet;
+}
+.large .big-nsn-image {
+  width: 50vw;
+}
+.large .register-input {
+  width: 28vw;
+}
+.large .register-input .register-mail-adress,
+.large .register-input .register-password {
+  height: 5vh;
+  font-size: 1.1rem;
+}
+.large .register-sign-up {
+  height: 5vh;
+  font-size: 0.9rem;
+}
+
+.medium {
+  background-color: chocolate;
+}
+.medium .header-register {
+  margin-top: 2vh;
+  margin-left: 4vw;
+}
+.medium .header-register .nsn-logo-header {
+  width: 24vw;
+}
+.medium .big-nsn-image {
+  width: 75vw;
+  margin-top: 1vh;
+}
+.medium .register-input {
+  width: 40vw;
+  margin-top: 1vh;
+  gap: 3vh;
+  margin-bottom: 0;
+}
+.medium .register-input .register-mail-adress,
+.medium .register-input .register-password {
+  height: 5vh;
+  font-size: 1rem;
+}
+.medium .register-input .register-mail-adress:focus,
+.medium .register-input .register-password:focus {
+  outline: none;
+}
+.medium .register-sign-up {
+  margin-top: 3vh;
+  height: 5vh;
+  font-size: 0.9rem;
+  width: 16vw;
+}
+.medium .register-user-log-in {
+  margin-top: 3vh;
+}
+.medium .register-google-sign-up {
+  bottom: 2vh;
+}
+
+.small {
+  background-color: crimson;
+}
+.small .big-nsn-image {
+  width: 60vw;
+}
+.small .register-input {
+  width: 28vw;
+}
+.small .register-input .register-mail-adress,
+.small .register-input .register-password {
+  height: 5.4vh;
+  font-size: 1rem;
+}
+.small .register-sign-up {
+  height: 5.4vh;
+  font-size: 0.9rem;
+}
+
+.xsmall {
+  background-color: darkseagreen;
+}
+.xsmall .header-register {
+  margin-top: 2vh;
+  margin-left: 4vw;
+}
+.xsmall .header-register .nsn-logo-header {
+  width: 40vw;
+}
+.xsmall .big-nsn-image {
+  width: 90vw;
+  margin-top: 3vh;
+}
+.xsmall .register-input {
+  width: 60vw;
+  gap: 3vh;
+  margin-bottom: 3vh;
+  margin-top: 1vh;
+}
+.xsmall .register-input .register-mail-adress,
+.xsmall .register-input .register-password {
+  height: 5.4vh;
+  font-size: 1rem;
+}
+.xsmall .register-sign-up {
+  height: 5.4vh;
+  font-size: 0.9rem;
+  width: 30vw;
+}
+.xsmall .register-user-log-in {
+  margin-top: 3vh;
+}/*# sourceMappingURL=Register.css.map */

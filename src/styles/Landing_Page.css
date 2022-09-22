@@ -14,10 +14,26 @@
 .container-landing .tagline {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0 0 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  letter-spacing: -0.25rem;
+  margin-left: 3vw;
+  line-height: 130%;
+  align-items: center;
+}
+.container-landing .tagline .tagline1 {
+  font-weight: 500;
 }
 .container-landing .tagline .tagline2 {
   font-weight: 700;
+  text-align: center;
+}
+.container-landing .tagline a {
+  text-decoration: none;
+}
+.container-landing .tagline .landing-button {
+  margin-top: 5vh;
 }
 
 button {
@@ -40,6 +56,7 @@ button:hover {
 }
 
 .xsmall {
+  background-color: darkseagreen;
   font-size: 3rem;
 }
 
@@ -63,6 +80,7 @@ button:hover {
 }
 
 .small {
+  background-color: darksalmon;
   font-size: 7rem;
 }
 
@@ -86,6 +104,7 @@ button:hover {
 }
 
 .medium {
+  background-color: chocolate;
   font-size: 5rem;
 }
 
@@ -109,6 +128,7 @@ button:hover {
 }
 
 .large {
+  background-color: mediumpurple;
   font-size: 7.5rem;
 }
 
@@ -132,32 +152,32 @@ button:hover {
 }
 
 .xlarge {
-  font-size: 10rem;
-}
-
-.tagline {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0 0 2rem;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background-color: darkcyan;
+  font-size: 6rem;
 }
 
 .tagline2-xlarge {
-  font-size: 15rem;
+  font-size: 9.4rem;
 }
 
 .msnTest-xlarge {
   position: absolute;
-  right: 0;
-  height: 800px;
-  width: 1200px;
+  right: -6vw;
+  width: 70vw;
+  height: auto;
+  margin-top: 3vh;
 }
 
 .btn-xlarge {
-  width: 250px;
-  height: 50px;
+  width: 15.6rem;
+  height: 3.1rem;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   letter-spacing: 0.1rem;
 }
 
-/*# sourceMappingURL=Landing_Page.css.map */
+.btn-log-in {
+  width: 12rem;
+}/*# sourceMappingURL=Landing_Page.css.map */
