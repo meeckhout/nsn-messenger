@@ -45,10 +45,30 @@
   height: 5vh;
 }
 
+// MEDIUM SCREEN
+.navbar-medium {
+  font-size: 1.6rem;
+  margin-top: 1vh;
+  height: 6vh;
+}
+
+.img-medium {
+  height: 4vh;
+}
+
+// LARGE SCREEN
+.navbar-large {
+  height: 7vh;
+  font-size: 1.6rem;
+}
+
+.img-large {
+  height: 4vh;
+}
+
 // XLARGE SCREEN
 
 .navbar-xlarge {
-  background-color: darkcyan;
   font-size: 1.8rem;
   gap: 3em;
 }
