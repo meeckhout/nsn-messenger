@@ -5,12 +5,68 @@ import '../styles/Chatbox.scss';
 
 const Chatbox = () => {
     return (
-        <>
+        <div className="container-body">
             <div className="container-logo">
                 <img src={ Logo } alt="Logo NSN"/>
             </div>
             <div className="container-toolbar">
-
+                <ul>
+                    <li className="dropdown-menu">
+                        <a
+                            href="javascript:void(0)"
+                            className="drop-button"
+                        >
+                            File
+                        </a>
+                        <div className="dropdown-content">
+                            <a href="#">Test</a>
+                        </div>
+                    </li>
+                    <li className="dropdown-menu">
+                        <a
+                            href="javascript:void(0)"
+                            className="drop-button"
+                        >
+                            Contacts
+                        </a>
+                        <div className="dropdown-content">
+                            <a href="#">Test</a>
+                        </div>
+                    </li>
+                    <li className="dropdown-menu">
+                        <a
+                            href="javascript:void(0)"
+                            className="drop-button"
+                        >
+                            Actions
+                        </a>
+                        <div className="dropdown-content">
+                            <a href="#">Test</a>
+                        </div>
+                    </li>
+                    <li className="dropdown-menu">
+                        <a
+                            href="javascript:void(0)"
+                            className="drop-button"
+                        >
+                            Tools
+                        </a>
+                        <div className="dropdown-content">
+                            <a href="#">Test</a>
+                        </div>
+                    </li>
+                    <li className="dropdown-menu">
+                        <a
+                            href="javascript:void(0)"
+                            className="drop-button"
+                        >
+                            Help
+                        </a>
+                        <div className="dropdown-content">
+                            <a href="#">Test</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
             <Breakpoint xsmall only>
@@ -133,7 +189,7 @@ const Chatbox = () => {
                 </footer>
             </Breakpoint>
 
-        </>
+        </div>
     )
 }
 
