@@ -10,20 +10,13 @@ const Login = () => {
         <div className="login-body">
             <Breakpoint xsmall>
                 <div className="container-login xsmall">
-                    <div className="taskbar-xsmall">
-                        <img
-                            className="img img-xsmall"
-                            src={Logo}
-                            alt="NSN Messenger"
-                        />
+                    <div className="taskbar taskbar-xsmall">
+                        <img className="img img-xsmall" src={Logo} alt="NSN Messenger" />
                     </div>
-                    <nav className="menu-bar-xsmall">
+                    <nav className="menu-bar">
                         <ul>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     File
                                 </a>
                                 <div className="dropdown-content">
@@ -31,10 +24,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Contacts
                                 </a>
                                 <div className="dropdown-content">
@@ -42,10 +32,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Actions
                                 </a>
                                 <div className="dropdown-content">
@@ -53,10 +40,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Tools
                                 </a>
                                 <div className="dropdown-content">
@@ -64,10 +48,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Help
                                 </a>
                                 <div className="dropdown-content">
@@ -76,15 +57,11 @@ const Login = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className="main-page-xsmall">
+                    <div className="main-page">
                         <div className="nsn-text">
                             <span>nsn</span>Messenger
                         </div>
-                        <img
-                            className="profile-picture"
-                            src={msnSocMed}
-                            alt="Profile picture"
-                        />
+                        <img className="profile-picture" src={msnSocMed} alt="Profile picture" />
                         <div className="login-input">
                             <label>E-mail adress:</label>
                             <div className="email-input">
@@ -113,9 +90,7 @@ const Login = () => {
                             </div>
                             <div className="sign-me-in-auto">
                                 <input type="checkbox" name="" id="" />
-                                <label htmlFor="">
-                                    Sign me in automatically
-                                </label>
+                                <label htmlFor="">Sign me in automatically</label>
                             </div>
                         </div>
                         <button>Sign In</button>
@@ -134,20 +109,13 @@ const Login = () => {
 
             <Breakpoint small>
                 <div className="container-login small">
-                    <div className="taskbar-small">
-                        <img
-                            className="img img-small"
-                            src={Logo}
-                            alt="NSN Messenger"
-                        />
+                    <div className="taskbar taskbar-small">
+                        <img className="img img-small" src={Logo} alt="NSN Messenger" />
                     </div>
-                    <nav className="menu-bar-small">
+                    <nav className="menu-bar">
                         <ul>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     File
                                 </a>
                                 <div className="dropdown-content">
@@ -155,10 +123,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Contacts
                                 </a>
                                 <div className="dropdown-content">
@@ -166,10 +131,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Actions
                                 </a>
                                 <div className="dropdown-content">
@@ -177,10 +139,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Tools
                                 </a>
                                 <div className="dropdown-content">
@@ -188,10 +147,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Help
                                 </a>
                                 <div className="dropdown-content">
@@ -200,15 +156,11 @@ const Login = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className="main-page-small">
+                    <div className="main-page">
                         <div className="nsn-text">
                             <span>nsn</span>Messenger
                         </div>
-                        <img
-                            className="profile-picture"
-                            src={msnSocMed}
-                            alt="Profile picture"
-                        />
+                        <img className="profile-picture" src={msnSocMed} alt="Profile picture" />
                         <div className="login-input">
                             <label>E-mail adress:</label>
                             <div className="email-input">
@@ -237,9 +189,7 @@ const Login = () => {
                             </div>
                             <div className="sign-me-in-auto">
                                 <input type="checkbox" name="" id="" />
-                                <label htmlFor="">
-                                    Sign me in automatically
-                                </label>
+                                <label htmlFor="">Sign me in automatically</label>
                             </div>
                         </div>
                         <button>Sign In</button>
@@ -258,20 +208,13 @@ const Login = () => {
 
             <Breakpoint medium>
                 <div className="container-login medium">
-                    <div className="taskbar-medium">
-                        <img
-                            className="img img-medium"
-                            src={Logo}
-                            alt="NSN Messenger"
-                        />
+                    <div className="taskbar taskbar-medium">
+                        <img className="img img-medium" src={Logo} alt="NSN Messenger" />
                     </div>
-                    <nav className="menu-bar-medium">
+                    <nav className="menu-bar">
                         <ul>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     File
                                 </a>
                                 <div className="dropdown-content">
@@ -279,10 +222,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Contacts
                                 </a>
                                 <div className="dropdown-content">
@@ -290,10 +230,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Actions
                                 </a>
                                 <div className="dropdown-content">
@@ -301,10 +238,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Tools
                                 </a>
                                 <div className="dropdown-content">
@@ -312,10 +246,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Help
                                 </a>
                                 <div className="dropdown-content">
@@ -324,15 +255,11 @@ const Login = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className="main-page-medium">
+                    <div className="main-page">
                         <div className="nsn-text">
                             <span>nsn</span>Messenger
                         </div>
-                        <img
-                            className="profile-picture"
-                            src={msnSocMed}
-                            alt="Profile picture"
-                        />
+                        <img className="profile-picture" src={msnSocMed} alt="Profile picture" />
                         <div className="login-input">
                             <label>E-mail adress:</label>
                             <div className="email-input">
@@ -361,9 +288,7 @@ const Login = () => {
                             </div>
                             <div className="sign-me-in-auto">
                                 <input type="checkbox" name="" id="" />
-                                <label htmlFor="">
-                                    Sign me in automatically
-                                </label>
+                                <label htmlFor="">Sign me in automatically</label>
                             </div>
                         </div>
                         <button>Sign In</button>
@@ -382,20 +307,13 @@ const Login = () => {
 
             <Breakpoint large>
                 <div className="container-login large">
-                    <div className="taskbar-large">
-                        <img
-                            className="img img-large"
-                            src={Logo}
-                            alt="NSN Messenger"
-                        />
+                    <div className="taskbar taskbar-large">
+                        <img className="img img-large" src={Logo} alt="NSN Messenger" />
                     </div>
-                    <nav className="menu-bar-large">
+                    <nav className="menu-bar">
                         <ul>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     File
                                 </a>
                                 <div className="dropdown-content">
@@ -403,10 +321,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Contacts
                                 </a>
                                 <div className="dropdown-content">
@@ -414,10 +329,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Actions
                                 </a>
                                 <div className="dropdown-content">
@@ -425,10 +337,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Tools
                                 </a>
                                 <div className="dropdown-content">
@@ -436,10 +345,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Help
                                 </a>
                                 <div className="dropdown-content">
@@ -448,15 +354,11 @@ const Login = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className="main-page-large">
+                    <div className="main-page">
                         <div className="nsn-text">
                             <span>nsn</span>Messenger
                         </div>
-                        <img
-                            className="profile-picture"
-                            src={msnSocMed}
-                            alt="Profile picture"
-                        />
+                        <img className="profile-picture" src={msnSocMed} alt="Profile picture" />
                         <div className="login-input">
                             <label>E-mail adress:</label>
                             <div className="email-input">
@@ -485,9 +387,7 @@ const Login = () => {
                             </div>
                             <div className="sign-me-in-auto">
                                 <input type="checkbox" name="" id="" />
-                                <label htmlFor="">
-                                    Sign me in automatically
-                                </label>
+                                <label htmlFor="">Sign me in automatically</label>
                             </div>
                         </div>
                         <button>Sign In</button>
@@ -506,20 +406,13 @@ const Login = () => {
 
             <Breakpoint xlarge>
                 <div className="container-login xlarge">
-                    <div className="taskbar-xlarge">
-                        <img
-                            className="img img-xlarge"
-                            src={Logo}
-                            alt="NSN Messenger"
-                        />
+                    <div className="taskbar taskbar-xlarge">
+                        <img className="img img-xlarge" src={Logo} alt="NSN Messenger" />
                     </div>
-                    <nav className="menu-bar-xlarge">
+                    <nav className="menu-bar">
                         <ul>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     File
                                 </a>
                                 <div className="dropdown-content">
@@ -527,10 +420,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Contacts
                                 </a>
                                 <div className="dropdown-content">
@@ -538,10 +428,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Actions
                                 </a>
                                 <div className="dropdown-content">
@@ -549,10 +436,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Tools
                                 </a>
                                 <div className="dropdown-content">
@@ -560,10 +444,7 @@ const Login = () => {
                                 </div>
                             </li>
                             <li className="dropdown-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="drop-button"
-                                >
+                                <a href="javascript:void(0)" className="drop-button">
                                     Help
                                 </a>
                                 <div className="dropdown-content">
@@ -572,15 +453,11 @@ const Login = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className="main-page-xlarge">
+                    <div className="main-page">
                         <div className="nsn-text">
                             <span>nsn</span>Messenger
                         </div>
-                        <img
-                            className="profile-picture"
-                            src={msnSocMed}
-                            alt="Profile picture"
-                        />
+                        <img className="profile-picture" src={msnSocMed} alt="Profile picture" />
                         <div className="login-input">
                             <label>E-mail adress:</label>
                             <div className="email-input">
@@ -609,9 +486,7 @@ const Login = () => {
                             </div>
                             <div className="sign-me-in-auto">
                                 <input type="checkbox" name="" id="" />
-                                <label htmlFor="">
-                                    Sign me in automatically
-                                </label>
+                                <label htmlFor="">Sign me in automatically</label>
                             </div>
                         </div>
                         <button>Sign In</button>
