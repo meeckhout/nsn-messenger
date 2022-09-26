@@ -1,59 +1,58 @@
 import React from 'react';
 import Logo from '../assets/images/Logo.png';
+import ProfileImage from '../assets/images/msnSocMed.png';
+import AddFriend from '../assets/images/addFriend.png';
 import { Breakpoint } from 'react-socks';
 import '../styles/Dashboard.scss';
 
 const Dashboard = () => {
     return (
-        <>
-            <div className="container-logo">
-                <img src={ Logo } alt="Logo NSN"/>
-            </div>
-            <nav className="container-toolbar">
+        <div className="dashboard-body-container">
+            <Breakpoint xsmall only></Breakpoint>
 
-            </nav>
-            <div className="container-userInfo">
-                <div className="profile-box">
-                    <img src="#" alt="Profile picture"/>
-                </div>
-            </div>
-            <form className="status-friends" action="">
-                <select className="online" id="">
-                    <option value="online_id_1">Master of Disaster and Design</option>
-                    <option value="online_id_2">Paperclip</option>
-                    <option value="online_id_3">The Dork lord69</option>
-                </select>
-                <label className="label-online" For="online">Online</label>
-                <br/>
-                <select className="offline" id="">
-                    <option value="offline_id_1">Jordi</option>
-                    <option value="offline_id_2">Nhung</option>
-                    <option value="offline_id_3">Wendy</option>
-                </select>
-                <label className="label-offline" For="offline"></label>
-            </form>
+            <Breakpoint small only></Breakpoint>
 
-            <Breakpoint xsmall only>
+            <Breakpoint medium only></Breakpoint>
 
-            </Breakpoint>
-
-            <Breakpoint small only>
-
-            </Breakpoint>
-
-            <Breakpoint medium only>
-
-            </Breakpoint>
-
-            <Breakpoint large only>
-
-            </Breakpoint>
+            <Breakpoint large only></Breakpoint>
 
             <Breakpoint xlarge only>
-
+                <div className="dashboard-container-xlarge">
+                    <div className="container-taskbar">
+                        <img src={Logo} alt="Logo NSN" />
+                    </div>
+                    <div className="container-userInfo">
+                        <img className="profile-picture" src={ProfileImage} alt="Profile picture" />
+                        <div className="nickname-container">
+                            <p className="nickname">Master of Disaster</p>
+                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                        </div>
+                    </div>
+                    <div className="add-friends">
+                        <input type="text" className="search-friend" />
+                        <button className="add-friend-button">
+                            <img src={AddFriend} alt="" />
+                        </button>
+                    </div>
+                    <div className="online">
+                        <button className="collapsible">⇳ Online (3)</button>
+                        <ul className="friendlist">
+                            <li>Master of Disaster and Design</li>
+                            <li>The Dork lord69</li>
+                            <li>Paperclip</li>
+                        </ul>
+                    </div>
+                    <div className="offline">
+                        <button className="collapsible">⇳ Offline (2)</button>
+                        <ul className="friendlist">
+                            <li>Negasonic teenage Warhead</li>
+                            <li>Oliver</li>
+                        </ul>
+                    </div>
+                </div>
             </Breakpoint>
-        </>
-    )
+        </div>
+    );
 }
 
 export default Dashboard;
