@@ -10,6 +10,7 @@ import router from './routes/router.js';
 const corsOptions = {
   // Specify frontend origin
   origin: "*", 
+  // origin: "http://localhost:3000",
   // Specify accepted methods
   methods: ["GET", "POST"],
   credentials: true,
@@ -26,33 +27,33 @@ app.use(router);
 // Create backend server
 const server = http.createServer(app);
 // Set backend server-listener on port stored in .env
-const PORT = process.env.PORT;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(process.env.SERVER_PORT, () => console.log(`Server running on port ${process.env.SERVER_PORT}`));
 
-// // Create socket connection to frontend server
-// const io = new Server(server, {cors: corsOptions});
+// Create socket connection to frontend server
+const io = new Server(server, {cors: corsOptions});
 
-// io.on('connection', (socket) => {
+io.on('connection', (socket) => {
 
-//   let addedUser = false;
+  let addedUser = false;
 
-//   //New user connects
-//   socket.on('add_user', (username) => {
-//     socket.username = username;
-//     addedUser = true;
-//     console.log("New user: " + username);
-//     socket.broadcast.emit('user joined', socket.username);
-//   });
+  //New user connects via socket
+  socket.on('add_user', (username) => {
+    socket.username = username;
+    addedUser = true;
+    console.log("New user: " + username);
+    console.log("New user socket id: " + socket.id);
+    socket.broadcast.emit('user joined', socket.username);
+  });
 
-//   //New message
-//   socket.on('new_message', (data) => {
-//     console.log(data);
+  //New message
+  socket.on('new_message', (data) => {
+    console.log(data);
 //     socket.broadcast.emit('receive_message', {
 //       sender: data.sender,
 //       receiver: data.receiver,
 //       message: data.message
 //     }); 
-//   });
+  });
 
 //   //User disconnects
 //   socket.on('disconnect', () => {
@@ -61,7 +62,9 @@ server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 //     }
 //   });
 
-// });
+});
+
+// OTHER STUFF
 
 // // Create array of online users
 // // global.onlineUsers = new Map();
@@ -117,6 +120,8 @@ server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   //   // io.emit("getUsers", users);
   // });
 // });
+
+
 
 // // Listen to socket events from frontend
 // io.on("connection", (socket) => {  
