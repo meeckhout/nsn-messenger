@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.landing-body {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
 .container-landing {
   display: flex;
   flex-direction: column;
@@ -14,8 +20,6 @@
 .container-landing .tagline {
   display: flex;
   flex-direction: column;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   letter-spacing: -0.25rem;
   margin-left: 3vw;
@@ -33,7 +37,7 @@
   text-decoration: none;
 }
 .container-landing .tagline .landing-button {
-  margin-top: 5vh;
+  margin-top: 7vh;
 }
 
 button {
@@ -56,128 +60,196 @@ button:hover {
 }
 
 .xsmall {
-  background-color: darkseagreen;
   font-size: 3rem;
 }
-
-.tagline2-small {
+.xsmall .tagline-xsmall {
+  letter-spacing: -0.15rem;
+  margin-left: 3vw;
+  line-height: 110%;
+  align-items: flex-start;
+  margin-top: -3vh;
+}
+.xsmall .tagline-xsmall .tagline2-xsmall {
   font-size: 4rem;
+  text-align: left;
+  margin-left: 0.6vw;
 }
-
-.msnTest-xsmall {
-  position: absolute;
-  right: 0;
-  height: 200px;
-  width: 300px;
+.xsmall .tagline-xsmall .landing-button {
+  margin-top: 3vh;
 }
-
-.btn-xsmall {
-  width: 90px;
-  height: 30px;
+.xsmall .tagline-xsmall .landing-button .btn-xsmall {
+  width: 40vw;
+  height: 5.2vh;
   border-radius: 12px;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1rem;
+}
+.xsmall .tagline-xsmall .landing-button .btn-log-in-xsmall {
+  width: 28vw;
+}
+.xsmall .landing-nsn-image {
+  position: absolute;
+  right: 0vw;
+  margin-top: 18vh;
+  overflow: hidden;
+}
+.xsmall .landing-nsn-image .msnTest-xsmall {
+  width: 94vw;
+  height: auto;
+  margin-right: -9vw;
 }
 
 .small {
-  background-color: darksalmon;
-  font-size: 7rem;
+  font-size: 4rem;
+  justify-content: flex-start;
 }
-
-.tagline2-small {
-  font-size: 15rem;
+.small .tagline-small {
+  letter-spacing: -0.15rem;
+  margin-left: 3vw;
+  line-height: 115%;
+  align-items: flex-start;
+  margin-top: 15vh;
 }
-
-.msnTest-small {
-  position: absolute;
-  right: 0;
-  height: 800px;
-  width: 1200px;
+.small .tagline-small .tagline2-small {
+  font-size: 5rem;
+  text-align: left;
+  margin-left: 0.6vw;
 }
-
-.btn-small {
-  width: 90px;
-  height: 30px;
+.small .tagline-small .landing-button {
+  margin-top: 1.2rem;
+  margin-left: 0.6vw;
+}
+.small .tagline-small .landing-button .btn-small {
+  width: 30vw;
+  height: 5.2vh;
   border-radius: 12px;
-  font-size: 0.6rem;
+  font-size: 0.9rem;
   letter-spacing: 0.1rem;
+}
+.small .tagline-small .landing-button .btn-log-in-small {
+  width: 22vw;
+}
+.small .landing-nsn-image {
+  position: absolute;
+  right: 0vw;
+  margin-top: 42vh;
+  overflow: hidden;
+}
+.small .landing-nsn-image .msnTest-small {
+  width: 100vw;
+  height: auto;
+  margin-right: -9vw;
 }
 
 .medium {
-  background-color: chocolate;
-  font-size: 5rem;
+  font-size: 7rem;
+  justify-content: flex-start;
 }
-
-.tagline2-medium {
-  font-size: 15rem;
+.medium .tagline-medium {
+  margin-top: 13vh;
+  font-size: 6rem;
+  align-items: flex-start;
+  line-height: 118%;
 }
-
-.msnTest-medium {
-  position: absolute;
-  right: 0;
-  height: 300px;
-  width: 500px;
+.medium .tagline-medium .tagline2-medium {
+  font-size: 7rem;
+  margin-left: 3vw;
 }
-
-.btn-medium {
-  width: 90px;
-  height: 30px;
+.medium .tagline-medium .landing-button {
+  margin-top: 3vh;
+  margin-left: 3vw;
+}
+.medium .tagline-medium .landing-button .btn-medium {
+  width: 26vw;
+  height: 5.2vh;
   border-radius: 12px;
-  font-size: 0.6rem;
+  font-size: 1.2rem;
   letter-spacing: 0.1rem;
+}
+.medium .tagline-medium .landing-button .btn-log-in-medium {
+  width: 20vw;
+}
+.medium .landing-nsn-image {
+  position: absolute;
+  right: 0vw;
+  margin-top: 36vh;
+  overflow: hidden;
+}
+.medium .landing-nsn-image .msnTest-medium {
+  width: 95vw;
+  height: auto;
+  margin-right: -9vw;
 }
 
 .large {
-  background-color: mediumpurple;
-  font-size: 7.5rem;
+  font-size: 7rem;
+  justify-content: flex-start;
 }
-
-.tagline2-large {
-  font-size: 12.5rem;
+.large .tagline-large {
+  margin-top: 10vh;
+  font-size: 6rem;
+  line-height: 118%;
 }
-
-.msnTest-large {
-  position: absolute;
-  right: 0;
-  height: 500px;
-  width: 700px;
+.large .tagline-large .tagline2-large {
+  font-size: 8rem;
+  margin-left: -5vw;
 }
-
-.btn-large {
-  width: 90px;
-  height: 30px;
+.large .tagline-large .landing-button {
+  margin-top: 3vh;
+  margin-left: -5vw;
+}
+.large .tagline-large .landing-button .btn-large {
+  width: 26vw;
+  height: 5.2vh;
   border-radius: 12px;
-  font-size: 0.6rem;
+  font-size: 1.4rem;
   letter-spacing: 0.1rem;
+}
+.large .tagline-large .landing-button .btn-log-in-large {
+  width: 20vw;
+}
+.large .landing-nsn-image {
+  position: absolute;
+  right: 0vw;
+  margin-top: 35vh;
+  overflow: hidden;
+}
+.large .landing-nsn-image .msnTest-large {
+  width: 90vw;
+  height: auto;
+  margin-right: -6vw;
 }
 
 .xlarge {
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  background-color: darkcyan;
   font-size: 6rem;
+  justify-content: flex-start;
 }
-
-.tagline2-xlarge {
+.xlarge .tagline-xlarge {
+  margin-top: 13vh;
+}
+.xlarge .tagline-xlarge .tagline2-xlarge {
   font-size: 9.4rem;
 }
-
-.msnTest-xlarge {
-  position: absolute;
-  right: -6vw;
-  width: 70vw;
-  height: auto;
-  margin-top: 3vh;
-}
-
-.btn-xlarge {
+.xlarge .tagline-xlarge .landing-button .btn-xlarge {
   width: 15.6rem;
   height: 3.1rem;
   border-radius: 12px;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
 }
-
-.btn-log-in {
+.xlarge .tagline-xlarge .landing-button .btn-log-in {
   width: 12rem;
-}/*# sourceMappingURL=Landing_Page.css.map */
+}
+.xlarge .landing-nsn-image {
+  position: absolute;
+  right: 0vw;
+  margin-top: 8vh;
+  overflow: hidden;
+}
+.xlarge .landing-nsn-image .msnTest-xlarge {
+  width: 70vw;
+  height: auto;
+  margin-right: -6vw;
+}
+
+/*# sourceMappingURL=Landing_Page.css.map */

@@ -7,7 +7,7 @@ import { Breakpoint } from 'react-socks'
 const Footer = () => {
     const Today = new Date();
 
-    return(
+    return (
         <>
             <Breakpoint xsmall only>
                 <div className="soc-med soc-med-xsmall">
@@ -16,9 +16,29 @@ const Footer = () => {
                     <FaTwitter />
                 </div>
                 <div className="footer footer-xsmall">
-                    <span>
-                       ©{Today.getFullYear()} The Nostalgia Network
-                    </span>
+                    <span>©{Today.getFullYear()} The Nostalgia Network</span>
+                </div>
+            </Breakpoint>
+
+            <Breakpoint small only>
+                <div className="soc-med soc-med-small">
+                    <FaFacebookF />
+                    <AiFillInstagram />
+                    <FaTwitter />
+                </div>
+                <div className="footer footer-small">
+                    <span>©{Today.getFullYear()} The Nostalgia Network</span>
+                </div>
+            </Breakpoint>
+
+            <Breakpoint medium only>
+                <div className="soc-med soc-med-medium">
+                    <FaFacebookF />
+                    <AiFillInstagram />
+                    <FaTwitter />
+                </div>
+                <div className="footer footer-medium">
+                    <span>©{Today.getFullYear()} The Nostalgia Network</span>
                 </div>
             </Breakpoint>
 
@@ -29,9 +49,7 @@ const Footer = () => {
                     <FaTwitter />
                 </div>
                 <div className="footer footer-large">
-                    <span>
-                       ©{Today.getFullYear()} The Nostalgia Network
-                    </span>
+                    <span>©{Today.getFullYear()} The Nostalgia Network</span>
                 </div>
             </Breakpoint>
 
@@ -42,13 +60,11 @@ const Footer = () => {
                     <FaTwitter />
                 </div>
                 <div className="footer footer-xlarge">
-                    <span>
-                       ©{Today.getFullYear()} The Nostalgia Network
-                    </span>
+                    <span>©{Today.getFullYear()} The Nostalgia Network</span>
                 </div>
             </Breakpoint>
         </>
-    )
+    );
 }
 
 export {Footer};

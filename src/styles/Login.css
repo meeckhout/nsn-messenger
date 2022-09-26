@@ -12,21 +12,19 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  background: linear-gradient(180deg, #70B8FB 10%, #A9D2F8 10%, #F4F4F4 60%);
+  background-color: #F4F4F4;
   font-family: "Roboto", sans-serif;
 }
-
-.taskbar-xsmall {
+.container-login .taskbar {
   background-color: #0F8CFF;
 }
-.taskbar-xsmall .img-xsmall {
+.container-login .taskbar .img {
   height: 1.2rem;
   width: auto;
   display: block;
   margin: 0.3rem;
 }
-
-.menu-bar-xsmall ul {
+.container-login .menu-bar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -34,23 +32,23 @@
   background-color: #E1E0E0;
   font-size: 0.8rem;
 }
-.menu-bar-xsmall li {
+.container-login .menu-bar li {
   float: left;
 }
-.menu-bar-xsmall li a, .menu-bar-xsmall .drop-button {
+.container-login .menu-bar li a, .container-login .menu-bar .drop-button {
   display: inline-block;
   color: #2D2D2D;
   text-align: center;
   padding: 0.2rem 0.5rem;
   text-decoration: none;
 }
-.menu-bar-xsmall li a:hover, .menu-bar-xsmall .dropdown-menu:hover .drop-button {
+.container-login .menu-bar li a:hover, .container-login .menu-bar .dropdown-menu:hover .drop-button {
   border-style: inset;
 }
-.menu-bar-xsmall li.dropdown-menu {
+.container-login .menu-bar li.dropdown-menu {
   display: inline-block;
 }
-.menu-bar-xsmall .dropdown-content {
+.container-login .menu-bar .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -58,908 +56,356 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-.menu-bar-xsmall .dropdown-content a {
+.container-login .menu-bar .dropdown-content a {
   color: black;
   padding: 0.3rem 0.5rem;
   text-decoration: none;
   display: block;
   text-align: left;
 }
-.menu-bar-xsmall .dropdown-content a:hover {
+.container-login .menu-bar .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
-.menu-bar-xsmall .dropdown-menu:hover .dropdown-content {
+.container-login .menu-bar .dropdown-menu:hover .dropdown-content {
   display: block;
 }
-
-.main-page-xsmall {
-  background-color: #F4F4F4;
+.container-login .main-page {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.main-page-xsmall .nsn-text {
+.container-login .main-page .nsn-text {
   color: #0F8CFF;
+}
+.container-login .main-page .nsn-text span {
+  font-weight: 900;
+}
+.container-login .main-page .profile-picture {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  border-style: solid;
+  border-color: #0F8CFF;
+  border-radius: 12px;
+  border-width: 1px;
+}
+.container-login .main-page .login-input {
+  display: flex;
+  flex-direction: column;
+  color: #0F8CFF;
+  gap: 0.2vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-login .main-page .login-input .email-input {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1vh;
+}
+.container-login .main-page .login-input .email-input input {
+  width: 100%;
+  border-color: #0F8CFF;
+  border-style: solid;
+  border-width: 1px;
+}
+.container-login .main-page .login-input .email-input select {
+  border-color: #0F8CFF;
+  color: #0F8CFF;
+  border-style: solid;
+}
+.container-login .main-page .login-input .password-input {
+  border-color: #0F8CFF;
+}
+.container-login .main-page .login-input .password-input input {
+  width: 100%;
+  border-color: #0F8CFF;
+  border-style: solid;
+  border-width: 1px;
+}
+.container-login .main-page .select-status {
+  margin-left: auto;
+  margin-right: auto;
+  color: #0F8CFF;
+}
+.container-login .main-page .select-status select {
+  border: none;
+  color: #0F8CFF;
+  margin-left: 1vw;
+  background-color: transparent;
+}
+.container-login .main-page .checkbox-area {
+  display: flex;
+  flex-direction: column;
+  color: #0F8CFF;
+  margin-top: 3vh;
+  gap: 1vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-login .main-page .checkbox-area .remember-me, .container-login .main-page .checkbox-area .remember-password, .container-login .main-page .checkbox-area .sign-me-in-auto {
+  display: flex;
+  flex-direction: row;
+}
+.container-login .main-page .checkbox-area .remember-me label, .container-login .main-page .checkbox-area .remember-password label, .container-login .main-page .checkbox-area .sign-me-in-auto label {
+  margin-left: 1vw;
+}
+.container-login .main-page button {
+  height: 1.9rem;
+  width: 7rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  border-radius: 12px;
+}
+.container-login .main-page .login-footer {
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #0F8CFF;
+}
+.container-login .main-page .login-footer a {
+  margin-left: 2vw;
+  color: #0F8CFF;
+}
+.container-login .main-page .login-footer nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container-login .main-page .login-footer nav p {
+  margin-left: 2vw;
+  text-align: left;
+  font-size: 0.9rem;
+}
+.container-login .main-page .login-footer nav a {
+  margin-right: 2vw;
+  position: absolute;
+  right: 0;
+}
+
+.xsmall .main-page .nsn-text {
   font-size: 0.77rem;
   margin-left: 0.5rem;
 }
-.main-page-xsmall .nsn-text span {
-  font-weight: 900;
+.xsmall .main-page .nsn-text span {
   font-size: 1.1rem;
 }
-.main-page-xsmall .profile-picture {
+.xsmall .main-page .profile-picture {
   width: 32vw;
-  aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-style: solid;
-  border-color: #0F8CFF;
-  border-radius: 12px;
-  border-width: 1px;
 }
-.main-page-xsmall .login-input {
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
+.xsmall .main-page .login-input {
   font-size: 0.8rem;
   margin-top: 1.6vh;
-  gap: 0.2vh;
   width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-xsmall .login-input .email-input {
-  display: flex;
-  flex-direction: row;
+.xsmall .main-page .login-input .email-input {
   width: 50vw;
-  margin-bottom: 1vh;
 }
-.main-page-xsmall .login-input .email-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-xsmall .login-input .email-input select {
-  border-color: #0F8CFF;
-  color: #0F8CFF;
-  border-style: solid;
-}
-.main-page-xsmall .login-input .password-input {
+.xsmall .main-page .login-input .password-input {
   width: 50vw;
-  border-color: #0F8CFF;
 }
-.main-page-xsmall .login-input .password-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-xsmall .select-status {
+.xsmall .main-page .select-status {
   font-size: 0.8rem;
   width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 1.7vh;
-  color: #0F8CFF;
 }
-.main-page-xsmall .select-status select {
-  border: none;
-  color: #0F8CFF;
-  margin-left: 1vw;
-  background-color: transparent;
-}
-.main-page-xsmall .checkbox-area {
+.xsmall .main-page .checkbox-area {
   font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
-  margin-top: 3vh;
-  gap: 1vh;
   width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-xsmall .checkbox-area .remember-me, .main-page-xsmall .checkbox-area .remember-password, .main-page-xsmall .checkbox-area .sign-me-in-auto {
-  display: flex;
-  flex-direction: row;
-}
-.main-page-xsmall .checkbox-area .remember-me label, .main-page-xsmall .checkbox-area .remember-password label, .main-page-xsmall .checkbox-area .sign-me-in-auto label {
+.xsmall .main-page .checkbox-area .remember-me label, .xsmall .main-page .checkbox-area .remember-password label, .xsmall .main-page .checkbox-area .sign-me-in-auto label {
   margin-left: 1vw;
 }
-.main-page-xsmall button {
-  height: 1.9rem;
-  width: 7rem;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-radius: 12px;
-}
-.main-page-xsmall .login-footer {
-  font-size: 0.8rem;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 2vh;
-  margin-left: 1rem;
-  width: 100%;
-  color: #0F8CFF;
-}
-.main-page-xsmall .login-footer a {
-  color: #0F8CFF;
-}
-.main-page-xsmall .login-footer nav {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-}
-.main-page-xsmall .login-footer nav p {
-  text-align: left;
-}
-.main-page-xsmall .login-footer nav a {
-  position: absolute;
-  right: 0;
-  margin-right: 2rem;
-}
 
-.taskbar-small {
-  background-color: #0F8CFF;
-}
-.taskbar-small .img-small {
-  height: 1.2rem;
-  width: auto;
-  display: block;
-  margin: 0.3rem;
-}
-
-.menu-bar-small ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #E1E0E0;
-  font-size: 0.8rem;
-}
-.menu-bar-small li {
-  float: left;
-}
-.menu-bar-small li a, .menu-bar-small .drop-button {
-  display: inline-block;
-  color: #2D2D2D;
-  text-align: center;
-  padding: 0.2rem 0.5rem;
-  text-decoration: none;
-}
-.menu-bar-small li a:hover, .menu-bar-small .dropdown-menu:hover .drop-button {
-  border-style: inset;
-}
-.menu-bar-small li.dropdown-menu {
-  display: inline-block;
-}
-.menu-bar-small .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.menu-bar-small .dropdown-content a {
-  color: black;
-  padding: 0.3rem 0.5rem;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.menu-bar-small .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-.menu-bar-small .dropdown-menu:hover .dropdown-content {
-  display: block;
-}
-
-.main-page-small {
-  background-color: #F4F4F4;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.main-page-small .nsn-text {
-  color: #0F8CFF;
+.small .main-page .nsn-text {
   font-size: 0.77rem;
   margin-left: 0.5rem;
 }
-.main-page-small .nsn-text span {
-  font-weight: 900;
+.small .main-page .nsn-text span {
   font-size: 1.1rem;
 }
-.main-page-small .profile-picture {
+.small .main-page .profile-picture {
   width: 28vw;
-  aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-style: solid;
-  border-color: #0F8CFF;
-  border-radius: 12px;
-  border-width: 1px;
 }
-.main-page-small .login-input {
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
+.small .main-page .login-input {
   font-size: 0.8rem;
   margin-top: 1.6vh;
-  gap: 0.2vh;
   width: 40vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-small .login-input .email-input {
-  display: flex;
-  flex-direction: row;
+.small .main-page .login-input .email-input {
   width: 40vw;
-  margin-bottom: 1vh;
 }
-.main-page-small .login-input .email-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-small .login-input .email-input select {
-  border-color: #0F8CFF;
-  color: #0F8CFF;
-  border-style: solid;
-}
-.main-page-small .login-input .password-input {
+.small .main-page .login-input .password-input {
   width: 40vw;
-  border-color: #0F8CFF;
 }
-.main-page-small .login-input .password-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-small .select-status {
+.small .main-page .select-status {
   font-size: 0.8rem;
   width: 40vw;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 1.7vh;
-  color: #0F8CFF;
 }
-.main-page-small .select-status select {
-  border: none;
-  color: #0F8CFF;
-  margin-left: 1vw;
-  background-color: transparent;
-}
-.main-page-small .checkbox-area {
+.small .main-page .checkbox-area {
   font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
-  margin-top: 3vh;
-  gap: 1vh;
   width: 40vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-small .checkbox-area .remember-me, .main-page-small .checkbox-area .remember-password, .main-page-small .checkbox-area .sign-me-in-auto {
-  display: flex;
-  flex-direction: row;
-}
-.main-page-small .checkbox-area .remember-me label, .main-page-small .checkbox-area .remember-password label, .main-page-small .checkbox-area .sign-me-in-auto label {
-  margin-left: 1vw;
-}
-.main-page-small button {
-  height: 1.9rem;
-  width: 7rem;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-radius: 12px;
-}
-.main-page-small .login-footer {
-  font-size: 0.8rem;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 2vh;
-  margin-left: 1rem;
-  width: 100%;
-  color: #0F8CFF;
-}
-.main-page-small .login-footer a {
-  color: #0F8CFF;
-}
-.main-page-small .login-footer nav {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-}
-.main-page-small .login-footer nav p {
-  text-align: left;
-}
-.main-page-small .login-footer nav a {
-  position: absolute;
-  right: 0;
-  margin-right: 2rem;
-}
-
-.taskbar-medium {
-  background-color: #0F8CFF;
-}
-.taskbar-medium .img-medium {
-  height: 1.2rem;
-  width: auto;
-  display: block;
-  margin: 0.3rem;
-}
-
-.menu-bar-medium ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #E1E0E0;
+.small .main-page .login-footer {
   font-size: 0.8rem;
 }
-.menu-bar-medium li {
-  float: left;
-}
-.menu-bar-medium li a, .menu-bar-medium .drop-button {
-  display: inline-block;
-  color: #2D2D2D;
-  text-align: center;
-  padding: 0.2rem 0.5rem;
-  text-decoration: none;
-}
-.menu-bar-medium li a:hover, .menu-bar-medium .dropdown-menu:hover .drop-button {
-  border-style: inset;
-}
-.menu-bar-medium li.dropdown-menu {
-  display: inline-block;
-}
-.menu-bar-medium .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.menu-bar-medium .dropdown-content a {
-  color: black;
-  padding: 0.3rem 0.5rem;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.menu-bar-medium .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-.menu-bar-medium .dropdown-menu:hover .dropdown-content {
-  display: block;
+.small .main-page .login-footer nav p {
+  font-size: 1rem;
 }
 
-.main-page-medium {
-  background-color: #F4F4F4;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.main-page-medium .nsn-text {
-  color: #0F8CFF;
+.medium .main-page .nsn-text {
   font-size: 0.77rem;
   margin-left: 0.5rem;
 }
-.main-page-medium .nsn-text span {
-  font-weight: 900;
+.medium .main-page .nsn-text span {
   font-size: 1.1rem;
 }
-.main-page-medium .profile-picture {
-  width: 18vw;
-  aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-style: solid;
-  border-color: #0F8CFF;
-  border-radius: 12px;
-  border-width: 1px;
+.medium .main-page .profile-picture {
+  width: 20vw;
 }
-.main-page-medium .login-input {
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
-  font-size: 0.8rem;
+.medium .main-page .login-input {
+  font-size: 0.9rem;
   margin-top: 1.6vh;
-  gap: 0.2vh;
   width: 30vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-medium .login-input .email-input {
-  display: flex;
-  flex-direction: row;
+.medium .main-page .login-input .email-input {
   width: 30vw;
-  margin-bottom: 1vh;
 }
-.main-page-medium .login-input .email-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-medium .login-input .email-input select {
-  border-color: #0F8CFF;
-  color: #0F8CFF;
-  border-style: solid;
-}
-.main-page-medium .login-input .password-input {
+.medium .main-page .login-input .password-input {
   width: 30vw;
-  border-color: #0F8CFF;
 }
-.main-page-medium .login-input .password-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-medium .select-status {
-  font-size: 0.8rem;
+.medium .main-page .select-status {
+  font-size: 0.9rem;
   width: 30vw;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 1.7vh;
-  color: #0F8CFF;
 }
-.main-page-medium .select-status select {
-  border: none;
-  color: #0F8CFF;
-  margin-left: 1vw;
-  background-color: transparent;
-}
-.main-page-medium .checkbox-area {
-  font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
-  margin-top: 3vh;
-  gap: 1vh;
+.medium .main-page .checkbox-area {
+  font-size: 0.9rem;
   width: 30vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-medium .checkbox-area .remember-me, .main-page-medium .checkbox-area .remember-password, .main-page-medium .checkbox-area .sign-me-in-auto {
-  display: flex;
-  flex-direction: row;
-}
-.main-page-medium .checkbox-area .remember-me label, .main-page-medium .checkbox-area .remember-password label, .main-page-medium .checkbox-area .sign-me-in-auto label {
-  margin-left: 1vw;
-}
-.main-page-medium button {
-  height: 1.9rem;
-  width: 7rem;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-radius: 12px;
-}
-.main-page-medium .login-footer {
+.medium .main-page .login-footer {
   font-size: 0.8rem;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 2vh;
-  margin-left: 1rem;
-  width: 100%;
-  color: #0F8CFF;
 }
-.main-page-medium .login-footer a {
-  color: #0F8CFF;
-}
-.main-page-medium .login-footer nav {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-}
-.main-page-medium .login-footer nav p {
-  text-align: left;
-}
-.main-page-medium .login-footer nav a {
-  position: absolute;
-  right: 0;
-  margin-right: 2rem;
+.medium .main-page .login-footer nav p {
+  font-size: 1rem;
 }
 
-.taskbar-large {
-  background-color: #0F8CFF;
+.large {
+  background-color: burlywood;
 }
-.taskbar-large .img-large {
+.large .taskbar-large .img-large {
   height: 1.4rem;
-  width: auto;
-  display: block;
-  margin: 0.3rem;
   margin-left: 0.7rem;
 }
-
-.menu-bar-large ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.large .menu-bar ul {
   padding-left: 0.2rem;
-  overflow: hidden;
-  background-color: #E1E0E0;
-  font-size: 0.8rem;
 }
-.menu-bar-large li {
-  float: left;
-}
-.menu-bar-large li a, .menu-bar-large .drop-button {
-  display: inline-block;
-  color: #2D2D2D;
-  text-align: center;
+.large .menu-bar li a, .large .menu-bar .drop-button {
   padding: 0.3rem 0.5rem;
-  text-decoration: none;
 }
-.menu-bar-large li a:hover, .menu-bar-large .dropdown-menu:hover .drop-button {
-  border-style: inset;
-}
-.menu-bar-large li.dropdown-menu {
-  display: inline-block;
-}
-.menu-bar-large .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.menu-bar-large .dropdown-content a {
-  color: black;
-  padding: 0.3rem 0.5rem;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.menu-bar-large .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-.menu-bar-large .dropdown-menu:hover .dropdown-content {
-  display: block;
-}
-
-.main-page-large {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.main-page-large .nsn-text {
-  color: #0F8CFF;
+.large .main-page .nsn-text {
   font-size: 1rem;
   margin-left: 0.7rem;
 }
-.main-page-large .nsn-text span {
-  font-weight: 900;
+.large .main-page .nsn-text span {
   font-size: 1.3rem;
 }
-.main-page-large .profile-picture {
-  width: 12vw;
-  aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-style: solid;
-  border-color: #0F8CFF;
-  border-radius: 12px;
+.large .main-page .profile-picture {
+  width: 14vw;
   border-width: 2px;
 }
-.main-page-large .login-input {
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
-  font-size: 0.9rem;
+.large .main-page .login-input {
+  font-size: 1rem;
   margin-top: 2vh;
-  gap: 0.2vh;
-  width: 20vw;
-  margin-left: auto;
-  margin-right: auto;
+  width: 22vw;
 }
-.main-page-large .login-input .email-input {
-  display: flex;
-  flex-direction: row;
-  width: 20vw;
-  margin-bottom: 1vh;
+.large .main-page .login-input .email-input {
+  width: 22vw;
 }
-.main-page-large .login-input .email-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
+.large .main-page .login-input .password-input {
+  width: 22vw;
 }
-.main-page-large .login-input .email-input select {
-  border-color: #0F8CFF;
-  color: #0F8CFF;
-  border-style: solid;
-}
-.main-page-large .login-input .password-input {
-  width: 20vw;
-  border-color: #0F8CFF;
-}
-.main-page-large .login-input .password-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-large .select-status {
-  font-size: 0.9rem;
-  width: 20vw;
-  margin-left: auto;
-  margin-right: auto;
+.large .main-page .select-status {
+  font-size: 1rem;
+  width: 22vw;
   margin-top: 3vh;
-  color: #0F8CFF;
 }
-.main-page-large .select-status select {
-  border: none;
-  color: #0F8CFF;
-  margin-left: 1vw;
-  background-color: transparent;
+.large .main-page .checkbox-area {
+  font-size: 1rem;
+  width: 22vw;
 }
-.main-page-large .checkbox-area {
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
-  margin-top: 3vh;
-  gap: 1vh;
-  width: 20vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-.main-page-large .checkbox-area .remember-me, .main-page-large .checkbox-area .remember-password, .main-page-large .checkbox-area .sign-me-in-auto {
-  display: flex;
-  flex-direction: row;
-}
-.main-page-large button {
-  height: 1.9rem;
+.large .main-page button {
+  height: 2.2rem;
   width: 7rem;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-radius: 12px;
+  font-size: 1rem;
 }
-.main-page-large .login-footer {
-  font-size: 0.8rem;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 2vh;
-  margin-left: 1rem;
-  width: 100%;
-  color: #0F8CFF;
+.large .main-page .login-footer {
+  font-size: 0.9rem;
 }
-.main-page-large .login-footer a {
-  color: #0F8CFF;
-}
-.main-page-large .login-footer nav {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-}
-.main-page-large .login-footer nav p {
-  text-align: left;
-}
-.main-page-large .login-footer nav a {
-  position: absolute;
-  right: 0;
-  margin-right: 2rem;
+.large .main-page .login-footer nav p {
+  font-size: 1.1rem;
 }
 
-.taskbar-xlarge {
-  background-color: #0F8CFF;
-}
-.taskbar-xlarge .img-xlarge {
-  height: 1.5rem;
-  width: auto;
-  display: block;
+.xlarge .taskbar-xlarge .img-xlarge {
+  height: 1.4rem;
   margin: 0.5rem;
   margin-left: 1rem;
 }
-
-.menu-bar-xlarge ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.xlarge .menu-bar-xlarge ul {
   padding-left: 0.6rem;
-  overflow: hidden;
-  background-color: #E1E0E0;
-  font-size: 0.8rem;
 }
-.menu-bar-xlarge li {
-  float: left;
-}
-.menu-bar-xlarge li a, .menu-bar-xlarge .drop-button {
-  display: inline-block;
-  color: #2D2D2D;
-  text-align: center;
+.xlarge .menu-bar-xlarge li a, .xlarge .menu-bar-xlarge .drop-button {
   padding: 0.4rem 0.5rem;
-  text-decoration: none;
 }
-.menu-bar-xlarge li a:hover, .menu-bar-xlarge .dropdown-menu:hover .drop-button {
-  border-style: inset;
-}
-.menu-bar-xlarge li.dropdown-menu {
-  display: inline-block;
-}
-.menu-bar-xlarge .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.menu-bar-xlarge .dropdown-content a {
-  color: black;
-  padding: 0.3rem 0.5rem;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.menu-bar-xlarge .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-.menu-bar-xlarge .dropdown-menu:hover .dropdown-content {
-  display: block;
-}
-
-.main-page-xlarge {
-  background-color: #F4F4F4;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.main-page-xlarge .nsn-text {
-  color: #0F8CFF;
+.xlarge .main-page .nsn-text {
   font-size: 1rem;
   margin-left: 1rem;
   margin-top: 0.4rem;
 }
-.main-page-xlarge .nsn-text span {
-  font-weight: 900;
+.xlarge .main-page .nsn-text span {
   font-size: 1.3rem;
 }
-.main-page-xlarge .profile-picture {
+.xlarge .main-page .profile-picture {
   width: 10vw;
-  aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 4vh;
-  border-style: solid;
-  border-color: #0F8CFF;
-  border-radius: 12px;
   border-width: 2px;
 }
-.main-page-xlarge .login-input {
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
+.xlarge .main-page .login-input {
   font-size: 1rem;
   margin-top: 2vh;
-  gap: 0.2vh;
   width: 15vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-xlarge .login-input .email-input {
-  display: flex;
-  flex-direction: row;
+.xlarge .main-page .login-input .email-input {
   width: 15vw;
-  margin-bottom: 1vh;
 }
-.main-page-xlarge .login-input .email-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-xlarge .login-input .email-input select {
-  border-color: #0F8CFF;
-  color: #0F8CFF;
-  border-style: solid;
-}
-.main-page-xlarge .login-input .password-input {
+.xlarge .main-page .login-input .password-input {
   width: 15vw;
-  border-color: #0F8CFF;
 }
-.main-page-xlarge .login-input .password-input input {
-  width: 100%;
-  border-color: #0F8CFF;
-  border-style: solid;
-  border-width: 1px;
-}
-.main-page-xlarge .select-status {
+.xlarge .main-page .select-status {
   font-size: 1rem;
   width: 15vw;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 3vh;
-  color: #0F8CFF;
 }
-.main-page-xlarge .select-status select {
-  border: none;
-  color: #0F8CFF;
-  margin-left: 1vw;
-  background-color: transparent;
-}
-.main-page-xlarge .checkbox-area {
+.xlarge .main-page .checkbox-area {
   font-size: 1rem;
-  display: flex;
-  flex-direction: column;
-  color: #0F8CFF;
-  margin-top: 3vh;
-  gap: 1vh;
   width: 15vw;
-  margin-left: auto;
-  margin-right: auto;
 }
-.main-page-xlarge .checkbox-area .remember-me, .main-page-xlarge .checkbox-area .remember-password, .main-page-xlarge .checkbox-area .sign-me-in-auto {
-  display: flex;
-  flex-direction: row;
-}
-.main-page-xlarge button {
-  height: 1.9rem;
+.xlarge .main-page button {
+  height: 2.2rem;
   width: 7rem;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3vh;
-  border-radius: 12px;
+  font-size: 1rem;
 }
-.main-page-xlarge .login-footer {
-  font-size: 0.8rem;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 2vh;
-  margin-left: 1rem;
-  width: 100%;
-  color: #0F8CFF;
+.xlarge .main-page .login-footer {
+  font-size: 0.9rem;
 }
-.main-page-xlarge .login-footer a {
-  color: #0F8CFF;
+.xlarge .main-page .login-footer nav p {
+  font-size: 1.1rem;
 }
-.main-page-xlarge .login-footer nav {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-}
-.main-page-xlarge .login-footer nav p {
-  text-align: left;
-}
-.main-page-xlarge .login-footer nav a {
-  position: absolute;
-  right: 0;
-  margin-right: 2rem;
-}/*# sourceMappingURL=Login.css.map */
+
+/*# sourceMappingURL=Login.css.map */

@@ -11,13 +11,21 @@ const Landing_Page = () => {
             <Breakpoint xsmall>
                 <Navbar />
                 <div className="container-landing xsmall">
-                    <div className="tagline">
+                    <div className="tagline tagline-xsmall">
                         <span className="tagline1-xsmall">Guess who's</span>
                         <span className="tagline2 tagline2-xsmall">back?</span>
-                        <button className="btn-xsmall">Get started</button>
-                        <button className="btn-xsmall">Log in</button>
+                        <div className="landing-button">
+                            <Link to="/Register">
+                                <button className="btn-xsmall">Get started ⟶</button>
+                            </Link>
+                            <Link to="/Login">
+                                <button className="btn-xsmall btn-log-in-xsmall">Log in</button>
+                            </Link>
+                        </div>
                     </div>
-                    <img className="msnTest-xsmall" src={msnLogo} alt="Two figures" />
+                    <div className="landing-nsn-image">
+                        <img className="msnTest-xsmall" src={msnLogo} alt="Two figures" />
+                    </div>
                     <Footer />
                 </div>
             </Breakpoint>
@@ -25,13 +33,21 @@ const Landing_Page = () => {
             <Breakpoint small>
                 <div className="container-landing small">
                     <Navbar />
-                    <div className="tagline">
+                    <div className="tagline tagline-small">
                         <span className="tagline1-small">Guess who's</span>
                         <span className="tagline2 tagline2-small">back?</span>
-                        <button className="btn-small">Get started</button>
-                        <button className="btn-small">Log in</button>
+                        <div className="landing-button">
+                            <Link to="/Register">
+                                <button className="btn-small">Get started ⟶</button>
+                            </Link>
+                            <Link to="/Login">
+                                <button className="btn-small btn-log-in-small">Log in</button>
+                            </Link>
+                        </div>
                     </div>
-                    <img className="msnTest-small" src={msnLogo} alt="Two figures" />
+                    <div className="landing-nsn-image">
+                        <img className="msnTest-small" src={msnLogo} alt="Two figures" />
+                    </div>
                     <Footer />
                 </div>
             </Breakpoint>
@@ -39,27 +55,21 @@ const Landing_Page = () => {
             <Breakpoint medium>
                 <div className="container-landing medium">
                     <Navbar />
-                    <div className="tagline">
+                    <div className="tagline tagline-medium">
                         <span className="tagline1-medium">Guess who's</span>
                         <span className="tagline2 tagline2-medium">back?</span>
-                        <button className="btn-medium">Get started</button>
-                        <button className="btn-medium">Log in</button>
+                        <div className="landing-button">
+                            <Link to="/Register">
+                                <button className="btn-medium">Get started ⟶</button>
+                            </Link>
+                            <Link to="/Login">
+                                <button className="btn-medium btn-log-in-medium">Log in</button>
+                            </Link>
+                        </div>
                     </div>
-                    <img className="msnTest-medium" src={msnLogo} alt="Two figures" />
-                    <Footer />
-                </div>
-            </Breakpoint>
-
-            <Breakpoint medium>
-                <div className="container-landing medium">
-                    <Navbar />
-                    <div className="tagline">
-                        <span className="tagline1-medium">Guess who's</span>
-                        <span className="tagline2 tagline2-medium">back?</span>
-                        <button className="btn-medium">Get started</button>
-                        <button className="btn-medium">Log in</button>
+                    <div className="landing-nsn-image">
+                        <img className="msnTest-medium" src={msnLogo} alt="Two figures" />
                     </div>
-                    <img className="msnTest-medium" src={msnLogo} alt="Two figures" />
                     <Footer />
                 </div>
             </Breakpoint>
@@ -67,13 +77,21 @@ const Landing_Page = () => {
             <Breakpoint large>
                 <div className="container-landing large">
                     <Navbar />
-                    <div className="tagline">
+                    <div className="tagline tagline-large">
                         <span className="tagline1">Guess who's</span>
-                        <span className="tagline2 tagline2">back?</span>
-                        <button className="btn-large">Get started</button>
-                        <button className="btn-large">Log in</button>
+                        <span className="tagline2 tagline2-large">back?</span>
+                        <div className="landing-button">
+                            <Link to="/Register">
+                                <button className="btn-large">Get started ⟶</button>
+                            </Link>
+                            <Link to="/Login">
+                                <button className="btn-large btn-log-in-large">Log in</button>
+                            </Link>
+                        </div>
                     </div>
-                    <img className="msnTest-large" src={msnLogo} alt="Two figures" />
+                    <div className="landing-nsn-image">
+                        <img className="msnTest-large" src={msnLogo} alt="Two figures" />
+                    </div>
                     <Footer />
                 </div>
             </Breakpoint>
@@ -81,7 +99,7 @@ const Landing_Page = () => {
             <Breakpoint xlarge>
                 <div className="container-landing xlarge">
                     <Navbar />
-                    <div className="tagline">
+                    <div className="tagline tagline-xlarge">
                         <span className="tagline1">Guess who's</span>
                         <span className="tagline2 tagline2-xlarge">back?</span>
                         <div className="landing-button">

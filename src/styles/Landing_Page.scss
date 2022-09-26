@@ -16,7 +16,6 @@
   background-color: $primary-white;
   height: 100vh;
   width: 100%;
-  
 
   .tagline {
     display: flex;
@@ -24,10 +23,8 @@
     width: fit-content;
     letter-spacing: -0.25rem;
     margin-left: 3vw;
-    //margin-top: -3vh;
     line-height: 130%;
     align-items: center;
-
 
     .tagline1{
       font-weight: 500;
@@ -70,136 +67,231 @@ button:hover {
 //XSMALL SCREEN////XSMALL SCREEN////XSMALL SCREEN////XSMALL SCREEN//
 
 .xsmall {
-  background-color: darkseagreen;
   font-size: 3rem;
+
+  .tagline-xsmall {
+    letter-spacing: -0.15rem;
+    margin-left: 3vw;
+    line-height: 110%;
+    align-items:flex-start;
+    margin-top: -3vh;
+
+  .tagline2-xsmall {
+    font-size: 4rem;
+    text-align: left;
+    margin-left: 0.6vw;
+  }
+  .landing-button {
+    margin-top: 3vh;
+    .btn-xsmall {
+    width: 40vw;
+    height: 5.2vh;
+    border-radius: 12px;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+  }
+  .btn-log-in-xsmall{
+    width: 28vw;
+    
+  }
+  }
+  
+  }
+  .landing-nsn-image {
+    position: absolute;
+    right: 0vw;
+    margin-top: 18vh;
+    overflow: hidden;
+      .msnTest-xsmall {
+        width: 94vw;
+        height: auto;
+        margin-right: -9vw
+      }
+  }
 }
 
-.tagline2-small {
-  font-size: 4rem;
-}
 
-.msnTest-xsmall {
-  position: absolute;
-  right: 0;
-  height: 200px;
-  width: 300px;
-}
-
-.btn-xsmall {
-  width: 90px;
-  height: 30px;
-  border-radius: 12px;
-  font-size: .6rem;
-  letter-spacing: .1rem;
-}
-
+  
 //SMALL SCREEN1////SMALL SCREEN1////SMALL SCREEN1////SMALL SCREEN1////SMALL SCREEN1//
 
 .small {
-  background-color: darksalmon;
-  font-size: 7rem;
-}
+  font-size: 4rem;
+  justify-content: flex-start;
 
-.tagline2-small {
-  font-size: 15rem;
-}
+  .tagline-small {
+    letter-spacing: -0.15rem;
+    margin-left: 3vw;
+    line-height: 115%;
+    align-items:flex-start;
+    margin-top: 15vh;
 
-.msnTest-small {
-  position: absolute;
-  right: 0;
-  height: 800px;
-  width: 1200px;
-}
+  .tagline2-small {
+    font-size: 5rem;
+    text-align: left;
+    
+    margin-left: 0.6vw;
+  }
+  .landing-button {
+    margin-top: 1.2rem;
+    margin-left: 0.6vw;
+    .btn-small {
+      width: 30vw;
+      height: 5.2vh;
+      border-radius: 12px;
+      font-size: .9rem;
+      letter-spacing: .1rem;
+    }
+    .btn-log-in-small{
+      width: 22vw;
+    }
+  }
+  }
 
-.btn-small {
-  width: 90px;
-  height: 30px;
-  border-radius: 12px;
-  font-size: .6rem;
-  letter-spacing: .1rem;
+  .landing-nsn-image {
+    position: absolute;
+    right: 0vw;
+    margin-top: 42vh;
+    overflow: hidden;
+      .msnTest-small {
+        width: 100vw;
+        height: auto;
+        margin-right: -9vw;
+      }
+  }
 }
 
 //MEDIUM SCREEN////MEDIUM SCREEN////MEDIUM SCREEN////MEDIUM SCREEN//
 .medium {
-  background-color: chocolate;
-  font-size: 5rem;
+  font-size: 7rem;
+  justify-content: flex-start;
+
+  .tagline-medium{
+    margin-top: 13vh;
+    font-size: 6rem;
+    align-items: flex-start;
+    line-height: 118%;
+  
+    .tagline2-medium {
+      font-size: 7rem;
+      margin-left: 3vw;
+    }
+    .landing-button {
+      margin-top: 3vh;
+      margin-left: 3vw;
+    .btn-medium {
+      width: 26vw;
+      height: 5.2vh;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      letter-spacing: .1rem;
+    }
+    .btn-log-in-medium {
+      width: 20vw;
+    }
+    }
 }
 
-.tagline2-medium {
-  font-size: 15rem;
+.landing-nsn-image {
+    position: absolute;
+    right: 0vw;
+    margin-top: 36vh;
+    overflow: hidden;
+      .msnTest-medium {
+        width: 95vw;
+        height: auto;
+        margin-right: -9vw;
+      }
+  }
 }
 
-.msnTest-medium {
-  position: absolute;
-  right: 0;
-  height: 300px;
-  width: 500px;
-}
 
-.btn-medium {
-  width: 90px;
-  height: 30px;
-  border-radius: 12px;
-  font-size: .6rem;
-  letter-spacing: .1rem;
-}
 
 //LARGE SCREEN////LARGE SCREEN////LARGE SCREEN////LARGE SCREEN//
 .large {
-  background-color:mediumpurple;
-  font-size: 7.5rem;
+  font-size: 7rem;
+  justify-content: flex-start;
+
+  .tagline-large {
+    margin-top: 10vh;
+    font-size: 6rem;
+    line-height: 118%;
+
+    .tagline2-large {
+      font-size: 8rem;
+      margin-left: -5vw;
+    }
+
+    .landing-button {
+      margin-top: 3vh;
+      margin-left: -5vw;
+    .btn-large {
+      width: 26vw;
+      height: 5.2vh;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      letter-spacing: .1rem;
+    }
+    .btn-log-in-large {
+      width: 20vw;
+    }
+    }
+
+  }
+
+  
+
+.landing-nsn-image {
+    position: absolute;
+    right: 0vw;
+    margin-top: 35vh;
+    overflow: hidden;
+      .msnTest-large {
+        width: 90vw;
+        height: auto;
+        margin-right: -6vw;
+      }
+  }
 }
 
-.tagline2-large {
-  font-size: 12.5rem;
-}
 
-.msnTest-large {
-  position: absolute;
-  right: 0;
-  height: 500px;
-  width: 700px;
-}
 
-.btn-large {
-  width: 90px;
-  height: 30px;
-  border-radius: 12px;
-  font-size: .6rem;
-  letter-spacing: .1rem;
-}
 
 //XLARGE SCREEN////XLARGE SCREEN////XLARGE SCREEN////XLARGE SCREEN//
 
 .xlarge {
-  background-color: darkcyan;
   font-size: 6rem;
-}
+  justify-content: flex-start;
 
-.tagline2-xlarge {
-  font-size: 9.4rem;
-}
-
-.landing-nsn-image {
-  position: absolute;
-  right: 0vw;
-  margin-top: 3vh;
-  overflow: hidden;
-    .msnTest-xlarge {
-      width: 70vw;
-      height: auto;
-      margin-right: -6vw;
+  .tagline-xlarge{
+    margin-top: 13vh;
+    .tagline2-xlarge {
+      font-size: 9.4rem;
     }
-}
 
+    .landing-button {
+      .btn-xlarge {
+        width: 15.6rem;
+        height: 3.1rem;
+        border-radius: 12px;
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+      }
+      .btn-log-in{
+        width: 12rem;
+      }
+    }
 
-.btn-xlarge {
-  width: 15.6rem;
-  height: 3.1rem;
-  border-radius: 12px;
-  font-size: 1.4rem;
-  letter-spacing: .1rem;
-}
-.btn-log-in{
-  width: 12rem;
+  }
+
+  .landing-nsn-image {
+    position: absolute;
+    right: 0vw;
+    margin-top: 8vh;
+    overflow: hidden;
+      .msnTest-xlarge {
+        width: 70vw;
+        height: auto;
+        margin-right: -6vw;
+      }
+  }
 }
