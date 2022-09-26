@@ -1,0 +1,33 @@
+// import waterfall from 'async-waterfall';
+
+// var radius = 25;
+
+// const showFriends = waterfall([
+//   function(callback){
+//     // Getting value of pi
+//     var pi = Math.PI
+//     // Sending value forward
+//     callback(null, pi)
+//   },
+//   function(pi, callback){
+//     // Squaring radius
+//     var square = radius * radius;
+//     // Sending both values forward
+//     callback(null, square, pi)
+//   },
+//   function(pi, square, callback){
+//     // Calculating area
+//     var area = pi * square;
+//     // Sending area to final callback
+//     callback(null, area);
+//   }
+// ], function(err, result){
+//   if (err){
+//     // Displaying error
+//     console.log(err)
+//   }
+//   else {
+//     // Displaying result
+//     console.log(result)
+//   }
+// })
