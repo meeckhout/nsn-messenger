@@ -1,6 +1,8 @@
 import React from 'react';
 import Logo from '../assets/images/Logo.png';
 import { Breakpoint } from 'react-socks';
+import { v4 as uuid } from 'uuid';
+import TimeAgo from 'javascript-time-ago'
 import '../styles/Chatbox.scss';
 
 const Chatbox = () => {
@@ -10,19 +12,19 @@ const Chatbox = () => {
                 <div className="chatbox-body-xsmall chatbox-body">
                     <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
 
-                    <div className="chat-top">
-                        <div className="chatbox-top">
+                    <div className="chat-top chat-top-xsmall">
+                        <div className="chatbox-top chatbox-top-xsmall">
                         </div>
 
-                        <div className="profile-top">
+                        <div className="profile-top profile-top-xsmall">
                         </div>
                     </div>
 
-                    <div className="chat-bottom">
-                        <div className="chatbox-bottom">
+                    <div className="chat-bottom chat-bottom-xsmall">
+                        <div className="chatbox-bottom chatbox-bottom-xsmall">
                         </div>
 
-                       <div className="profile-bottom">
+                       <div className="profile-bottom profile-bottom-xsmall">
                        </div>
                     </div>
                 </div>
@@ -76,19 +78,19 @@ const Chatbox = () => {
             <div className="chatbox-body chatbox-body-large">
                 <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
 
-                <div className="chat-top">
-                    <div className="chatbox-top">
+                <div className="chat-top chat-top-large">
+                    <div className="chatbox-top chatbox-top-large">
                     </div>
 
-                    <div className="profile-top">
+                    <div className="profile-top profile-top-large">
                     </div>
                 </div>
 
-                <div className="chat-bottom">
-                    <div className="chatbox-bottom">
+                <div className="chat-bottom chat-bottom-large">
+                    <div className="chatbox-bottom chatbox-bottom-large">
                     </div>
 
-                    <div className="profile-bottom">
+                    <div className="profile-bottom profile-bottom-large">
                     </div>
                 </div>
             </div>
@@ -107,7 +109,7 @@ const Chatbox = () => {
                 </div>
 
                 <div className="chat-bottom chat-bottom-xlarge">
-                    <div className="chatbox-bottom chatbox-bottom-large">
+                    <div className="chatbox-bottom chatbox-bottom-xlarge">
                     </div>
 
                     <div className="profile-bottom profile-bottom-xlarge">
