@@ -1,6 +1,4 @@
 
-Q
-!src/styles/_abstracts/colors.scss,f/4/f47cc89322357b51f03b7bfabb5a086b1e54c207
 H
 src/styles/Register.scss,a/6/a6ad8d09af5f66cc1fcd8bebe239418b34ae5f79
 9
@@ -25,9 +23,6 @@ H
 src/components/index.jsx,a/4/a4c46af8d3470562b8d65c165585a940c6de45f8
 U
 %src/styles/_abstracts/typography.scss,0/9/0919bc63a725fb09b97a6432b2715ac25db5d314
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 J
 src/styles/LastFmData.scss,3/c/3cf1422a022fdd9caee3fb0a30e77235039fa2d6
 :
@@ -43,3 +38,21 @@ D
 src/styles/Login.css,c/c/cc0c602ac51cca85763dcd9bb9978e9db10d8750
 M
 src/components/LastFmData.jsx,f/f/ffcb85d0be71fccb78efc9b5ba1e8f1af49b7b0d
+F
+src/styles/Navbar.scss,7/3/73c0023a6f4428fa6fc522c028b63af33043e658
+L
+src/styles/Landing_Page.scss,8/c/8cd87cb7fb7cca502f0cef596b8813ce317fa9d9
+N
+src/components/currentSong.jsx,9/a/9a03784d4af0d5a99fc5800299cb34e327abc48e
+I
+src/components/Navbar.jsx,d/1/d1eb1e252fd507134cfc95e08757d087da9b650a
+C
+src/pages/About.jsx,f/c/fcad63f0891a8395b39928f4961bb065edb79c37
+E
+src/styles/About.scss,d/d/ddf9fa93fe05a4a88d63f80ab135bdb979c20c53
+Q
+!src/styles/_abstracts/colors.scss,f/4/f47cc89322357b51f03b7bfabb5a086b1e54c207
+I
+src/styles/Dashboard.scss,3/5/352797f4fe8de44d95e417d619351ca3efc12f83
+G
+src/pages/Dashboard.jsx,a/1/a1b8ba7631773a19eacf3537ecb443f8eee6b9c7

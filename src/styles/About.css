@@ -38,6 +38,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
 }
 .about-img .img-team {
   box-sizing: content-box;
