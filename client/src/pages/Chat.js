@@ -3,6 +3,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import {useEffect, useState, useRef} from 'react';
 import ReactTimeAgo from 'react-time-ago';
+import { v4 as uuid } from 'uuid';
 
 const Chat = () => {
 
@@ -15,89 +16,78 @@ const Chat = () => {
     const [receiver, setReceiver] = useState([]);
     const [chatHistory, setChatHistory] = useState([]);
     const [errMsg, setErrMsg] = useState("");
-    const [values, setValues] = useState({
-        newMessage: "",
-    });
+    const [sentMessage, setSentMessage] = useState();
 
     // Create socket.io connection to backend server
     useEffect(() => {
-        socket.current = io.connect("http://localhost:3001");
-        console.log("chicken");
-        socket.current.emit("add_user", localStorage.getItem(process.env.REACT_APP_KEY));
-        console.log("house");
-    }, []);
 
-    useEffect(() => {
-        socket.current.emit("receive_message", (data) => {
-            console.log("mouse");
+        socket.current = io.connect("http://localhost:3001");
+        // console.log("chicken");
+
+        socket.current.emit("add_user", localStorage.getItem(process.env.REACT_APP_KEY));
+        // console.log("house");
+
+        socket.current.on("receive_message", (data) => {
             console.log(data);
-            console.log("horse");
             setMessageReceived({
+                id: data.id,
                 sender: data.sender,
                 message: data.message,
-                sent_at: Date.now(),
+                sent_at: data.sent_at,
             });
-            console.log("cow");
         });
-    },[messageReceived]);
+        // console.log("farm");
+    }, []);
 
+    // Add instant message to chatHistory
     useEffect(() => {
         messageReceived && setChatHistory((prev) => [...prev, messageReceived]);
-    }, [messageReceived]);
+      }, [messageReceived]);
 
-    // Get chatbox data
-    const getChatHistory = () => {
-        axios.get("http://localhost:3001/chat", {
-            params: {
-                sender: localStorage.getItem(process.env.REACT_APP_KEY),
-                receiver: localStorage.getItem(process.env.REACT_APP_CHAT)
-            }
-        })
-        .then(response => {
-            // console.log(response.data);
-            // console.log(response.data.chatHistory);
-            // console.log(response.data.sender[0].nickname, response.data.sender[0].email);
-            setSender(response.data.sender);
-            setReceiver(response.data.receiver);
-            setChatHistory(response.data.chatHistory);
-        })
-    };
-
+    // Fetch chatbox data from database
     useEffect(() => {
+        const getChatHistory = () => {
+            axios.get("http://localhost:3001/chat", {
+                params: {
+                    sender: localStorage.getItem(process.env.REACT_APP_KEY),
+                    receiver: localStorage.getItem(process.env.REACT_APP_CHAT)
+                }
+            })
+            .then(response => {
+                // console.log(response.data);
+                console.log(response.data.chatHistory);
+                // console.log(response.data.sender[0].nickname, response.data.sender[0].email);
+                setSender(response.data.sender);
+                setReceiver(response.data.receiver);
+                setChatHistory(response.data.chatHistory);
+            })
+        };
         getChatHistory();
     },[]);
+    // Empty brackets trigger request/rendering only when page is loaded
 
     // Send message: store in DB & emit via socket
     const sendMessage = async (event) => {
         event.preventDefault();
-        let { newMessage } = values;
-
         //Emit mew message via socket
+        const unique_id = uuid();
+        const small_id = unique_id.slice(0,8)
         socket.current.emit("new_message", {
+            id: small_id,
             sender: localStorage.getItem(process.env.REACT_APP_KEY),
             receiver: localStorage.getItem(process.env.REACT_APP_CHAT),
-            message: newMessage
+            message: sentMessage,
+            sent_at: Date.now()
         });
-
-        // Add instant message to chatHistory
-        // const messages = [...chatHistory]
-        // messages.push({
-        //     sender: localStorage.getItem(process.env.REACT_APP_KEY),
-        //     receiver: localStorage.getItem(process.env.REACT_APP_CHAT),
-        //     message: newMessage,
-        //     sent_at: Date.now()
-        // });
-        // setChatHistory(messages);
 
         // Send message to DB
         try {
-            // let { newMessage } = values;
             await axios.post("http://localhost:3001/sendMessage", {
                 sender: localStorage.getItem(process.env.REACT_APP_KEY),
                 members: [localStorage.getItem(process.env.REACT_APP_KEY), localStorage.getItem(process.env.REACT_APP_CHAT)],
-                message: newMessage
+                message: sentMessage
             });
-            // newMessage = "";
+            setSentMessage("");
         } catch (error) {
             if (error.response) {
                 setErrMsg(error.response.data.msg);
@@ -110,30 +100,8 @@ const Chat = () => {
         scrollRef.current?.scrollIntoView({behavior: "smooth"});
     },[chatHistory]);
 
-    // Emit submitted message as event to back-end server
-    // const sendMessage = () => {
-    //     const { message } = values;
-    //     socket.emit("sent_message", {userId, message});      
-    // };
-    // // Connect via socket.io
-    // socket.on("connect", () => {
-    //     console.log(`${socket.id}`);
-    //     // setUserId(socket.id);
-    // });
-    // // Log errors in browser console
-    // socket.on("connect_error", (error) => {
-    //     console.log(`Connection error due to ${error.message}`);
-    // });
-    // // Fetch received message from back-end & update useState variable
-    // useEffect(() => {
-    // socket.on("received_message", (data) => {
-    //     setUserReceived(data.userId);
-    //     setMessageReceived(data.message);
-    //     });
-    // });
-
     const handleChange = (event) => {
-        setValues({ ...values, [event.target.name]: event.target.value });
+        setSentMessage(event.target.value);
     };
 
     return (

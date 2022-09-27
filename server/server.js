@@ -48,6 +48,12 @@ io.on('connection', (socket) => {
   //New message
   socket.on('new_message', (data) => {
     console.log(data);
+    io.emit( 'receive_message', {
+      id: data.id,
+      sender: data.sender,
+      message: data.message,
+      sent_at: data.sent_at
+    });
 //     socket.broadcast.emit('receive_message', {
 //       sender: data.sender,
 //       receiver: data.receiver,
