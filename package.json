@@ -14,8 +14,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-socks": "^2.2.0",
-    "use-last-fm": "^0.6.1",
     "socket.io": "^4.5.2",
+    "use-last-fm": "^0.6.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
