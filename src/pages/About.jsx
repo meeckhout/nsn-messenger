@@ -5,7 +5,6 @@ import {Breakpoint} from 'react-socks';
 import NmJgg from '../assets/images/NmJgg.jpg';
 import NmJggM from '../assets/images/NmJggM.jpg';
 import sanderrr from '../assets/images/sanderrr.jpg';
-import {Link} from 'react-router-dom'
 
 const About = () => {
     return (
@@ -23,6 +22,7 @@ const About = () => {
                         </h1>
                     </div>
                     <div className="about-img flex-col">
+
                         <div className="bio-team Franziska Franziska-xsmall">
                             <img className="img-team img-team-xsmall" src={NmJgg} alt="Team member" />
                             <span className="bio bio-small">kzjkljdfkdljfklsdfsd</span>
@@ -43,6 +43,7 @@ const About = () => {
                             <span className="bio bio-small">dkfljkdljflkdsjkl</span>
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
                         </div>
+
                     </div>
                     <Footer />
                 </div>
@@ -61,6 +62,7 @@ const About = () => {
                         </h1>
                     </div>
                     <div className="about-img flex-col">
+
                         <div className="bio-team Franziska Franziska-small">
                             <img className="img-team img-team-small" src={NmJgg} alt="Team member" />
                             <span className="bio bio-small">kzjkljdfkdljfklsdfsd</span>
@@ -81,6 +83,7 @@ const About = () => {
                             <span className="bio bio-small">dkfljkdljflkdsjkl</span>
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
                         </div>
+
                     </div>
                     <Footer />
                 </div>
@@ -99,6 +102,7 @@ const About = () => {
                         </h1>
                     </div>
                     <div className="about-img">
+
                         <div className="bio-team Franziska Franziska-medium">
                             <img className="img-team img-team-medium" src={NmJgg} alt="Team member" />
                             <span className="bio bio-medium">kzjkljdfkdljfklsdfsd</span>
@@ -119,6 +123,7 @@ const About = () => {
                             <span className="bio bio-medium">dkfljkdljflkdsjkl</span>
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
                         </div>
+
                     </div>
                     <Footer />
                 </div>
@@ -132,11 +137,14 @@ const About = () => {
                             The
                             <span className="alt alt-large">Nostalgia Network</span>
                             team
+
                             <br />
+
                             <span className="player">Choose Your Player!</span>
                         </h1>
                     </div>
                     <div className="about-img">
+
                         <div className="bio-team Franziska Franziska-large">
                             <img className="img-team img-team-large" src={NmJgg} alt="Team member" />
                             <span className="bio bio-large">kzjkljdfkdljfklsdfsd</span>
@@ -157,6 +165,7 @@ const About = () => {
                             <span className="bio bio-large">dkfljkdljflkdsjkl</span>
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
                         </div>
+
                     </div>
                     <Footer />
                 </div>
@@ -177,26 +186,34 @@ const About = () => {
                     <div className="about-img">
                         <div className="bio-team Franziska Franziska-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJgg} alt="Team member" />
+
                             <span className="bio bio-xlarge">kzjkljdfkdljfklsdfsd</span>
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
+
                         </div>
 
                         <div className="bio-team Marthe Marthe-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJggM} alt="Team member" />
                             <span className="bio bio-xlarge">Master of Disaster and Design</span>
+
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
+
                         </div>
 
                         <div className="bio-team Sander Sander-xlarge">
                             <img className="img-team img-team-xlarge" src={sanderrr} alt="Team member" />
                             <span className="bio bio-xlarge">The Dork Lord</span>
+
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
+
                         </div>
 
                         <div className="bio-team Gio Gio-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJgg} alt="Team member" />
+
                             <span className="bio bio-xlarge">dkfljkdljflkdsjkl</span>
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
+
                         </div>
                     </div>
                     <Footer />

@@ -28,15 +28,13 @@ p {
   margin-left: 2vw;
 }
 .header-register .nsn-logo-header {
-  width: 16vw;
+  width: 15vw;
 }
 
 .big-nsn-image {
-  width: 40vw;
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -5vh;
 }
 
 .register-input {
@@ -64,15 +62,13 @@ p {
   padding-left: 3rem;
   font-size: 1.2rem;
 }
-.register-input input.register-mail-adress::-moz-placeholder, .register-input input.register-password::-moz-placeholder {
-  color: #F4F4F4;
-}
-.register-input input.register-mail-adress:-ms-input-placeholder, .register-input input.register-password:-ms-input-placeholder {
-  color: #F4F4F4;
-}
 .register-input input.register-mail-adress::placeholder,
 .register-input input.register-password::placeholder {
   color: #F4F4F4;
+}
+.register-input .register-mail-adress:focus,
+.register-input .register-password:focus {
+  outline: none;
 }
 .register-input .input-icons {
   position: absolute;
@@ -83,7 +79,7 @@ p {
 
 .register-sign-up {
   width: 10vw;
-  height: 6vh;
+  height: 5vh;
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
@@ -123,95 +119,8 @@ p {
   font-size: 1.2rem;
 }
 
-.xlarge {
-  background-color: aqua;
-}
-
-.large {
-  background-color: blueviolet;
-}
-.large .big-nsn-image {
-  width: 50vw;
-}
-.large .register-input {
-  width: 28vw;
-}
-.large .register-input .register-mail-adress,
-.large .register-input .register-password {
-  height: 5vh;
-  font-size: 1.1rem;
-}
-.large .register-sign-up {
-  height: 5vh;
-  font-size: 0.9rem;
-}
-
-.medium {
-  background-color: chocolate;
-}
-.medium .header-register {
-  margin-top: 2vh;
-  margin-left: 4vw;
-}
-.medium .header-register .nsn-logo-header {
-  width: 24vw;
-}
-.medium .big-nsn-image {
-  width: 75vw;
-  margin-top: 1vh;
-}
-.medium .register-input {
-  width: 40vw;
-  margin-top: 1vh;
-  gap: 3vh;
-  margin-bottom: 0;
-}
-.medium .register-input .register-mail-adress,
-.medium .register-input .register-password {
-  height: 5vh;
-  font-size: 1rem;
-}
-.medium .register-input .register-mail-adress:focus,
-.medium .register-input .register-password:focus {
-  outline: none;
-}
-.medium .register-sign-up {
-  margin-top: 3vh;
-  height: 5vh;
-  font-size: 0.9rem;
-  width: 16vw;
-}
-.medium .register-user-log-in {
-  margin-top: 3vh;
-}
-.medium .register-google-sign-up {
-  bottom: 2vh;
-}
-
-.small {
-  background-color: crimson;
-}
-.small .big-nsn-image {
-  width: 60vw;
-}
-.small .register-input {
-  width: 28vw;
-}
-.small .register-input .register-mail-adress,
-.small .register-input .register-password {
-  height: 5.4vh;
-  font-size: 1rem;
-}
-.small .register-sign-up {
-  height: 5.4vh;
-  font-size: 0.9rem;
-}
-
-.xsmall {
-  background-color: darkseagreen;
-}
 .xsmall .header-register {
-  margin-top: 2vh;
+  margin-top: 1.5vh;
   margin-left: 4vw;
 }
 .xsmall .header-register .nsn-logo-header {
@@ -233,10 +142,111 @@ p {
   font-size: 1rem;
 }
 .xsmall .register-sign-up {
-  height: 5.4vh;
+  height: 5vh;
   font-size: 0.9rem;
   width: 30vw;
 }
 .xsmall .register-user-log-in {
   margin-top: 3vh;
-}/*# sourceMappingURL=Register.css.map */
+}
+
+.small .header-register {
+  margin-left: 4vw;
+  margin-top: 1.5vh;
+}
+.small .header-register .nsn-logo-header {
+  width: 30vw;
+}
+.small .big-nsn-image {
+  margin-top: 3vh;
+  width: 64vw;
+}
+.small .register-input {
+  width: 34vw;
+}
+.small .register-input .register-mail-adress,
+.small .register-input .register-password {
+  height: 5.4vh;
+  font-size: 1rem;
+}
+.small .register-sign-up {
+  height: 5vh;
+  font-size: 0.9rem;
+  width: 18vw;
+}
+
+.medium .header-register {
+  margin-top: 2vh;
+  margin-left: 4vw;
+}
+.medium .header-register .nsn-logo-header {
+  width: 24vw;
+}
+.medium .big-nsn-image {
+  width: 75vw;
+  margin-top: 1vh;
+}
+.medium .register-input {
+  width: 40vw;
+  margin-top: 1vh;
+  gap: 3vh;
+  margin-bottom: 0;
+}
+.medium .register-input .register-mail-adress,
+.medium .register-input .register-password {
+  height: 5.4vh;
+  font-size: 1rem;
+}
+.medium .register-sign-up {
+  margin-top: 3vh;
+  height: 5vh;
+  font-size: 1rem;
+  width: 16vw;
+}
+.medium .register-user-log-in {
+  margin-top: 3vh;
+}
+.medium .register-google-sign-up {
+  bottom: 2vh;
+}
+
+.large .header-register {
+  margin-top: 2vh;
+  margin-left: 4vw;
+}
+.large .header-register .nsn-logo-header {
+  width: 22vw;
+}
+.large .big-nsn-image {
+  width: 65vw;
+  margin-top: 5vh;
+}
+.large .register-input {
+  width: 28vw;
+}
+.large .register-input .register-mail-adress,
+.large .register-input .register-password {
+  height: 4.5vh;
+  font-size: 1.1rem;
+}
+.large .register-user-log-in {
+  font-size: 0.9rem;
+}
+.large .register-sign-up {
+  height: 4vh;
+  font-size: 1.1rem;
+}
+
+.xlarge .header-register {
+  margin-top: 2vh;
+  margin-left: 2vw;
+}
+.xlarge .header-register .nsn-logo-header {
+  width: 12vw;
+}
+.xlarge .big-nsn-image {
+  width: 40vw;
+  margin-top: -1vh;
+}
+
+/*# sourceMappingURL=Register.css.map */

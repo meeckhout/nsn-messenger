@@ -1,0 +1,23 @@
+// (async () => {
+//   const user = await getUser(db, "test@mail.com")
+//   console.log(user)
+
+//   const friendIdList = await getFriendIds(db, user[0].id)
+//   console.log(friendIdList)
+
+//   const friendList = await getFriends(db, friendIdList)
+//   console.log(friendList)
+
+// })()
+
+const getUser = (db, email) => {
+    return new Promise((resolve, reject)=> {
+        db.query(
+            "SELECT * FROM users WHERE email = ?",
+            email,
+            (err, result) => {
+                return err ? reject(err) : resolve(result)
+            }
+        )
+    })
+}

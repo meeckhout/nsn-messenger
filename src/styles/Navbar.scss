@@ -22,6 +22,8 @@
     }
 
     ul {
+      display: flex;
+      flex-direction: row;
       list-style-type: none;
       margin-right: 4vw;
 
