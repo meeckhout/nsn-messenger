@@ -17,66 +17,105 @@
   .chat-top {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
 
     .chatbox-top {
-      margin-left: 5rem;
-      width: 80rem;
-      height: 32rem;
       background-color: $primary-white;
       border: 1px solid $text-black;
       border-radius: .75rem .75rem 0 0;
+      flex: 1;
+      max-height: 75%;
     }
 
     .profile-top {
-      width: 14rem;
-      height: 15rem;
       background-color: $primary-white;
       border-radius: .75rem;
       border: 1px solid $text-black;
+      margin-right: 2vw;
+      max-height: 25%;
     }
   }
 
   .chat-bottom {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
     margin-top: 4rem;
 
     .chatbox-bottom {
-      margin-left: 5rem;
-      width: 80rem;
-      height: 15rem;
       background-color: $primary-white;
       border: 1px solid $text-black;
       border-radius: .75rem;
+      flex: 1;
     }
 
     .profile-bottom {
-      width: 14rem;
-      height: 15rem;
       background-color: $primary-white;
       border-radius: .75rem;
       border: 1px solid $text-black;
+      margin-right: 2vw;
+    }
+
+    .btn-send {
+
     }
   }
 }
 
 // XSMALL SCREEN
+.chatbox-top-xsmall {
+  width: 30rem;
+  height: 5rem;
+}
+
+.profile-top-xsmall {
+  width: 5rem;
+  height: 6rem;
+}
 
 // SMALL SCREEN
+
 
 // MEDIUM SCREEN
 
 // LARGE SCREEN
+.chat-top-large, .chat-bottom-large {
+  gap: 2rem;
+}
+
+.chatbox-top-large {
+  margin-left: 2rem;
+  width: 55rem;
+  height: 30rem;
+}
+
+.chatbox-bottom-large {
+  margin-left: 2rem;
+  width: 50rem;
+  height: 12rem;
+}
+
+.profile-top-large, .profile-bottom-large {
+  width: 12rem;
+  height: 12rem;
+}
 
 // XLARGE SCREEN
+.chat-top-xlarge, .chat-bottom-xlarge {
+  gap: 2rem;
+ }
 
 .chatbox-top-xlarge {
-  margin-left: 5rem;
-  width: 80rem;
-  height: 32rem;
-  background-color: $primary-white;
-  border: 1px solid $text-black;
-  border-radius: .75rem .75rem 0 0;
+  margin-left: 2rem;
+  width: 55rem;
+  height: 30rem;
+}
+
+.chatbox-bottom-xlarge {
+  margin-left: 2rem;
+  width: 55rem;
+  height: 14rem;
+}
+
+.profile-top-xlarge, .profile-bottom-xlarge {
+  width: 14rem;
+  height: 14rem;
 }
