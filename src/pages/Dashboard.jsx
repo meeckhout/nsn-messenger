@@ -389,7 +389,7 @@ const Dashboard = () => {
                     </div>
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
-x                        <div className="nickname-container">
+                        <div className="nickname-container">
                             <div style={{display: "flex"}}>
                                 {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
                                 <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
