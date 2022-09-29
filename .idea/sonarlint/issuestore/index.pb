@@ -46,8 +46,6 @@ N
 src/components/currentSong.jsx,9/a/9a03784d4af0d5a99fc5800299cb34e327abc48e
 I
 src/components/Navbar.jsx,d/1/d1eb1e252fd507134cfc95e08757d087da9b650a
-C
-src/pages/About.jsx,f/c/fcad63f0891a8395b39928f4961bb065edb79c37
 E
 src/styles/About.scss,d/d/ddf9fa93fe05a4a88d63f80ab135bdb979c20c53
 Q
@@ -56,3 +54,32 @@ I
 src/styles/Dashboard.scss,3/5/352797f4fe8de44d95e417d619351ca3efc12f83
 G
 src/pages/Dashboard.jsx,a/1/a1b8ba7631773a19eacf3537ecb443f8eee6b9c7
+@
+server/async.txt,e/4/e49d712ca5443829a7dacaae89c006a4dc32d9b4
+D
+server/waterfall.txt,6/0/6088a2170889306873c46fedde7e77aeb74a5002
+<
+package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+A
+server/.gitignore,6/8/684633b668b24c06fe5d5ba72b7ed42a437aa655
+N
+server/controllers/register.js,b/d/bdb897964c1dd761f0b8beebfd46041c30dd76aa
+4
+.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+;
+server/.env,7/4/74c0224311d9cb9feca55cc2c27a2b847c0286e7
+O
+server/controllers/dashboard.js,4/7/475663e01b6780da9568fe7070263a7ec3c66dca
+G
+server/routes/router.js,d/1/d1e695e0bf57e545c4fa20071c9d8fb2cb572a23
+L
+server/controllers/logout.js,e/4/e46762341d256aa549b3ff1923274a1be719fd9e
+K
+server/controllers/login.js,6/a/6aad77ebd089512c6acc181e7ba85bc26524f5ca
+H
+server/package-lock.json,d/0/d015b61d94ec074e22132931840237a6e110b623
+C
+server/package.json,5/4/54e8f14248f674b305c14bde70fadbe1da1edb31
