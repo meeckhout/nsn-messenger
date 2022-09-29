@@ -1,46 +1,99 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-.container-body {
+.dashboard-body-container {
+  background: linear-gradient(0deg, #F4F4F4, #B7D9F7 80%, #0F8CFF) no-repeat fixed;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+.dashboard-body-container .container-taskbar img {
+  height: 1.2rem;
+  width: auto;
+  display: block;
+  margin: 0.3rem;
+}
+.dashboard-body-container .container-userInfo {
+  display: flex;
+  flex-direction: row;
+  height: 16vh;
+  border: 1px solid lightgrey;
+  margin-top: 1vh;
+  margin-left: 0.8vw;
+  margin-right: 0.8vw;
+  border-radius: 5px;
   background: linear-gradient(0deg, #F4F4F4, #B7D9F7 80%, #0F8CFF) no-repeat fixed;
 }
-
-.container-logo {
-  height: 30px;
-}
-.container-logo img {
-  height: 25px;
-  margin-left: 10px;
-}
-
-.label-online {
-  margin-left: 10px;
-}
-
-.container-toolbar {
-  background-color: #F4F4F4;
-  height: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-.container-userInfo {
-  height: 90px;
-  border: 1px solid lightgrey;
-  margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-.profile-box {
-  height: 80px;
-  width: 70px;
-  border: 1px solid black;
-  border-radius: 15px;
+.dashboard-body-container .container-userInfo .profile-picture {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: rgba(45, 45, 45, 0.5);
+  border-radius: 12px;
+  border-width: 1px;
   margin: 5px 20px;
+  margin-top: 1vh;
+  margin-left: 1vw;
+  background-color: #F4F4F4;
+}
+.dashboard-body-container .container-userInfo .nickname-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1vh;
+  justify-content: flex-start;
+  margin-top: 3vh;
+}
+.dashboard-body-container .container-userInfo .nickname-container .nickname {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.dashboard-body-container .container-userInfo .nickname-container .song-playing {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0.15vw;
+}
+.dashboard-body-container .add-friends {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1vh;
+  margin-right: 1.6vw;
+  margin-left: 0.8vw;
+  margin-bottom: 1vh;
+  gap: 1vw;
+  align-items: center;
+}
+.dashboard-body-container .add-friends .search-friend {
+  flex: 1;
+  height: 1.2rem;
+  border-color: rgba(45, 45, 45, 0.2);
+  border-radius: 5px;
+}
+.dashboard-body-container .add-friends .search-friend:focus {
+  outline: none;
+}
+.dashboard-body-container .add-friends .add-friend-button {
+  width: 2rem;
+  padding: 0;
+  margin: 0;
+  height: 3.6rem;
+  background-color: transparent;
+}
+.dashboard-body-container .add-friends .add-friend-button img {
+  height: 100%;
+  width: auto;
+}
+.dashboard-body-container .online, .dashboard-body-container .offline {
+  margin-left: 2vw;
+}
+.dashboard-body-container .online .collapsible, .dashboard-body-container .offline .collapsible {
+  border: none;
+  color: #0F8CFF;
+  background-color: transparent;
+  font-size: 1.1rem;
 }
 
-form {
-  margin: 40px 20px;
-}/*# sourceMappingURL=Dashboard.css.map */
+/*# sourceMappingURL=Dashboard.css.map */

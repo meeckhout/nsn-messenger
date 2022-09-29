@@ -1,53 +1,227 @@
 @import '_abstracts/typography.scss';
 @import '_abstracts/colors.scss';
 
-.container-body {
+.dashboard-body-container {
   background: linear-gradient(0deg, $primary-white, #B7D9F7 80%, $primary-blue) no-repeat fixed;
-}
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  .container-taskbar {
+    img {
+      height: 1.2rem;
+      width: auto;
+      display:block;
+      margin: 0.3rem;
+    }
+  }
+  .container-userInfo {
+    display: flex;
+    flex-direction: row;
+    height: 16vh;
+    border: 1px solid lightgrey;
+    margin-top: 1vh;
+    margin-left: 0.8vw;
+    margin-right: 0.8vw;
+    border-radius: 5px;
+    background: linear-gradient(0deg, $primary-white, #B7D9F7 80%, $primary-blue) no-repeat fixed;
+    .profile-picture{
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: solid;
+      border-color: rgb(45, 45, 45, 0.5);
+      border-radius: 12px;
+      border-width: 1px;
+      margin: 5px 20px;
+      margin-top: 1vh;
+      margin-left: 1vw;
+      background-color: $primary-white;
+    }
+    .nickname-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1vh;
+      justify-content:flex-start;
+      margin-top: 3vh;
+      .nickname{
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .song-playing{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0.15vw;
+      }
+    }
+  }
 
-.container-logo {
-  height: 30px;
-
-  img {
-    height: 25px;
-    margin-left: 10px;
+  .add-friends {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    margin-right: 1.6vw;
+    margin-left: 0.8vw;
+    margin-bottom: 1vh;
+    gap: 2vw;
+    align-items: center;
+    .search-friend{
+      flex: 1;
+      height: 1.4rem;
+      border-color: rgb(45, 45, 45, 0.2);
+      border-radius: 5px;
+    }
+    .search-friend:focus {
+      outline: none;
+    }
+    .add-friend-button{
+      width: 2rem;
+      padding: 0;
+      margin: 0;
+      height: 3.4rem;
+      background-color: transparent;
+      
+      img{
+        height: 100%;
+        width: auto;
+      }
+    }
+    .play-game {
+      margin: 0;
+      height: 1.8rem;
+      border-radius: 5px;
+      width: 5rem;
+    }
+  }
+  .online, .offline{
+    margin-left: 2vw;
+    .collapsible {
+      border: none;
+      color: $primary-blue;
+      background-color: transparent;
+      font-size: 1.1rem;
+    }
   }
 }
 
-.label-online {
-  margin-left: 10px;
-}
-
-.container-toolbar {
-  background-color: #F4F4F4;
-  height: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-.container-userInfo {
-  height: 90px;
-  border: 1px solid lightgrey;
-  margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-.profile-box {
-  height: 80px;
-  width: 70px;
-  border: 1px solid black;
-  border-radius: 15px;
-  margin: 5px 20px;
-}
-
-form {
-  margin: 40px 20px;
-
-  .status-friends {
-
+// XSMALL SCREEN//// XSMALL SCREEN//// XSMALL SCREEN//// XSMALL SCREEN//
+.dashboard-container-xsmall{
+  .container-userInfo{
+    .profile-picture{
+      margin-right: 1vw;
+    }
+    .nickname-container{
+      margin-top: 2vh;
+      .nickname{
+        font-size: 1rem;
+      }
+      .song-playing{
+        font-size: 0.8rem;
+        text-align: left;
+      }
+    }
   }
+  .add-friends {
+    gap: 5vw;
+    align-items: center;
+    .search-friend{
+      flex: 1;
+      height: 1.4rem;
+    }
+    .add-friend-button{
+      width: 2rem;
+      padding: 0;
+      margin: 0;
+      height: 2.5rem;
+      background-color: transparent;
+    }
+    .play-game {
+      margin: 0;
+      height: 1.8rem;
+      border-radius: 5px;
+      width: 4.7rem;
+    }
+  }
+  .online, .offline{
+    .collapsible {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    .friendlist{
+      margin-top: 0.5vh;
+      font-size: 0.9rem;
+    }
+  }
+}
 
+// SMALL SCREEN//// SMALL SCREEN//// SMALL SCREEN//// SMALL SCREEN//
+.dashboard-container-small {
+  .container-userInfo{
+    margin-top: 0;
+    border: 2px solid lightgrey;
+  }
+  .add-friends {
+    gap: 3vw;
+    .add-friend-button{
+      height: 3rem;
+    }
+    .play-game {
+      width: 5rem;
+    }
+  }
+}
 
+// MEDIUM SCREEN//// MEDIUM SCREEN//// MEDIUM SCREEN//// MEDIUM SCREEN//
+.dashboard-container-medium {
+  .container-taskbar{
+    img{
+      height: 1.4rem;
+      margin: 0.4rem;
+    }
+  }
+  .container-userInfo{
+    margin-top: 0vh;
+  }
+  .add-friends {
+    gap: 3vw;
+    .add-friend-button{
+      height: 3rem;
+    }
+    .play-game {
+      width: 5rem;
+    }
+  }
+}
+
+// LARGE SCREEN//// LARGE SCREEN//// LARGE SCREEN//// LARGE SCREEN//
+.dashboard-container-large {
+  .container-taskbar{
+    img{
+      height: 1.4rem;
+      margin: 0.4rem;
+    }
+  }
+  .container-userInfo{
+    margin-top: 0vh;
+    border: 2px solid lightgrey;
+  }
+}
+
+// XLARGE SCREEN//// XLARGE SCREEN//// XLARGE SCREEN//// XLARGE SCREEN//
+.dashboard-container-xlarge{
+  .container-taskbar{
+    img{
+      height: 1.4rem;
+      margin: 0.4rem;
+    }
+  }
+  .container-userInfo{
+    border: 2px solid lightgrey;
+  }
+  .add-friends {
+    gap: 2vw;
+  }
 }

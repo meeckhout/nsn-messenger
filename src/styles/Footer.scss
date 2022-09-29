@@ -25,6 +25,7 @@
     color: $text-black;
     width: 20%;
     position: absolute;
+    
     bottom: 3vh;
     margin-left: 3vw;
 }
@@ -35,6 +36,7 @@
     position: absolute;
     bottom: 2vh;
     font-size: 1.1rem;
+    position: fixed;
 }
 
 .footer-xsmall {
@@ -46,6 +48,7 @@
     position: absolute;
     bottom: 2vh;
     font-size: 1.4rem;
+    position: fixed;
 }
 
 .footer-small {
@@ -56,6 +59,7 @@
 .soc-med-medium {
     font-size: 1.8rem;
     margin-left: 3vw;
+    position: fixed;
 }
 
 .footer-medium {
@@ -66,6 +70,7 @@
 
 .soc-med-large {
     font-size: 1.9rem;
+    position: fixed;
 }
 
 .footer-large {

@@ -5,7 +5,7 @@
   overflow: hidden;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
 }
 .container-navbar .navbar {
   display: flex;
@@ -19,6 +19,8 @@
   width: auto;
 }
 .container-navbar .navbar ul {
+  display: flex;
+  flex-direction: row;
   list-style-type: none;
   margin-right: 4vw;
 }
@@ -29,14 +31,36 @@
 
 .navbar-xsmall {
   font-size: 1.2rem;
-  gap: 3em;
+  margin-top: 1vh;
+  height: 6vh;
 }
 
 .img-xsmall {
-  width: 35%;
+  height: 5vh;
+}
+
+.navbar-medium {
+  font-size: 1.6rem;
+  margin-top: 1vh;
+  height: 6vh;
+}
+
+.img-medium {
+  height: 4vh;
+}
+
+.navbar-large {
+  height: 7vh;
+  font-size: 1.6rem;
+}
+
+.img-large {
+  height: 4vh;
 }
 
 .navbar-xlarge {
   font-size: 1.8rem;
   gap: 3em;
-}/*# sourceMappingURL=Navbar.css.map */
+}
+
+/*# sourceMappingURL=Navbar.css.map */
