@@ -22,12 +22,16 @@
       background-color: $primary-white;
       border: 1px solid $text-black;
       border-radius: .75rem .75rem 0 0;
+      flex: 1;
+      max-height: 75%;
     }
 
     .profile-top {
       background-color: $primary-white;
       border-radius: .75rem;
       border: 1px solid $text-black;
+      margin-right: 2vw;
+      max-height: 25%;
     }
   }
 
@@ -40,12 +44,14 @@
       background-color: $primary-white;
       border: 1px solid $text-black;
       border-radius: .75rem;
+      flex: 1;
     }
 
     .profile-bottom {
       background-color: $primary-white;
       border-radius: .75rem;
       border: 1px solid $text-black;
+      margin-right: 2vw;
     }
   }
 }

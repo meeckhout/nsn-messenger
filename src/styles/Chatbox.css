@@ -20,11 +20,15 @@
   background-color: #F4F4F4;
   border: 1px solid #2D2D2D;
   border-radius: 0.75rem 0.75rem 0 0;
+  flex: 1;
+  max-height: 75%;
 }
 .chatbox-body .chat-top .profile-top {
   background-color: #F4F4F4;
   border-radius: 0.75rem;
   border: 1px solid #2D2D2D;
+  margin-right: 2vw;
+  max-height: 25%;
 }
 .chatbox-body .chat-bottom {
   display: flex;
@@ -35,11 +39,13 @@
   background-color: #F4F4F4;
   border: 1px solid #2D2D2D;
   border-radius: 0.75rem;
+  flex: 1;
 }
 .chatbox-body .chat-bottom .profile-bottom {
   background-color: #F4F4F4;
   border-radius: 0.75rem;
   border: 1px solid #2D2D2D;
+  margin-right: 2vw;
 }
 
 .chatbox-top-xsmall {
