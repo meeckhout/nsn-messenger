@@ -3,8 +3,6 @@ import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BreakpointProvider } from 'react-socks';
 import {Login, Dashboard, Chatbox, Register, About, Landing_Page} from './pages';
 
-
-
 function App() {
     return (
         <div className="App">
