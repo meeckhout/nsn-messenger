@@ -1,0 +1,91 @@
+body {
+  max-width: 100vh;
+  display: flex;
+  background: #F4F4F4 no-repeat center;
+  background-size: cover;
+}
+
+.body-playfield {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid {
+  height: 560px;
+  min-width: 580px;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("../assets/jewels/grid-background.jpg");
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  color: #85796b;
+}
+
+.grid div {
+  height: 70px;
+  width: 70px;
+}
+
+.score-board {
+  border-radius: 10px;
+  margin-left: 200px;
+  height: 560px;
+  min-width: 200px;
+  padding: 5px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #2166A7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  color: white;
+}
+
+#score {
+  background: #1B2549;
+}
+
+.points,
+.timer {
+  border: 1px gray solid;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btn-restart {
+  background: transparent;
+  border-radius: 15px;
+  width: auto;
+  color: white;
+  font-size: 18px;
+  border: 1px gray solid;
+  padding: 10px;
+}
+
+.btn-restart:hover {
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Bungee Spice Regular", sans-serif;
+  text-align: center;
+  color: #FF00F5;
+  text-decoration: underline;
+}
+
+h3,
+h2 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+h4 {
+  color: #4FABB1;
+}
+
+/*# sourceMappingURL=Bejeweled.css.map */
