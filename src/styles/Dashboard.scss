@@ -51,10 +51,13 @@
         margin-top: 0;
         margin-bottom: 0;
       }
-      .song-playing{
+      .current-song {
         margin-top: 0;
         margin-bottom: 0;
         margin-left: 0.15vw;
+        font-family: $heading-font-family;
+        font-weight: 300;
+        font-size: .9rem;
       }
     }
   }

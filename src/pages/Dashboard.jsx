@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Logo from '../assets/images/Logo.png';
 import ProfileImage from '../assets/images/msnSocMed.png';
 import AddFriend from '../assets/images/addFriend.png';
-import {LastFmData} from '../components/LastFmData';
+import {FaHeadphonesAlt} from 'react-icons/fa';
 import { Breakpoint } from 'react-socks';
 import '../styles/Dashboard.scss';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import {LastFmData} from '../components';
 
 const Dashboard = () => {
-
     const navigate = useNavigate();
     const [searchButton, setSearchButton] = useState(false);
     const [searchResult, setSearchResult] = useState('');
@@ -141,7 +141,9 @@ const Dashboard = () => {
                                 {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
                                 <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
@@ -204,7 +206,9 @@ const Dashboard = () => {
                                 {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
                                 <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
@@ -267,7 +271,9 @@ const Dashboard = () => {
                                 {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
                                 <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
@@ -331,7 +337,9 @@ const Dashboard = () => {
                                 {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
                                 <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
@@ -394,9 +402,10 @@ const Dashboard = () => {
                                 {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
                                 <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
                             </div>
-                            <p className="song-playing">
+                            <div className="current-song">
+                                <FaHeadphonesAlt />
                                 <LastFmData />
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
