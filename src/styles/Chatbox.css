@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 .chatbox-body {
   background: linear-gradient(0deg, #F4F4F4, #B7D9F7 80%, #0F8CFF) no-repeat fixed;
-  width: 100vw;
-  height: 100vh;
   position: fixed;
 }
 .chatbox-body .chatbox-logo {
@@ -57,6 +55,11 @@
   height: 6rem;
 }
 
+.chatbox-body-large {
+  height: 800px;
+  width: auto;
+}
+
 .chat-top-large, .chat-bottom-large {
   gap: 2rem;
 }
@@ -76,6 +79,11 @@
 .profile-top-large, .profile-bottom-large {
   width: 12rem;
   height: 12rem;
+}
+
+.chatbox-body-xlarge {
+  width: 100vw;
+  height: auto;
 }
 
 .chat-top-xlarge, .chat-bottom-xlarge {

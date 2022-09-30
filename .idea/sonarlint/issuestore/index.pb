@@ -31,12 +31,8 @@ D
 src/styles/Login.css,c/c/cc0c602ac51cca85763dcd9bb9978e9db10d8750
 F
 src/styles/Navbar.scss,7/3/73c0023a6f4428fa6fc522c028b63af33043e658
-L
-src/styles/Landing_Page.scss,8/c/8cd87cb7fb7cca502f0cef596b8813ce317fa9d9
 I
 src/components/Navbar.jsx,d/1/d1eb1e252fd507134cfc95e08757d087da9b650a
-E
-src/styles/About.scss,d/d/ddf9fa93fe05a4a88d63f80ab135bdb979c20c53
 Q
 !src/styles/_abstracts/colors.scss,f/4/f47cc89322357b51f03b7bfabb5a086b1e54c207
 @
@@ -70,13 +66,6 @@ C
 server/server.js,9/3/93c47de4314a8bf1f5f5dc34593df407f5ceebf9
 J
 server/controllers/chat.js,e/a/eaa363935b40652b0336dde0f4769419727cb92c
-G
-src/styles/Chatbox.scss,1/e/1e140481f6ae4bc55de62e7644ced654aa6e73e6
-E
-src/pages/Chatbox.jsx,7/e/7eef0aa4e37597211dbee6bc76411124ea416104
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 ;
 src/App.css,a/a/aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
 I
