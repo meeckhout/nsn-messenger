@@ -7,11 +7,29 @@
   height: 100vh;
   position: fixed;
   .container-taskbar {
+    display: flex;
+    justify-content: space-between;
     img {
       height: 1.2rem;
       width: auto;
       display:block;
       margin: 0.3rem;
+    }
+    button {
+      width: 4rem;
+      padding: 0;
+      margin-top: 0.5rem;
+      margin-right: 0.5rem;
+      height: 1.7rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      background-color: $primary-white;
+      color: $text-black;
+      &:hover {
+        background-color: $text-black;
+        color: $primary-white;
+        transition: 1s ease-in-out;
+      }
     }
   }
   .container-userInfo {
@@ -147,6 +165,12 @@
 
 // XSMALL SCREEN//// XSMALL SCREEN//// XSMALL SCREEN//// XSMALL SCREEN//
 .dashboard-container-xsmall{
+  .container-taskbar {
+    button{
+      height: 1.2rem;
+      font-size: 0.8rem;
+    }
+  }
   .container-userInfo{
     .profile-picture{
       margin-right: 1vw;
@@ -243,6 +267,8 @@
 // MEDIUM SCREEN//// MEDIUM SCREEN//// MEDIUM SCREEN//// MEDIUM SCREEN//
 .dashboard-container-medium {
   .container-taskbar{
+    display: flex;
+    justify-content: space-between;
     img{
       height: 1.4rem;
       margin: 0.4rem;
@@ -273,6 +299,8 @@
 // LARGE SCREEN//// LARGE SCREEN//// LARGE SCREEN//// LARGE SCREEN//
 .dashboard-container-large {
   .container-taskbar{
+    display: flex;
+    justify-content: space-between;
     img{
       height: 1.4rem;
       margin: 0.4rem;
@@ -287,6 +315,8 @@
 // XLARGE SCREEN//// XLARGE SCREEN//// XLARGE SCREEN//// XLARGE SCREEN//
 .dashboard-container-xlarge{
   .container-taskbar{
+    display: flex;
+    justify-content: space-between;
     img{
       height: 1.4rem;
       margin: 0.4rem;

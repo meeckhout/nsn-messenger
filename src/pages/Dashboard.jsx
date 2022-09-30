@@ -133,12 +133,30 @@ const Dashboard = () => {
         navigate("/Chatbox");
     }
 
+    // Logout button
+    const Logout = async (event) => {
+        event.preventDefault();
+        // console.log("Logout clicked");
+        try {
+            const email = localStorage.getItem(process.env.REACT_APP_KEY);
+            await axios.post('http://localhost:3001/logout', {
+                email,
+            });
+            localStorage.clear();
+            navigate("/Login");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
     return (
         <div className="dashboard-body-container">
             <Breakpoint xsmall only>
                 <div className="dashboard-container-xsmall">
                     <div className="container-taskbar">
                         <img src={Logo} alt="Logo NSN" />
+                        <button onClick={(event) => Logout(event)}>Logout</button>
                     </div>
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
@@ -211,6 +229,7 @@ const Dashboard = () => {
                 <div className="dashboard-container-small">
                     <div className="container-taskbar">
                         <img src={Logo} alt="Logo NSN" />
+                        <button onClick={(event) => Logout(event)}>Logout</button>
                     </div>
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
@@ -283,6 +302,7 @@ const Dashboard = () => {
                 <div className="dashboard-container-medium">
                     <div className="container-taskbar">
                         <img src={Logo} alt="Logo NSN" />
+                        <button onClick={(event) => Logout(event)}>Logout</button>
                     </div>
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
@@ -356,6 +376,7 @@ const Dashboard = () => {
                 <div className="dashboard-container-large">
                     <div className="container-taskbar">
                         <img src={Logo} alt="Logo NSN" />
+                        <button onClick={(event) => Logout(event)}>Logout</button>
                     </div>
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
@@ -428,6 +449,7 @@ const Dashboard = () => {
                 <div className="dashboard-container-xlarge">
                     <div className="container-taskbar">
                         <img src={Logo} alt="Logo NSN" />
+                        <button onClick={(event) => Logout(event)}>Logout</button>
                     </div>
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />

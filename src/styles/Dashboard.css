@@ -6,11 +6,31 @@
   height: 100vh;
   position: fixed;
 }
+.dashboard-body-container .container-taskbar {
+  display: flex;
+  justify-content: space-between;
+}
 .dashboard-body-container .container-taskbar img {
   height: 1.2rem;
   width: auto;
   display: block;
   margin: 0.3rem;
+}
+.dashboard-body-container .container-taskbar button {
+  width: 4rem;
+  padding: 0;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  height: 1.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  background-color: #F4F4F4;
+  color: #2D2D2D;
+}
+.dashboard-body-container .container-taskbar button:hover {
+  background-color: #2D2D2D;
+  color: #F4F4F4;
+  transition: 1s ease-in-out;
 }
 .dashboard-body-container .container-userInfo {
   display: flex;
@@ -140,6 +160,10 @@
   font-size: 1.1rem;
 }
 
+.dashboard-container-xsmall .container-taskbar button {
+  height: 1.2rem;
+  font-size: 0.8rem;
+}
 .dashboard-container-xsmall .container-userInfo .profile-picture {
   margin-right: 1vw;
 }
@@ -223,6 +247,10 @@
   width: 5rem;
 }
 
+.dashboard-container-medium .container-taskbar {
+  display: flex;
+  justify-content: space-between;
+}
 .dashboard-container-medium .container-taskbar img {
   height: 1.4rem;
   margin: 0.4rem;
@@ -246,6 +274,10 @@
   width: 5rem;
 }
 
+.dashboard-container-large .container-taskbar {
+  display: flex;
+  justify-content: space-between;
+}
 .dashboard-container-large .container-taskbar img {
   height: 1.4rem;
   margin: 0.4rem;
@@ -255,6 +287,10 @@
   border: 2px solid lightgrey;
 }
 
+.dashboard-container-xlarge .container-taskbar {
+  display: flex;
+  justify-content: space-between;
+}
 .dashboard-container-xlarge .container-taskbar img {
   height: 1.4rem;
   margin: 0.4rem;
