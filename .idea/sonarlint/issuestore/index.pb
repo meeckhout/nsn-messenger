@@ -13,8 +13,6 @@ F
 src/pages/Register.jsx,5/f/5f336b5f29199b2d1790dde0fbca619b330b20a9
 A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
-I
-src/components/Footer.jsx,8/2/8292f64d2de4032e9c7b7614534e68315052f34a
 C
 src/pages/Login.jsx,0/e/0e659cbf848793b2a4261f495400d7e6b21ec5a8
 C
@@ -24,11 +22,6 @@ H
 U
 %src/styles/_abstracts/typography.scss,0/9/0919bc63a725fb09b97a6432b2715ac25db5d314
 J
-src/styles/LastFmData.scss,3/c/3cf1422a022fdd9caee3fb0a30e77235039fa2d6
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
-J
 src/pages/Landing_Page.jsx,5/6/5626b306b95327a7c96d508680c77629dfeed83e
 E
 src/styles/Login.scss,3/8/3811d631a2428bdc9cf7dd6ee036528ce5442c81
@@ -36,24 +29,16 @@ H
 src/styles/Login.css.map,b/a/bac2364debe941a08ea24b1bc15bee42871fa369
 D
 src/styles/Login.css,c/c/cc0c602ac51cca85763dcd9bb9978e9db10d8750
-M
-src/components/LastFmData.jsx,f/f/ffcb85d0be71fccb78efc9b5ba1e8f1af49b7b0d
 F
 src/styles/Navbar.scss,7/3/73c0023a6f4428fa6fc522c028b63af33043e658
 L
 src/styles/Landing_Page.scss,8/c/8cd87cb7fb7cca502f0cef596b8813ce317fa9d9
-N
-src/components/currentSong.jsx,9/a/9a03784d4af0d5a99fc5800299cb34e327abc48e
 I
 src/components/Navbar.jsx,d/1/d1eb1e252fd507134cfc95e08757d087da9b650a
 E
 src/styles/About.scss,d/d/ddf9fa93fe05a4a88d63f80ab135bdb979c20c53
 Q
 !src/styles/_abstracts/colors.scss,f/4/f47cc89322357b51f03b7bfabb5a086b1e54c207
-I
-src/styles/Dashboard.scss,3/5/352797f4fe8de44d95e417d619351ca3efc12f83
-G
-src/pages/Dashboard.jsx,a/1/a1b8ba7631773a19eacf3537ecb443f8eee6b9c7
 @
 server/async.txt,e/4/e49d712ca5443829a7dacaae89c006a4dc32d9b4
 D
@@ -67,8 +52,6 @@ A
 server/.gitignore,6/8/684633b668b24c06fe5d5ba72b7ed42a437aa655
 N
 server/controllers/register.js,b/d/bdb897964c1dd761f0b8beebfd46041c30dd76aa
-4
-.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 ;
 server/.env,7/4/74c0224311d9cb9feca55cc2c27a2b847c0286e7
 O
@@ -83,3 +66,22 @@ H
 server/package-lock.json,d/0/d015b61d94ec074e22132931840237a6e110b623
 C
 server/package.json,5/4/54e8f14248f674b305c14bde70fadbe1da1edb31
+@
+server/server.js,9/3/93c47de4314a8bf1f5f5dc34593df407f5ceebf9
+J
+server/controllers/chat.js,e/a/eaa363935b40652b0336dde0f4769419727cb92c
+G
+src/styles/Chatbox.scss,1/e/1e140481f6ae4bc55de62e7644ced654aa6e73e6
+E
+src/pages/Chatbox.jsx,7/e/7eef0aa4e37597211dbee6bc76411124ea416104
+:
+
+src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
+;
+src/App.css,a/a/aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
+I
+src/components/Footer.jsx,8/2/8292f64d2de4032e9c7b7614534e68315052f34a
+C
+src/pages/About.jsx,f/c/fcad63f0891a8395b39928f4961bb065edb79c37
+J
+src/styles/LastFmData.scss,3/c/3cf1422a022fdd9caee3fb0a30e77235039fa2d6
