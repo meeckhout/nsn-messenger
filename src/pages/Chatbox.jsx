@@ -197,7 +197,7 @@ const Chatbox = () => {
         </Breakpoint>
 
         <Breakpoint xlarge>
-            <div className="chatbox-body">
+            <div className="chatbox-body chatbox-body-xlarge">
                 <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
 
                 <div className="chat-top chat-top-xlarge">

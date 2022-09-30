@@ -3,8 +3,6 @@
 
 .chatbox-body {
   background: linear-gradient(0deg, $primary-white, #B7D9F7 80%, $primary-blue) no-repeat fixed;
-  width: 100vw;
-  height: 100vh;
   position: fixed;
 
   .chatbox-logo {
@@ -77,6 +75,11 @@
 // MEDIUM SCREEN
 
 // LARGE SCREEN
+.chatbox-body-large {
+  height: 800px;
+  width: auto;
+}
+
 .chat-top-large, .chat-bottom-large {
   gap: 2rem;
 }
@@ -99,6 +102,11 @@
 }
 
 // XLARGE SCREEN
+.chatbox-body-xlarge {
+  width: 100vw;
+  height: auto;
+}
+
 .chat-top-xlarge, .chat-bottom-xlarge {
   gap: 2rem;
  }
