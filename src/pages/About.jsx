@@ -195,6 +195,7 @@ const About = () => {
                             <img className="img-team img-team-xlarge" src={NmJggM} alt="Team member" />
                             <span className="bio bio-xlarge">Master of Disaster and Design</span>
 
+
                             <span className="text">She will come for ur design and u will never look at it the same way again!! Ps: Don't say here code is ..Messy !!!</span>
 
                         </div>
