@@ -9,6 +9,7 @@ import '../styles/Dashboard.scss';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { LastFmData } from '../components/LastFmData';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -178,7 +179,9 @@ const Dashboard = () => {
                         <button className="search-friend-button" onClick={findUser}>
                             <img src={SearchFriend} alt="" />
                         </button>
-                        <button className="play-game">Play game!</button>
+                        <Link to="/Bejeweled" className="gameLink">
+                            <button className="play-game">Play game!</button>
+                        </Link>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
                     {searchResult && (
@@ -251,7 +254,9 @@ const Dashboard = () => {
                         <button className="search-friend-button" onClick={findUser}>
                             <img src={SearchFriend} alt="" />
                         </button>
-                        <button className="play-game">Play game!</button>
+                        <Link to="/Bejeweled" className="gameLink">
+                            <button className="play-game">Play game!</button>
+                        </Link>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
                     {searchResult && (
@@ -324,7 +329,9 @@ const Dashboard = () => {
                         <button className="search-friend-button" onClick={findUser}>
                             <img src={SearchFriend} alt="" />
                         </button>
-                        <button className="play-game">Play game!</button>
+                        <Link to="/Bejeweled" className="gameLink">
+                            <button className="play-game">Play game!</button>
+                        </Link>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
                     {searchResult && (
@@ -398,7 +405,9 @@ const Dashboard = () => {
                         <button className="search-friend-button" onClick={findUser}>
                             <img src={SearchFriend} alt="" />
                         </button>
-                        <button className="play-game">Play game!</button>
+                        <Link to="/Bejeweled" className="gameLink">
+                            <button className="play-game">Play game!</button>
+                        </Link>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
                     {searchResult && (
@@ -471,7 +480,9 @@ const Dashboard = () => {
                         <button className="search-friend-button" onClick={findUser}>
                             <img src={SearchFriend} alt="" />
                         </button>
-                        <button className="play-game">Play game!</button>
+                        <Link to="/Bejeweled" className="gameLink">
+                            <button className="play-game">Play game!</button>
+                        </Link>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
                     {searchResult && (

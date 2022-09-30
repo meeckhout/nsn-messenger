@@ -4,6 +4,7 @@ import Chatbox from './Chatbox';
 import Register from './Register';
 import About from './About';
 import Landing_Page from './Landing_Page';
+import Bejeweled from './Bejeweled';
 
 export {
     Dashboard,
@@ -11,5 +12,6 @@ export {
     Chatbox,
     Register,
     About,
-    Landing_Page
+    Landing_Page,
+    Bejeweled
 }
