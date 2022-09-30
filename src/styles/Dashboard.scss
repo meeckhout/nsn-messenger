@@ -45,19 +45,43 @@
       gap: 1vh;
       justify-content:flex-start;
       margin-top: 3vh;
-      .nickname{
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-top: 0;
-        margin-bottom: 0;
+      .nicknameInput{
+        display: flex;
+        gap: 1vw;
+        height: 1.6rem;
+        .nickname{
+          font-size: 1.2rem;
+          font-weight: 500;
+          height: 100%;
+          flex:1;
+          padding: 0;
+          margin: 0;
+          border-color: rgb(45, 45, 45, 0.2);
+          border-radius: 5px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+        .update-nickname{
+          width: 4rem;
+          padding: 0;
+          margin-bottom: 0;
+          height: 1.7rem;
+          border-radius: 5px;
+          font-size: 0.9rem;
+        }
       }
       .current-song {
+        display: flex;
         margin-top: 0;
         margin-bottom: 0;
         margin-left: 0.15vw;
         font-family: $heading-font-family;
         font-weight: 300;
         font-size: .9rem;
+        align-items: center;
+        gap: 0.3rem;
       }
     }
   }
@@ -79,6 +103,17 @@
     }
     .search-friend:focus {
       outline: none;
+    }
+    .search-friend-button {
+      width: 2rem;
+      padding: 0;
+      margin: 0;
+      height: 3.4rem;
+      background-color: transparent;
+      img{
+        height: 100%;
+        width: auto;
+      }
     }
     .add-friend-button{
       width: 2rem;
@@ -118,10 +153,23 @@
     }
     .nickname-container{
       margin-top: 2vh;
-      .nickname{
-        font-size: 1rem;
+      gap: 0;
+      
+      .nicknameInput{
+        gap: 1vw;
+        .nickname{
+          font-size: 0.8rem;
+          height: 1rem;
+          flex: 1;
+        }
+        .update-nickname{
+          margin-right: 0vw;
+          height: 1.2rem;
+          font-size: 0.8rem;
+        }
       }
-      .song-playing{
+      
+      .current-song{
         font-size: 0.8rem;
         text-align: left;
       }
@@ -133,6 +181,9 @@
     .search-friend{
       flex: 1;
       height: 1.4rem;
+    }
+    .search-friend-button {
+      height: 2.5rem;
     }
     .add-friend-button{
       width: 2rem;
@@ -165,10 +216,22 @@
   .container-userInfo{
     margin-top: 0;
     border: 2px solid lightgrey;
+    .nickname-container{
+      height: 1.5rem;
+      .nicknameInput{
+        height: 1.5rem;
+        gap: 1vw;
+        .nickname{
+          font-size: 1rem;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
   }
   .add-friends {
     gap: 3vw;
-    .add-friend-button{
+    .add-friend-button, .search-friend-button{
       height: 3rem;
     }
     .play-game {
@@ -187,10 +250,18 @@
   }
   .container-userInfo{
     margin-top: 0vh;
+    .nickname-container {
+      .nicknameInput{
+        height: 1.6rem;
+        .nickname{
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
   .add-friends {
     gap: 3vw;
-    .add-friend-button{
+    .add-friend-button, .search-friend-button{
       height: 3rem;
     }
     .play-game {
