@@ -51,10 +51,13 @@
   margin-top: 0;
   margin-bottom: 0;
 }
-.dashboard-body-container .container-userInfo .nickname-container .song-playing {
+.dashboard-body-container .container-userInfo .nickname-container .current-song {
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0.15vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 .dashboard-body-container .add-friends {
   display: flex;

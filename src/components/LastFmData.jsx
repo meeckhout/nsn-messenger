@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import '../styles/LastFmData.scss';
 
-const LastFmData= ({ userName }) => {
-    const apiKey = process.env.REACT_APP_API_KEY;
+const LastFmData= () => {
     const [lfmData, updateLfmData] = useState({});
     useEffect(() => {
+        const apiKey = process.env.REACT_APP_LASTFM_CLIENT_ID;
+        const userName = process.env.REACT_APP_LASTFM_CLIENT_NAME;
         fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${userName}&api_key=${apiKey}&limit=1&nowplaying=true&format=json`)
             .then(response => {
                 if (response.ok) {
@@ -34,8 +34,9 @@ const LastFmData= ({ userName }) => {
             { name: songName, artist: { '#text': artistName } = {} } = {}
         ] = track;
 
-        return <h3>Currently listening to:
-            <br />{songName} by {artistName}</h3>;
+        return <span>
+            <br />{songName} by {artistName}
+            </span>
     };
 
     return buildLastFmData();

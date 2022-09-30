@@ -195,7 +195,6 @@ const About = () => {
                         <div className="bio-team Marthe Marthe-xlarge">
                             <img className="img-team img-team-xlarge" src={NmJggM} alt="Team member" />
                             <span className="bio bio-xlarge">Master of Disaster and Design</span>
-
                             <span className="text">Bacon ipsum dolor amet tri-tip kielbasa prosciutto ribeye alcatra. Doner pork chop shank ham hock, buffalo filet mignon bresaola strip steak biltong meatball.</span>
 
                         </div>
