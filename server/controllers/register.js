@@ -28,9 +28,9 @@ const register = async (req, res, next) => {
                 (err, result) => {
                   if (err) {
                     throw err;
-                    return res.status(400).send({
-                      msg: err
-                    });
+                    // return res.status(400).send({
+                    //   msg: err
+                    // });
                   }
                   return res.status(201).send({
                     msg: 'Registered!'

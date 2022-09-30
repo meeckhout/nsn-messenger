@@ -1,6 +1,5 @@
 import dbConnection from '../config/database.js';
 import bcrypt from 'bcryptjs';
-const saltRounds = 10;
 
 // User login
 const login = async (req, res, next) => {
@@ -20,7 +19,7 @@ const login = async (req, res, next) => {
                         // Wrong password
                         if (bErr) {
                             throw bErr;
-                                return res.status(401).send({msg: 'Password is incorrect'});
+                            // return res.status(401).send({msg: 'Password is incorrect'});
                         }
                         // Correct password
                         if (bResult) {          

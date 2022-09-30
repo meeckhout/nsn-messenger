@@ -16,9 +16,9 @@ const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // console.log("LOGcat");
+        console.log("LOGcat");
         if (localStorage.getItem(process.env.REACT_APP_KEY)) {
-            // console.log("LOGcow");
+            console.log("LOGcow");
             navigate("/dashboard");
         }
     },[navigate]);
@@ -60,7 +60,7 @@ const Login = () => {
                 // Store username in local storage & navigate to dashboard
                 localStorage.setItem(process.env.REACT_APP_KEY, email);
                 localStorage.setItem(process.env.REACT_APP_STATUS, true);
-                // console.log("horse");
+                console.log("horse");
                 navigate("/dashboard");
             }
         } catch (error) {

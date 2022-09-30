@@ -1,195 +1,359 @@
-import React from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import Logo from '../assets/images/Logo.png';
-import { Breakpoint } from 'react-socks';
+import {Breakpoint} from 'react-socks';
+import axios from 'axios';
+import io from 'socket.io-client';
+import TimeAgo from 'react-timeago'
+import { v4 as uuid } from 'uuid';
 import '../styles/Chatbox.scss';
 
 const Chatbox = () => {
+    const socket = useRef();
+    const scrollRef = useRef();
+
+    const [messageReceived, setMessageReceived] = useState("");
+
+    const [sender, setSender] = useState([]);
+    const [receiver, setReceiver] = useState([]);
+    const [chatHistory, setChatHistory] = useState([]);
+    const [errMsg, setErrMsg] = useState("");
+    const [sentMessage, setSentMessage] = useState();
+
+    // Create socket.io connection to backend server
+    useEffect(() => {
+
+        socket.current = io.connect("http://localhost:3001");
+        console.log("chicken");
+
+        socket.current.emit("add_user", localStorage.getItem(process.env.REACT_APP_KEY));
+        console.log("house");
+
+        socket.current.on("receive_message", (data) => {
+            console.log(data);
+            setMessageReceived({
+                id: data.id,
+                sender: data.sender,
+                message: data.message,
+                sent_at: data.sent_at,
+            });
+        });
+        console.log("farm");
+    }, []);
+
+    // Add instant message to chatHistory
+    // useEffect(() => {
+    //     setChatHistory((prev) => [...prev, messageReceived]);
+    //     // messageReceived && setChatHistory((prev) => [...prev, messageReceived]);
+    // }, [messageReceived]);
+
+    // Fetch chatbox data from database
+    useEffect(() => {
+        const getChatHistory = () => {
+            axios.get("http://localhost:3001/chat", {
+                params: {
+                    sender: localStorage.getItem(process.env.REACT_APP_KEY),
+                    receiver: localStorage.getItem(process.env.REACT_APP_CHAT)
+                }
+            })
+                .then(response => {
+                    // console.log(response.data);
+                    // console.log(response.data.chatHistory);
+                    // console.log(response.data.sender[0].nickname, response.data.sender[0].email);
+                    setSender(response.data.sender);
+                    setReceiver(response.data.receiver);
+                    setChatHistory(response.data.chatHistory);
+                })
+        };
+        getChatHistory();
+    },[]);
+    // Empty brackets trigger rendering only when page is (re)loaded
+
+    // Send message: store in DB & emit via socket
+    const sendMessage = async (event) => {
+        event.preventDefault();
+        if(sentMessage) {
+        
+        //Emit mew message via socket
+        // const unique_id = uuid();
+        // const small_id = unique_id.slice(0,8)
+        // socket.current.emit("new_message", {
+        //     id: small_id,
+        //     sender: localStorage.getItem(process.env.REACT_APP_KEY),
+        //     receiver: localStorage.getItem(process.env.REACT_APP_CHAT),
+        //     message: sentMessage,
+        //     sent_at: Date.now()
+        // });
+
+        // Send message to DB
+            try {
+                await axios.post("http://localhost:3001/sendMessage", {
+                    sender: localStorage.getItem(process.env.REACT_APP_KEY),
+                    members: [localStorage.getItem(process.env.REACT_APP_KEY), localStorage.getItem(process.env.REACT_APP_CHAT)],
+                    message: sentMessage
+                });
+                setSentMessage("");
+            } catch (error) {
+                if (error.response) {
+                    setErrMsg(error.response.data.msg);
+                }
+            }
+
+        }
+        console.log("clicked");
+    }
+
+    // Add scroll bar to chat history div
+    useEffect(() => {
+        scrollRef.current?.scrollIntoView({behavior: "smooth"});
+    },[chatHistory]);
+
+    const handleChange = (event) => {
+        setSentMessage(event.target.value);
+    };
+
     return (
-        <div className="container-body">
-            <div className="container-logo">
-                <img src={ Logo } alt="Logo NSN"/>
+        <>
+            <Breakpoint xsmall>
+                <div className="chatbox-body-xsmall chatbox-body">
+                    <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+
+                    <div className="chat-top chat-top-xsmall">
+                        <div className="chatbox-top chatbox-top-xsmall">
+                            {(chatHistory.length > 0) ? (
+                                <div style={{height: "80px", overflow: "auto"}}>
+                                    {chatHistory.map((message) => {
+                                        return (
+                                            <div key={message.id} ref={scrollRef}>
+                                                {(message.sender === sender[0].email) ? (
+                                                    <div>
+                                                        {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                        <p style={{margin: "0"}}>{message.message}</p>
+                                                        <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
+                                                    </div>
+                                                ) : (
+                                                    <div>
+                                                        {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                        {<p style={{margin: "0"}}>{message.message}</p>}
+                                                        {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            )                        
+                            : (<p>No chat history available</p>)} 
+
+                            {errMsg && <p className="has-text-centered">{errMsg}</p>}
+
+                        </div>
+
+                        <div className="profile-top profile-top-xsmall">
+                        </div>
+                    </div>
+
+                    <div className="chat-bottom chat-bottom-xsmall">
+                        <input className="chatbox-bottom chatbox-bottom-xsmall" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
+                        <button className="btn-send" onClick={sendMessage}>Send</button>
+
+                       <div className="profile-bottom profile-bottom-xsmall">
+                       </div>
+                    </div>
+                </div>
+            </Breakpoint>
+
+        <Breakpoint small>
+            <div className="chatbox-body chatbox-body-small">
+                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+
+                <div className="chat-top">
+                    <div className="chatbox-top">
+                        {(chatHistory.length > 0) ? (
+                            <div style={{height: "480px", overflow: "auto"}}>
+                                {chatHistory.map((message) => {
+                                    return (
+                                        <div key={message.id} ref={scrollRef}>
+                                            {(message.sender === sender[0].email) ? (
+                                                <div>
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    <p style={{margin: "0"}}>{message.message}</p>
+                                                    <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    {<p style={{margin: "0"}}>{message.message}</p>}
+                                                    {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )                        
+                        : (<p>No chat history available</p>)} 
+
+                        {errMsg && <p className="has-text-centered">{errMsg}</p>}
+                    </div>
+
+                    <div className="profile-top">
+                    </div>
+                </div>
+
+                <div className="chat-bottom">
+                    <input className="chatbox-bottom" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
+                    <button className="btn-send" onClick={sendMessage}>Send</button>
+
+                    <div className="profile-bottom">
+                    </div>
+                </div>
             </div>
-            <div className="container-toolbar">
-                <ul>
-                    <li className="dropdown-menu">
-                        <a
-                            href="javascript:void(0)"
-                            className="drop-button"
-                        >
-                            File
-                        </a>
-                        <div className="dropdown-content">
-                            <a href="#">Test</a>
-                        </div>
-                    </li>
-                    <li className="dropdown-menu">
-                        <a
-                            href="javascript:void(0)"
-                            className="drop-button"
-                        >
-                            Contacts
-                        </a>
-                        <div className="dropdown-content">
-                            <a href="#">Test</a>
-                        </div>
-                    </li>
-                    <li className="dropdown-menu">
-                        <a
-                            href="javascript:void(0)"
-                            className="drop-button"
-                        >
-                            Actions
-                        </a>
-                        <div className="dropdown-content">
-                            <a href="#">Test</a>
-                        </div>
-                    </li>
-                    <li className="dropdown-menu">
-                        <a
-                            href="javascript:void(0)"
-                            className="drop-button"
-                        >
-                            Tools
-                        </a>
-                        <div className="dropdown-content">
-                            <a href="#">Test</a>
-                        </div>
-                    </li>
-                    <li className="dropdown-menu">
-                        <a
-                            href="javascript:void(0)"
-                            className="drop-button"
-                        >
-                            Help
-                        </a>
-                        <div className="dropdown-content">
-                            <a href="#">Test</a>
-                        </div>
-                    </li>
-                </ul>
+        </Breakpoint>
+
+        <Breakpoint medium>
+            <div className="chatbox-body chatbox-body-medium">
+                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+
+                <div className="chat-top">
+                    <div className="chatbox-top">
+                        {(chatHistory.length > 0) ? (
+                            <div style={{height: "480px", overflow: "auto"}}>
+                                {chatHistory.map((message) => {
+                                    return (
+                                        <div key={message.id} ref={scrollRef}>
+                                            {(message.sender === sender[0].email) ? (
+                                                <div>
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    <p style={{margin: "0"}}>{message.message}</p>
+                                                    <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    {<p style={{margin: "0"}}>{message.message}</p>}
+                                                    {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )                        
+                        : (<p>No chat history available</p>)} 
+
+                        {errMsg && <p className="has-text-centered">{errMsg}</p>}
+                    </div>
+
+                    <div className="profile-top">
+                    </div>
+                </div>
+
+                <div className="chat-bottom">
+                    <input className="chatbox-bottom" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
+                    <button className="btn-send" onClick={sendMessage}>Send</button>
+
+                    <div className="profile-bottom">
+                    </div>
+                </div>
             </div>
+        </Breakpoint>
 
-            <Breakpoint xsmall only>
-                <main >
-                    <div className="chat-display chat-display-xsmall">
+        <Breakpoint large>
+            <div className="chatbox-body chatbox-body-large">
+                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
 
-                    </div>
-                    <div className="friend-profile friend-profile-xsmall">
-                        <div className="friend-profile-outer friend-profile-outer-xsmall"></div>
-                        <div className="friend-profile-inner friend-profile-inner-xsmall"></div>
-                    </div>
-                </main>
+                <div className="chat-top chat-top-large">
+                    <div className="chatbox-top chatbox-top-large">
+                        {(chatHistory.length > 0) ? (
+                            <div style={{height: "480px", overflow: "auto"}}>
+                                {chatHistory.map((message) => {
+                                    return (
+                                        <div key={message.id} ref={scrollRef}>
+                                            {(message.sender === sender[0].email) ? (
+                                                <div>
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    <p style={{margin: "0"}}>{message.message}</p>
+                                                    <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    {<p style={{margin: "0"}}>{message.message}</p>}
+                                                    {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )                        
+                        : (<p>No chat history available</p>)} 
 
-                <footer>
-                    <div className="footer-chatwindow footer-chatwindow-xsmall">
-                        <div className="footer-menu footer-menu-xsmall"></div>
-                        <input className="footer-tekst footer-tekst-xsmall" type="text"/>
-                        <div className="footer-message footer-message-xsmall"></div>
+                        {errMsg && <p className="has-text-centered">{errMsg}</p>}
                     </div>
-                    <div className="self-profile self-profile-xsmall">
-                        <div className="self-profile-outer self-profile-outer-xsmall"></div>
-                        <div className="self-profile-inner self-profile-inner-xsmall"></div>
-                    </div>
-                </footer>
-            </Breakpoint>
 
-            <Breakpoint small only>
-                <main >
-                    <div className="chat-display chat-display-small">
+                    <div className="profile-top profile-top-large">
+                    </div>
+                </div>
 
-                    </div>
-                    <div className="friend-profile friend-profile-small">
-                        <div className="friend-profile-outer friend-profile-outer-small"></div>
-                        <div className="friend-profile-inner friend-profile-inner-small"></div>
-                    </div>
-                </main>
+                <div className="chat-bottom chat-bottom-large">
+                    <input className="chatbox-bottom chatbox-bottom-large" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
+                    <button className="btn-send" onClick={sendMessage}>Send</button>
 
-                <footer>
-                    <div className="footer-chatwindow footer-chatwindow-small">
-                        <div className="footer-menu footer-menu-small"></div>
-                        <input className="footer-tekst footer-tekst-small" type="text"/>
-                        <div className="footer-message footer-message-small"></div>
+                    <div className="profile-bottom profile-bottom-large">
                     </div>
-                    <div className="self-profile self-profile-small">
-                        <div className="self-profile-outer self-profile-outer-small"></div>
-                        <div className="self-profile-inner self-profile-inner-small"></div>
-                    </div>
-                </footer>
-            </Breakpoint>
+                </div>
+            </div>
+        </Breakpoint>
 
-            <Breakpoint medium only>
-                <main >
-                    <div className="chat-display chat-display-medium">
+        <Breakpoint xlarge>
+            <div className="chatbox-body">
+                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
 
-                    </div>
-                    <div className="friend-profile friend-profile-medium">
-                        <div className="friend-profile-outer friend-profile-outer-medium"></div>
-                        <div className="friend-profile-inner friend-profile-inner-medium"></div>
-                    </div>
-                </main>
+                <div className="chat-top chat-top-xlarge">
+                    <div className="chatbox-top chatbox-top-xlarge">
+                        {(chatHistory.length > 0) ? (
+                            <div style={{height: "480px", overflow: "auto"}}>
+                                {chatHistory.map((message) => {
+                                    return (
+                                        <div key={message.id} ref={scrollRef}>
+                                            {(message.sender === sender[0].email) ? (
+                                                <div>
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    <p style={{margin: "0"}}>{message.message}</p>
+                                                    <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    {<p style={{margin: "0"}}>{message.message}</p>}
+                                                    {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )                        
+                        : (<p>No chat history available</p>)} 
 
-                <footer>
-                    <div className="footer-chatwindow footer-chatwindow-medium">
-                        <div className="footer-menu footer-menu-medium"></div>
-                        <input className="footer-tekst footer-tekst-medium" type="text"/>
-                        <div className="footer-message footer-message-medium"></div>
+                        {errMsg && <p className="has-text-centered">{errMsg}</p>}
                     </div>
-                    <div className="self-profile self-profile-medium">
-                        <div className="self-profile-outer self-profile-outer-medium"></div>
-                        <div className="self-profile-inner self-profile-inner-medium"></div>
-                    </div>
-                </footer>
-            </Breakpoint>
 
-            <Breakpoint large only>
-                <main >
-                    <div className="chat-display chat-display-large">
+                    <div className="profile-top profile-top-xlarge">
+                    </div>
+                </div>
 
-                    </div>
-                    <div className="friend-profile friend-profile-large">
-                        <div className="friend-profile-outer friend-profile-outer-large"></div>
-                        <div className="friend-profile-inner friend-profile-inner-large"></div>
-                    </div>
-                </main>
+                <div className="chat-bottom chat-bottom-xlarge">
+                    <input className="chatbox-bottom chatbox-bottom-xlarge" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
+                    <button className="btn-send" onClick={sendMessage}>Send</button>
 
-                <footer>
-                    <div className="footer-chatwindow footer-chatwindow-large">
-                        <div className="footer-menu footer-menu-large"></div>
-                        <input className="footer-tekst footer-tekst-large" type="text"/>
-                        <div className="footer-message footer-message-large"></div>
+                    <div className="profile-bottom profile-bottom-xlarge">
                     </div>
-                    <div className="self-profile self-profile-large">
-                        <div className="self-profile-outer self-profile-outer-large"></div>
-                        <div className="self-profile-inner self-profile-inner-large"></div>
-                    </div>
-                </footer>
-            </Breakpoint>
-
-            <Breakpoint xlarge only>
-                <main >
-                    <div className="chat-display chat-display-xlarge">
-
-                    </div>
-                    <div className="friend-profile friend-profile-xlarge">
-                        <div className="friend-profile-outer friend-profile-outer-xlarge"></div>
-                        <div className="friend-profile-inner friend-profile-inner-xlarge"></div>
-                    </div>
-                </main>
-
-                <footer>
-                    <div className="footer-chatwindow footer-chatwindow-xlarge">
-                        <div className="footer-menu footer-menu-xlarge"></div>
-                        <input className="footer-tekst footer-tekst-xlarge" type="text"/>
-                        <div className="footer-message footer-message-xlarge"></div>
-                    </div>
-                    <div className="self-profile self-profile-xlarge">
-                        <div className="self-profile-outer self-profile-outer-xlarge"></div>
-                        <div className="self-profile-inner self-profile-inner-xlarge"></div>
-                    </div>
-                </footer>
-            </Breakpoint>
-
-        </div>
+                </div>
+            </div>
+        </Breakpoint>
+        </>
     )
 }
 
