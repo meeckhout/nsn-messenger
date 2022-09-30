@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Logo from "../assets/images/Logo.png";
 import msnLogo from "../assets/images/msnLogo.png";
+import nsn_animation from '../assets/images/nsn_animation.gif';
 import { Breakpoint } from "react-socks";
 import { SiGoogle } from "react-icons/si";
 import { RiUser3Fill, RiLockPasswordFill } from "react-icons/ri";
@@ -313,7 +314,7 @@ const Register = () => {
                     </div>
                     <img
                         className="big-nsn-image "
-                        src={msnLogo}
+                        src={nsn_animation}
                         alt="Two figures"
                     />
 
