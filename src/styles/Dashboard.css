@@ -1,46 +1,285 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-.container-body {
+.dashboard-body-container {
+  background: linear-gradient(0deg, #F4F4F4, #B7D9F7 80%, #0F8CFF) no-repeat fixed;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+.dashboard-body-container .container-taskbar img {
+  height: 1.2rem;
+  width: auto;
+  display: block;
+  margin: 0.3rem;
+}
+.dashboard-body-container .container-userInfo {
+  display: flex;
+  flex-direction: row;
+  height: 16vh;
+  border: 1px solid lightgrey;
+  margin-top: 1vh;
+  margin-left: 0.8vw;
+  margin-right: 0.8vw;
+  border-radius: 5px;
   background: linear-gradient(0deg, #F4F4F4, #B7D9F7 80%, #0F8CFF) no-repeat fixed;
 }
-
-.container-logo {
-  height: 30px;
-}
-.container-logo img {
-  height: 25px;
-  margin-left: 10px;
-}
-
-.label-online {
-  margin-left: 10px;
-}
-
-.container-toolbar {
-  background-color: #F4F4F4;
-  height: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-.container-userInfo {
-  height: 90px;
-  border: 1px solid lightgrey;
-  margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-.profile-box {
-  height: 80px;
-  width: 70px;
-  border: 1px solid black;
-  border-radius: 15px;
+.dashboard-body-container .container-userInfo .profile-picture {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: rgba(45, 45, 45, 0.5);
+  border-radius: 12px;
+  border-width: 1px;
   margin: 5px 20px;
+  margin-top: 1vh;
+  margin-left: 1vw;
+  background-color: #F4F4F4;
+}
+.dashboard-body-container .container-userInfo .nickname-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1vh;
+  justify-content: flex-start;
+  margin-top: 3vh;
+}
+.dashboard-body-container .container-userInfo .nickname-container .nicknameInput {
+  display: flex;
+  gap: 1vw;
+  height: 1.6rem;
+}
+.dashboard-body-container .container-userInfo .nickname-container .nicknameInput .nickname {
+  font-size: 1.2rem;
+  font-weight: 500;
+  height: 100%;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border-color: rgba(45, 45, 45, 0.2);
+  border-radius: 5px;
+}
+.dashboard-body-container .container-userInfo .nickname-container .nicknameInput .nickname:focus {
+  outline: none;
+}
+.dashboard-body-container .container-userInfo .nickname-container .nicknameInput .update-nickname {
+  width: 4rem;
+  padding: 0;
+  margin-bottom: 0;
+  height: 1.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+.dashboard-body-container .container-userInfo .nickname-container .current-song {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0.15vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  align-items: center;
+  gap: 0.3rem;
+}
+.dashboard-body-container .add-friends {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1vh;
+  margin-right: 1.6vw;
+  margin-left: 0.8vw;
+  margin-bottom: 1vh;
+  gap: 2vw;
+  align-items: center;
+}
+.dashboard-body-container .add-friends .search-friend {
+  flex: 1;
+  height: 1.4rem;
+  border-color: rgba(45, 45, 45, 0.2);
+  border-radius: 5px;
+}
+.dashboard-body-container .add-friends .search-friend:focus {
+  outline: none;
+}
+.dashboard-body-container .add-friends .search-friend-button {
+  width: 2rem;
+  padding: 0;
+  margin: 0;
+  height: 3.4rem;
+  background-color: transparent;
+}
+.dashboard-body-container .add-friends .search-friend-button img {
+  height: 100%;
+  width: auto;
+}
+.dashboard-body-container .add-friends .add-friend-button {
+  width: 2rem;
+  padding: 0;
+  margin: 0;
+  height: 3.4rem;
+  background-color: transparent;
+}
+.dashboard-body-container .add-friends .add-friend-button img {
+  height: 100%;
+  width: auto;
+}
+.dashboard-body-container .add-friends .play-game {
+  margin: 0;
+  height: 1.8rem;
+  border-radius: 5px;
+  width: 5rem;
+}
+.dashboard-body-container .online, .dashboard-body-container .offline {
+  margin-left: 2vw;
+}
+.dashboard-body-container .online .collapsible, .dashboard-body-container .offline .collapsible {
+  border: none;
+  color: #0F8CFF;
+  background-color: transparent;
+  font-size: 1.1rem;
 }
 
-form {
-  margin: 40px 20px;
+.dashboard-container-xsmall .container-userInfo .profile-picture {
+  margin-right: 1vw;
+}
+.dashboard-container-xsmall .container-userInfo .nickname-container {
+  margin-top: 2vh;
+  gap: 0;
+}
+.dashboard-container-xsmall .container-userInfo .nickname-container .nicknameInput {
+  gap: 1vw;
+}
+.dashboard-container-xsmall .container-userInfo .nickname-container .nicknameInput .nickname {
+  font-size: 0.8rem;
+  height: 1rem;
+  flex: 1;
+}
+.dashboard-container-xsmall .container-userInfo .nickname-container .nicknameInput .update-nickname {
+  margin-right: 0vw;
+  height: 1.2rem;
+  font-size: 0.8rem;
+}
+.dashboard-container-xsmall .container-userInfo .nickname-container .current-song {
+  font-size: 0.8rem;
+  text-align: left;
+}
+.dashboard-container-xsmall .add-friends {
+  gap: 5vw;
+  align-items: center;
+}
+.dashboard-container-xsmall .add-friends .search-friend {
+  flex: 1;
+  height: 1.4rem;
+}
+.dashboard-container-xsmall .add-friends .search-friend-button {
+  height: 2.5rem;
+}
+.dashboard-container-xsmall .add-friends .add-friend-button {
+  width: 2rem;
+  padding: 0;
+  margin: 0;
+  height: 2.5rem;
+  background-color: transparent;
+}
+.dashboard-container-xsmall .add-friends .play-game {
+  margin: 0;
+  height: 1.8rem;
+  border-radius: 5px;
+  width: 4.7rem;
+}
+.dashboard-container-xsmall .online .collapsible, .dashboard-container-xsmall .offline .collapsible {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.dashboard-container-xsmall .online .friendlist, .dashboard-container-xsmall .offline .friendlist {
+  margin-top: 0.5vh;
+  font-size: 0.9rem;
+}
+
+.dashboard-container-small .container-userInfo {
+  margin-top: 0;
+  border: 2px solid lightgrey;
+}
+.dashboard-container-small .container-userInfo .nickname-container {
+  height: 1.5rem;
+}
+.dashboard-container-small .container-userInfo .nickname-container .nicknameInput {
+  height: 1.5rem;
+  gap: 1vw;
+}
+.dashboard-container-small .container-userInfo .nickname-container .nicknameInput .nickname {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.dashboard-container-small .add-friends {
+  gap: 3vw;
+}
+.dashboard-container-small .add-friends .add-friend-button, .dashboard-container-small .add-friends .search-friend-button {
+  height: 3rem;
+}
+.dashboard-container-small .add-friends .play-game {
+  width: 5rem;
+}
+
+.dashboard-container-medium .container-taskbar img {
+  height: 1.4rem;
+  margin: 0.4rem;
+}
+.dashboard-container-medium .container-userInfo {
+  margin-top: 0vh;
+}
+.dashboard-container-medium .container-userInfo .nickname-container .nicknameInput {
+  height: 1.6rem;
+}
+.dashboard-container-medium .container-userInfo .nickname-container .nicknameInput .nickname {
+  font-size: 1.2rem;
+}
+.dashboard-container-medium .add-friends {
+  gap: 3vw;
+}
+.dashboard-container-medium .add-friends .add-friend-button, .dashboard-container-medium .add-friends .search-friend-button {
+  height: 3rem;
+}
+.dashboard-container-medium .add-friends .play-game {
+  width: 5rem;
+}
+
+.dashboard-container-large .container-taskbar img {
+  height: 1.4rem;
+  margin: 0.4rem;
+}
+.dashboard-container-large .container-userInfo {
+  margin-top: 0vh;
+  border: 2px solid lightgrey;
+}
+
+.dashboard-container-xlarge .container-taskbar img {
+  height: 1.4rem;
+  margin: 0.4rem;
+}
+.dashboard-container-xlarge .container-userInfo {
+  border: 2px solid lightgrey;
+}
+.dashboard-container-xlarge .add-friends {
+  gap: 2vw;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.addFriend-btn {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  margin-left: 1rem;
+}
+.addFriend-btn:focus {
+  background-color: transparent;
+}
+.addFriend-btn img {
+  height: 48px;
 }/*# sourceMappingURL=Dashboard.css.map */

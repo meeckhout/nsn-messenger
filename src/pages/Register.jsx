@@ -4,14 +4,12 @@ import axios from "axios";
 import Logo from "../assets/images/Logo.png";
 import msnLogo from "../assets/images/msnLogo.png";
 import { Breakpoint } from "react-socks";
-// import { SiGoogle } from "react-icons/si";
 import { RiUser3Fill, RiLockPasswordFill } from "react-icons/ri";
 import "../styles/Register.scss";
 
 const Register = () => {
 
     const [values, setValues] = useState({
-        // username: "",
         email: "",
         password: "",
         confPassword: "",
@@ -62,7 +60,7 @@ const Register = () => {
                     password,
                     confPassword
                 });
-                navigate("/");
+                navigate("/Login");
             }
         } catch (error) {
             if (error.response) {
@@ -122,12 +120,6 @@ const Register = () => {
                     <p className="register-user-log-in">
                         Already a user? <a href="/login">log in</a>
                     </p>
-                    {/* <div className="register-google-sign-up-container">
-                        <p className="register-google-sign-up">
-                            <SiGoogle className="google-icon" />
-                            Sign up with <a href="#">google</a>
-                        </p>
-                    </div> */}
                 </div>
             </Breakpoint>
 
@@ -179,12 +171,6 @@ const Register = () => {
                     <p className="register-user-log-in">
                         Already a user? <a href="/login">log in</a>
                     </p>
-                    {/* <div className="register-google-sign-up-container">
-                        <p className="register-google-sign-up">
-                            <SiGoogle className="google-icon" />
-                            Sign up with <a href="#">google</a>
-                        </p>
-                    </div> */}
                 </div>
             </Breakpoint>
 
@@ -236,12 +222,6 @@ const Register = () => {
                     <p className="register-user-log-in">
                         Already a user? <a href="/login">log in</a>
                     </p>
-                    {/* <div className="register-google-sign-up-container">
-                        <p className="register-google-sign-up">
-                            <SiGoogle className="google-icon" />
-                            Sign up with <a href="#">google</a>
-                        </p>
-                    </div> */}
                 </div>
             </Breakpoint>
 
@@ -293,12 +273,6 @@ const Register = () => {
                     <p className="register-user-log-in">
                         Already a user? <a href="/login">log in</a>
                     </p>
-                    {/* <div className="register-google-sign-up-container">
-                        <p className="register-google-sign-up">
-                            <SiGoogle className="google-icon" />
-                            Sign up with <a href="#">google</a>
-                        </p>
-                    </div> */}
                 </div>
             </Breakpoint>
 
@@ -350,12 +324,6 @@ const Register = () => {
                     <p className="register-user-log-in">
                         Already a user? <a href="/login">log in</a>
                     </p>
-                    {/* <div className="register-google-sign-up-container">
-                        <p className="register-google-sign-up">
-                            <SiGoogle className="google-icon" />
-                            Sign up with <a href="#">google</a>
-                        </p>
-                    </div> */}
                 </div>
             </Breakpoint>
         </div>

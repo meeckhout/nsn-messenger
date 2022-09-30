@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Logo from '../assets/images/Logo.png';
 import ProfileImage from '../assets/images/msnSocMed.png';
 import AddFriend from '../assets/images/addFriend.png';
+import SearchFriend from '../assets/images/searchFriend.png';
+import {FaHeadphonesAlt} from 'react-icons/fa';
 import { Breakpoint } from 'react-socks';
 import '../styles/Dashboard.scss';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { LastFmData } from '../components/LastFmData';
 
 const Dashboard = () => {
-
     const navigate = useNavigate();
-    const [searchButton, setSearchButton] = useState(false);
     const [searchResult, setSearchResult] = useState('');
     const [noSearchResult, setNoSearchResult] = useState('');
     const [friendList, setFriendList] = useState([]);
@@ -27,20 +28,20 @@ const Dashboard = () => {
     // Update Dashboard when loaded
 
     const getDashboardInfo = () => {
-        console.log(localStorage.getItem(process.env.REACT_APP_KEY));
+        // console.log(localStorage.getItem(process.env.REACT_APP_KEY));
         axios.get("http://localhost:3001/dashboard", {
             params: {
                 user: localStorage.getItem(process.env.REACT_APP_KEY),
             }
         })
-        .then(response => {
-            // console.log(response.data);
-            // console.log(response.data.friendList);
-            // console.log(response.data.user[0].status);
-            setCurrentNickname(response.data.nickname);
-            setFriendList(response.data.friendList);
-            setCurrentNickname(response.data.user[0].nickname);
-        })
+            .then(response => {
+                // console.log(response.data);
+                // console.log(response.data.friendList);
+                // console.log(response.data.user[0].status);
+                setCurrentNickname(response.data.nickname);
+                setFriendList(response.data.friendList);
+                setCurrentNickname(response.data.user[0].nickname);
+            })
     };
 
     useEffect(() => {
@@ -48,10 +49,12 @@ const Dashboard = () => {
     }, []);
 
     useEffect(() => {
-        const a = friendList.filter(friend => friend.status === 0)
-        const b = friendList.filter(friend => friend.status === 1)
-        setOfflineFriendList(a);
-        setOnlineFriendList(b);
+        if(friendList) {
+            const onlineFriends = friendList.filter(friend => friend.status === 0)
+            const offlineFriends = friendList.filter(friend => friend.status === 1)
+            setOfflineFriendList(onlineFriends);
+            setOnlineFriendList(offlineFriends);
+        }
     }, [friendList]);
 
     // Actions for input fields & buttons
@@ -67,15 +70,19 @@ const Dashboard = () => {
         setMsg("");
         try {
             const { userEmail } = values;
-            const friendSearch = await axios.post("http://localhost:3001/search", {
-                userEmail: userEmail,
-            });
-            // console.log(friendSearch.data);
-            if(friendSearch.data.search === 'True'){
-                setSearchResult(`${userEmail} exists`);
-            } else {
-                setNoSearchResult(`${userEmail} doesn't exist`);
+            if(userEmail && userEmail !== localStorage.getItem(process.env.REACT_APP_KEY)) {
+                console.log(userEmail);
+                const friendSearch = await axios.post("http://localhost:3001/search", {
+                    userEmail: userEmail,
+                });
+                // console.log(friendSearch.data);
+                if(friendSearch.data.search === 'True'){
+                    setSearchResult(`${userEmail} exists`);
+                } else {
+                    setNoSearchResult(`${userEmail} doesn't exist`);
+                }
             }
+            document.getElementById("addFriendField").style.visibility = "visible";
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
@@ -91,24 +98,24 @@ const Dashboard = () => {
                 user: localStorage.getItem(process.env.REACT_APP_KEY),
                 search: userEmail
             });
-            navigate("/dashboard");
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
             }
         }
-        setSearchButton(!searchButton);
+        document.getElementById("addFriendField").style.visibility = "hidden";
     }
 
     const addNickname = async (event) => {
         event.preventDefault();
         try {
             const { nickname } = values;
-            await axios.post("http://localhost:3001/addNickname", {
-                user: localStorage.getItem(process.env.REACT_APP_KEY),
-                nickname: nickname
-            });
-            navigate("/dashboard");
+            if(nickname) {
+                await axios.post("http://localhost:3001/addNickname", {
+                    user: localStorage.getItem(process.env.REACT_APP_KEY),
+                    nickname: nickname
+                });
+            }
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
@@ -122,7 +129,7 @@ const Dashboard = () => {
         // console.log(index, friend);
         localStorage.setItem(process.env.REACT_APP_CHAT, friend.email);
         setCurrentSelected(index);
-    
+
         navigate("/Chatbox");
     }
 
@@ -136,43 +143,50 @@ const Dashboard = () => {
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
                         <div className="nickname-container">
-                            <div style={{display: "flex"}}>
-                                {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
-                                <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
+                            <div className="nicknameInput">
+                                {currentNickname ? <input type="text" className="nickname" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)} /> : <input type="text" className="nickname" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)} />}
+                                <button onClick={addNickname} className="update-nickname">
+                                    Update
+                                </button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <FaHeadphonesAlt />
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
-                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)}/>
-                        <button className="play-game" onClick={findUser}>Search</button>
+                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)} />
+                        <button className="search-friend-button" onClick={findUser}>
+                            <img src={SearchFriend} alt="" />
+                        </button>
                         <button className="play-game">Play game!</button>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
-                    {searchResult &&
-                        <form onSubmit={addFriend} className="box" style={{display: "flex"}}>
+                    {searchResult && (
+                        <form id="addFriendField" onSubmit={addFriend} className="box">
                             <p className="has-text-centered">{searchResult}</p>
-                            <button type="submit" className="add-friend-button">
+                            <button type="submit" className="addFriend-btn">
                                 <img src={AddFriend} alt="" />
                             </button>
                         </form>
-                    }
-                    {noSearchResult &&
-                        <p className="has-text-centered">{noSearchResult}</p>
-                    }
+                    )}
+                    {noSearchResult && <p className="has-text-centered">{noSearchResult}</p>}
                     <div className="online">
                         <button className="collapsible">⇳ Online ({onlineFriendList.length})</button>
                         {onlineFriendList ? (
                             <ul className="friendlist">
                                 {onlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                     <div className="offline">
                         <button className="collapsible">⇳ Offline ({offlineFriendList.length})</button>
@@ -180,13 +194,15 @@ const Dashboard = () => {
                             <ul className="friendlist">
                                 {offlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                 </div>
             </Breakpoint>
@@ -199,43 +215,50 @@ const Dashboard = () => {
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
                         <div className="nickname-container">
-                            <div style={{display: "flex"}}>
-                                {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
-                                <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
+                            <div className="nicknameInput">
+                                {currentNickname ? <input type="text" className="nickname" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)} /> : <input type="text" className="nickname" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)} />}{" "}
+                                <button onClick={addNickname} className="update-nickname">
+                                    Update
+                                </button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <FaHeadphonesAlt />
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
-                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)}/>
-                        <button className="play-game" onClick={findUser}>Search</button>
+                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)} />
+                        <button className="search-friend-button" onClick={findUser}>
+                            <img src={SearchFriend} alt="" />
+                        </button>
                         <button className="play-game">Play game!</button>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
-                    {searchResult &&
-                        <form onSubmit={addFriend} className="box" style={{display: "flex"}}>
+                    {searchResult && (
+                        <form id="addFriendField" onSubmit={addFriend} className="box">
                             <p className="has-text-centered">{searchResult}</p>
-                            <button type="submit" className="add-friend-button">
+                            <button type="submit" className="addFriend-btn">
                                 <img src={AddFriend} alt="" />
                             </button>
                         </form>
-                    }
-                    {noSearchResult &&
-                        <p className="has-text-centered">{noSearchResult}</p>
-                    }
+                    )}
+                    {noSearchResult && <p className="has-text-centered">{noSearchResult}</p>}
                     <div className="online">
                         <button className="collapsible">⇳ Online ({onlineFriendList.length})</button>
                         {onlineFriendList ? (
                             <ul className="friendlist">
                                 {onlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                     <div className="offline">
                         <button className="collapsible">⇳ Offline ({offlineFriendList.length})</button>
@@ -243,13 +266,15 @@ const Dashboard = () => {
                             <ul className="friendlist">
                                 {offlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                 </div>
             </Breakpoint>
@@ -262,44 +287,51 @@ const Dashboard = () => {
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
                         <div className="nickname-container">
-                            <div style={{display: "flex"}}>
-                                {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
-                                <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
+                            <div className="nicknameInput">
+                                {currentNickname ? <input type="text" className="nickname" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)} /> : <input type="text" className="nickname" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)} />}{" "}
+                                <button onClick={addNickname} className="update-nickname">
+                                    Update
+                                </button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <FaHeadphonesAlt />
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
-                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)}/>
-                        <button className="play-game" onClick={findUser}>Search</button>
+                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)} />
+                        <button className="search-friend-button" onClick={findUser}>
+                            <img src={SearchFriend} alt="" />
+                        </button>
                         <button className="play-game">Play game!</button>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
-                    {searchResult &&
-                        <form onSubmit={addFriend} className="box" style={{display: "flex"}}>
+                    {searchResult && (
+                        <form id="addFriendField" onSubmit={addFriend} className="box" style={{ display: "flex" }}>
                             <p className="has-text-centered">{searchResult}</p>
-                            <button type="submit" className="add-friend-button">
+                            <button type="submit" className="addFriend-btn">
                                 <img src={AddFriend} alt="" />
                             </button>
                         </form>
-                    }
-                    {noSearchResult &&
-                        <p className="has-text-centered">{noSearchResult}</p>
-                    }
+                    )}
+                    {noSearchResult && <p className="has-text-centered">{noSearchResult}</p>}
 
-<div className="online">
+                    <div className="online">
                         <button className="collapsible">⇳ Online ({onlineFriendList.length})</button>
                         {onlineFriendList ? (
                             <ul className="friendlist">
                                 {onlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                     <div className="offline">
                         <button className="collapsible">⇳ Offline ({offlineFriendList.length})</button>
@@ -307,13 +339,15 @@ const Dashboard = () => {
                             <ul className="friendlist">
                                 {offlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                 </div>
             </Breakpoint>
@@ -326,43 +360,50 @@ const Dashboard = () => {
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
                         <div className="nickname-container">
-                            <div style={{display: "flex"}}>
-                                {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
-                                <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
+                            <div className="nicknameInput">
+                                {currentNickname ? <input type="text" className="nickname" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)} /> : <input type="text" className="nickname" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)} />}{" "}
+                                <button onClick={addNickname} className="update-nickname">
+                                    Update
+                                </button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <FaHeadphonesAlt />
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
-                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)}/>
-                        <button className="play-game" onClick={findUser}>Search</button>
+                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)} />
+                        <button className="search-friend-button" onClick={findUser}>
+                            <img src={SearchFriend} alt="" />
+                        </button>
                         <button className="play-game">Play game!</button>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
-                    {searchResult &&
-                        <form onSubmit={addFriend} className="box" style={{display: "flex"}}>
+                    {searchResult && (
+                        <form id="addFriendField" onSubmit={addFriend} className="box" style={{ display: "flex" }}>
                             <p className="has-text-centered">{searchResult}</p>
-                            <button type="submit" className="add-friend-button">
+                            <button type="submit" className="addFriend-btn">
                                 <img src={AddFriend} alt="" />
                             </button>
                         </form>
-                    }
-                    {noSearchResult &&
-                        <p className="has-text-centered">{noSearchResult}</p>
-                    }
+                    )}
+                    {noSearchResult && <p className="has-text-centered">{noSearchResult}</p>}
                     <div className="online">
                         <button className="collapsible">⇳ Online ({onlineFriendList.length})</button>
                         {onlineFriendList ? (
                             <ul className="friendlist">
                                 {onlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                     <div className="offline">
                         <button className="collapsible">⇳ Offline ({offlineFriendList.length})</button>
@@ -370,13 +411,15 @@ const Dashboard = () => {
                             <ul className="friendlist">
                                 {offlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                 </div>
             </Breakpoint>
@@ -389,43 +432,50 @@ const Dashboard = () => {
                     <div className="container-userInfo">
                         <img className="profile-picture" src={ProfileImage} alt="Profile" />
                         <div className="nickname-container">
-                            <div style={{display: "flex"}}>
-                                {currentNickname ? (<input type="text" className="input" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)}/>) : (<input type="text" className="input" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)}/>)}
-                                <button onClick={addNickname} className="play-game" style={{marginLeft: "1rem"}}>Update</button>
+                            <div className="nicknameInput">
+                                {currentNickname ? <input type="text" className="nickname" placeholder={currentNickname} name="nickname" onChange={(e) => handleChange(e)} /> : <input type="text" className="nickname" placeholder="No nickname set" name="nickname" onChange={(e) => handleChange(e)} />}{" "}
+                                <button onClick={addNickname} className="update-nickname">
+                                    Update
+                                </button>
                             </div>
-                            <p className="song-playing">Ik spring uit een vliegmachien - OG Eddie</p>
+                            <div className="current-song">
+                                <FaHeadphonesAlt />
+                                <LastFmData />
+                            </div>
                         </div>
                     </div>
                     <div className="add-friends">
-                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)}/>
-                        <button className="play-game" onClick={findUser}>Search</button>
+                        <input type="text" className="search-friend" placeholder="Search for email" name="userEmail" onChange={(e) => handleChange(e)} />
+                        <button className="search-friend-button" onClick={findUser}>
+                            <img src={SearchFriend} alt="" />
+                        </button>
                         <button className="play-game">Play game!</button>
                     </div>
                     {msg && <p className="has-text-centered">{msg}</p>}
-                    {searchResult &&
-                        <form onSubmit={addFriend} className="box" style={{display: "flex"}}>
+                    {searchResult && (
+                        <form id="addFriendField" onSubmit={addFriend} className="box" style={{ display: "flex" }}>
                             <p className="has-text-centered">{searchResult}</p>
-                            <button type="submit" className="add-friend-button">
+                            <button type="submit" className="addFriend-btn">
                                 <img src={AddFriend} alt="" />
                             </button>
                         </form>
-                    }
-                    {noSearchResult &&
-                        <p className="has-text-centered">{noSearchResult}</p>
-                    }
+                    )}
+                    {noSearchResult && <p className="has-text-centered">{noSearchResult}</p>}
                     <div className="online">
                         <button className="collapsible">⇳ Online ({onlineFriendList.length})</button>
                         {onlineFriendList ? (
                             <ul className="friendlist">
                                 {onlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                     <div className="offline">
                         <button className="collapsible">⇳ Offline ({offlineFriendList.length})</button>
@@ -433,18 +483,21 @@ const Dashboard = () => {
                             <ul className="friendlist">
                                 {offlineFriendList.map((friend, index) => {
                                     return (
-                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick = {() => changeCurrentChat(index, friend)}>
-                                                {friend.nickname ? (<li>{friend.nickname}</li>) : (<li>{friend.email}</li>)}
+                                        <div key={friend.id} className={`friend ${index === currentSelected ? "selected" : ""}`} onClick={() => changeCurrentChat(index, friend)}>
+                                            {friend.nickname ? <li>{friend.nickname}</li> : <li>{friend.email}</li>}
                                         </div>
-                                    )
+                                    );
                                 })}
-                            </ul>)
-                        : (<p>You have no friends</p>)}
+                            </ul>
+                        ) : (
+                            <p>You have no friends</p>
+                        )}
                     </div>
                 </div>
             </Breakpoint>
         </div>
     );
+
 }
 
 export default Dashboard;

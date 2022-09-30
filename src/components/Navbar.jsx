@@ -26,7 +26,9 @@ const Navbar = () => {
             <Breakpoint small only>
                 <div className="container-navbar">
                     <div className="navbar-medium navbar">
-                        <img className="img img-medium" src={Logo} alt="NSN Messenger"/>
+                        <Link to="/">
+                            <img className="img img-medium" src={Logo} alt="NSN Messenger"/>
+                        </Link>
                         <nav>
                             <ul>
                                 <li>
@@ -41,7 +43,9 @@ const Navbar = () => {
             <Breakpoint medium only>
                 <div className="container-navbar">
                     <div className="navbar-medium navbar">
-                        <img className="img img-medium" src={Logo} alt="NSN Messenger"/>
+                        <Link to="/">
+                            <img className="img img-medium" src={Logo} alt="NSN Messenger"/>
+                        </Link>
                         <nav>
                             <ul>
                                 <li>
@@ -56,7 +60,9 @@ const Navbar = () => {
             <Breakpoint large only>
                 <div className="container-navbar">
                     <div className="navbar-large navbar">
-                        <img className="img img-large" src={Logo} alt="NSN Messenger"/>
+                        <Link to="/">
+                            <img className="img img-large" src={Logo} alt="NSN Messenger"/>
+                        </Link>
                         <nav>
                             <ul>
                                 <li>

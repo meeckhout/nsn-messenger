@@ -25,62 +25,6 @@
     }
   }
 
-  // Menu bar///////////
-  .menu-bar {
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #E1E0E0;
-      font-size: 0.8rem;
-    }
-
-    li {
-      float: left;
-    }
-
-    li a, .drop-button {
-      display: inline-block;
-      color: $text-black;
-      text-align: center;
-      padding: 0.2rem 0.5rem;
-      text-decoration: none;
-    }
-
-    li a:hover, .dropdown-menu:hover .drop-button {
-      border-style: inset;
-    }
-
-    li.dropdown-menu {
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 0.3rem 0.5rem;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-    }
-
-    .dropdown-content a:hover {background-color: #f1f1f1;}
-
-    .dropdown-menu:hover .dropdown-content {
-      display: block;
-    }
-  }
-//////////////////
-
   .main-page{
     display: flex;
     flex-direction: column;
@@ -110,19 +54,13 @@
         margin-left: auto;
         margin-right: auto;
         .email-input{
-          display: flex;
-          flex-direction: row;
           margin-bottom: 1vh;
           input {
             width: 100%;
             border-color: $primary-blue;
             border-style: solid;
             border-width: 1px;
-          }
-          select {
-            border-color: $primary-blue;
-            color: $primary-blue;
-            border-style: solid;
+            height: 1.1rem;
           }
         }
         .password-input{
@@ -132,39 +70,13 @@
             border-color: $primary-blue;
             border-style: solid;
             border-width: 1px;
+            height: 1.1rem;
           }
         }
     }
-    .select-status {
-      margin-left: auto;
-      margin-right: auto;
-      color: $primary-blue;
-
-      select {
-        border: none;
-        color: $primary-blue;
-        margin-left: 1vw;
-        background-color: transparent;
-      }
-    }
-    .checkbox-area{
-      display: flex;
-      flex-direction: column;
-      color: $primary-blue;
-      margin-top: 3vh;
-      gap: 1vh;
-      margin-left: auto;
-      margin-right: auto;
-      .remember-me, .remember-password, .sign-me-in-auto{
-        display: flex;
-        flex-direction: row;
-        label{
-          margin-left: 1vw;
-        }
-      }
-    }
+  
     button {
-      height: 1.9rem;
+      height: 2rem;
       width: 7rem;
       justify-content: center;
       align-items: center;
@@ -179,10 +91,7 @@
       bottom: 0;
       width: 100%;
       color: $primary-blue;
-      a{
-        margin-left: 2vw;
-        color: $primary-blue;
-      }
+      
       nav {
         display: flex;
         flex-direction: row;
@@ -218,27 +127,13 @@
     }
     .login-input{
       font-size: 0.8rem;
-      margin-top: 1.6vh;
+      margin-top: 2vh;
       width: 50vw;
       .email-input{
         width: 50vw;
       }
       .password-input{
         width: 50vw;
-      }
-    }
-    .select-status {
-      font-size: 0.8rem;
-      width: 50vw;
-      margin-top: 1.7vh;
-    }
-    .checkbox-area{
-      font-size: 0.8rem;
-      width: 50vw;
-      .remember-me, .remember-password, .sign-me-in-auto{
-        label{
-          margin-left: 1vw;
-        }
       }
     }
   }
@@ -256,26 +151,29 @@
     }
     .profile-picture{
       width: 28vw;
+      margin-top: 5vh;
     }
     .login-input{
       font-size: 0.8rem;
-      margin-top: 1.6vh;
+      margin-top: 3vh;
       width: 40vw;
+      
       .email-input{
         width: 40vw;
+        margin-bottom: 2vh;
+        input {
+          height: 1.4rem;
+        }
       }
       .password-input{
         width: 40vw;
+        input {
+          height: 1.4rem;
+        }
       }
     }
-    .select-status {
-      font-size: 0.8rem;
-      width: 40vw;
-      margin-top: 1.7vh;
-    }
-    .checkbox-area{
-      font-size: 0.8rem;
-      width: 40vw;
+    button{
+      height: 2.2rem;
     }
     .login-footer {
       font-size: 0.8rem;
@@ -299,27 +197,28 @@
       }
     }
     .profile-picture{
-        width: 20vw;
+        width: 26vw;
+        margin-top: 6vh;
     }
     .login-input{
       font-size: 0.9rem;
-      margin-top: 1.6vh;
-      width: 30vw;
+      margin-top: 3vh;
+      width: 38vw;
       .email-input{
-        width: 30vw;
+        width: 38vw;
+        input {
+          height: 1.4rem;
+        }
       }
       .password-input{
-        width: 30vw;
+        width: 38vw;
+        input {
+          height: 1.4rem;
+        }
       }
     }
-    .select-status {
-      font-size: 0.9rem;
-      width: 30vw;
-      margin-top: 1.7vh;
-    }
-    .checkbox-area{
-      font-size: 0.9rem;
-      width: 30vw;
+    button{
+      height: 2.2rem;
     }
     .login-footer {
       font-size: 0.8rem;
@@ -334,23 +233,13 @@
 
 // LARGE SCREEN//////////////////////////////////////////////////////////////////////////////////////////////////////////
 .large{
-  background-color: burlywood;
   .taskbar-large{
     .img-large{
       height: 1.4rem;
       margin-left: 0.7rem;
     }
   }
-  // Menu bar///////////
-  .menu-bar {
-    ul {
-      padding-left: 0.2rem;  
-    }
-    li a, .drop-button {
-      padding: 0.3rem 0.5rem;
-    }
-  }
-  //////////////////
+  
   .main-page {
     .nsn-text{
       font-size: 1rem;
@@ -360,29 +249,26 @@
       }
     }
     .profile-picture{
-        width: 14vw;
+        width: 15vw;
         border-width: 2px;
     }
     .login-input{
       font-size: 1rem;
-      margin-top: 2vh;
+      margin-top: 3vh;
       width: 22vw;
       .email-input{
         width: 22vw;
+        input{
+          height: 1.4rem;
+        }
       }
       .password-input{
         width: 22vw;
+        input{
+          height: 1.4rem;
+        }
       }
     }
-    .select-status {
-      font-size: 1rem;
-      width: 22vw;
-      margin-top: 3vh;
-    }
-    .checkbox-area{
-      font-size: 1rem;
-      width: 22vw;
-    }  
     button {
       height: 2.2rem;
       width: 7rem;
@@ -408,16 +294,7 @@
       margin-left: 1rem;
     }
   }
-  // Menu bar///////////
-  .menu-bar-xlarge {
-    ul {
-      padding-left: 0.6rem;
-    }
-    li a, .drop-button {
-      padding: 0.4rem 0.5rem;
-    }
-  }
-  //////////////////
+  
   .main-page {
     .nsn-text{
       font-size: 1rem;
@@ -428,29 +305,26 @@
       }
     }
     .profile-picture{
-        width: 10vw;
-        margin-top: 4vh;
+        width: 12vw;
+        margin-top: 5vh;
         border-width: 2px;
     }
     .login-input{
       font-size: 1rem;
-      margin-top: 2vh;
+      margin-top: 4vh;
       width: 15vw;
       .email-input{
         width: 15vw;
+        input {
+          height: 1.6rem;
+        }
       }
       .password-input{
         width: 15vw;
+        input {
+          height: 1.6rem;
+        }
       }
-    }
-    .select-status {
-      font-size: 1rem;
-      width: 15vw;
-      margin-top: 3vh;
-    }
-    .checkbox-area{
-      font-size: 1rem;
-      width: 15vw;
     }
     button {
       height: 2.2rem;

@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/images/Logo.png';
 import {Breakpoint} from 'react-socks';
 import axios from 'axios';
@@ -41,10 +42,10 @@ const Chatbox = () => {
     }, []);
 
     // Add instant message to chatHistory
-    // useEffect(() => {
-    //     setChatHistory((prev) => [...prev, messageReceived]);
-    //     // messageReceived && setChatHistory((prev) => [...prev, messageReceived]);
-    // }, [messageReceived]);
+    useEffect(() => {
+        // setChatHistory((prev) => [...prev, messageReceived]);
+        messageReceived && setChatHistory((prev) => [...prev, messageReceived]);
+    }, [messageReceived]);
 
     // Fetch chatbox data from database
     useEffect(() => {
@@ -74,15 +75,15 @@ const Chatbox = () => {
         if(sentMessage) {
         
         //Emit mew message via socket
-        // const unique_id = uuid();
-        // const small_id = unique_id.slice(0,8)
-        // socket.current.emit("new_message", {
-        //     id: small_id,
-        //     sender: localStorage.getItem(process.env.REACT_APP_KEY),
-        //     receiver: localStorage.getItem(process.env.REACT_APP_CHAT),
-        //     message: sentMessage,
-        //     sent_at: Date.now()
-        // });
+        const unique_id = uuid();
+        const small_id = unique_id.slice(0,8)
+        socket.current.emit("new_message", {
+            id: small_id,
+            sender: localStorage.getItem(process.env.REACT_APP_KEY),
+            receiver: localStorage.getItem(process.env.REACT_APP_CHAT),
+            message: sentMessage,
+            sent_at: Date.now()
+        });
 
         // Send message to DB
             try {
@@ -115,7 +116,9 @@ const Chatbox = () => {
         <>
             <Breakpoint xsmall>
                 <div className="chatbox-body-xsmall chatbox-body">
-                    <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                    <Link to="/Dashboard">
+                        <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                    </Link>
 
                     <div className="chat-top chat-top-xsmall">
                         <div className="chatbox-top chatbox-top-xsmall">
@@ -164,7 +167,9 @@ const Chatbox = () => {
 
         <Breakpoint small>
             <div className="chatbox-body chatbox-body-small">
-                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                <Link to="/Dashboard">
+                    <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                </Link>
 
                 <div className="chat-top">
                     <div className="chatbox-top">
@@ -212,7 +217,9 @@ const Chatbox = () => {
 
         <Breakpoint medium>
             <div className="chatbox-body chatbox-body-medium">
-                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                <Link to="/Dashboard">
+                    <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                </Link>
 
                 <div className="chat-top">
                     <div className="chatbox-top">
@@ -260,7 +267,9 @@ const Chatbox = () => {
 
         <Breakpoint large>
             <div className="chatbox-body chatbox-body-large">
-                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                <Link to="/Dashboard">
+                    <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                </Link>
 
                 <div className="chat-top chat-top-large">
                     <div className="chatbox-top chatbox-top-large">
@@ -308,7 +317,9 @@ const Chatbox = () => {
 
         <Breakpoint xlarge>
             <div className="chatbox-body">
-                <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                <Link to="/Dashboard">
+                    <img className="chatbox-logo" src={Logo} alt="Logo NSN" />
+                </Link>
 
                 <div className="chat-top chat-top-xlarge">
                     <div className="chatbox-top chatbox-top-xlarge">
