@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Logo from "../assets/images/Logo.png";
-import msnLogo from "../assets/images/msnLogo.png";
+// import msnLogo from "../assets/images/msnLogo.png";
 import animatedNsnLogo from "../assets/images/nsn_animation.gif";
 import { Breakpoint } from "react-socks";
 import { RiUser3Fill, RiLockPasswordFill } from "react-icons/ri";

@@ -3,6 +3,7 @@
 .login-body {
   overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
+  width: 100vw;
 }
 
 .container-login {

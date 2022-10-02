@@ -6,18 +6,24 @@ import Logo from "../assets/images/Logo.png";
 import msnSocMed from "../assets/images/msnSocMed.png";
 import "../styles/Login.scss";
 
+
 const Login = () => {
 
     const [values, setValues] = useState({
+        // username: "",
         email: "",
         password: "",
     });
     const [msg, setMsg] = useState("");
     const navigate = useNavigate();
 
+    // console.log("LOGchicken");
+    // console.log(process.env.REACT_APP_KEY);
+
     useEffect(() => {
-        console.log("LOGcat");
+        // console.log("LOGcat");
         if (localStorage.getItem(process.env.REACT_APP_KEY)) {
+            // console.log("LOGcow");
             navigate("/dashboard");
         }
     }, [navigate]);
@@ -35,6 +41,10 @@ const Login = () => {
 
     const validateLogin = () => {
         const { email, password } = values;
+        // if (!username || username.length < 3) {
+        //     setMsg("Username should be greater than 3 characters");
+        //   return false;
+        // }
         if (!email || !validateEmail(email)) {
             setMsg("Email has no valid format");
             return false;
@@ -51,12 +61,14 @@ const Login = () => {
             if (validateLogin()) {
                 const { email, password } = values;
                 await axios.post("http://localhost:3001/login", {
+                    // username,
                     email,
                     password,
                 });
                 // Store username in local storage & navigate to dashboard
                 localStorage.setItem(process.env.REACT_APP_KEY, email);
                 localStorage.setItem(process.env.REACT_APP_STATUS, true);
+                // console.log("horse");
                 navigate("/dashboard");
             }
         } catch (error) {
