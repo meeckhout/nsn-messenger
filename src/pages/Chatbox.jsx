@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/Logo.png';
+import ProfileImage from '../assets/images/msnSocMed.png';
 import {Breakpoint} from 'react-socks';
 import axios from 'axios';
 import io from 'socket.io-client';
@@ -123,19 +124,20 @@ const Chatbox = () => {
                     <div className="chat-top chat-top-xsmall">
                         <div className="chatbox-top chatbox-top-xsmall">
                             {(chatHistory.length > 0) ? (
-                                <div style={{height: "80px", overflow: "auto"}}>
+                                <div style={{height: "30rem", overflow: "auto"}}>
                                     {chatHistory.map((message) => {
                                         return (
                                             <div key={message.id} ref={scrollRef}>
                                                 {(message.sender === sender[0].email) ? (
-                                                    <div>
-                                                        {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    <div className="sender">
+                                                        {/* <p style={{fontWeight: "bold", marginBottom: "0"}}>Me</p> */}
+                                                        {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                         <p style={{margin: "0"}}>{message.message}</p>
                                                         <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
                                                     </div>
                                                 ) : (
-                                                    <div>
-                                                        {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                    <div className="receiver">
+                                                        {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                         {<p style={{margin: "0"}}>{message.message}</p>}
                                                         {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
                                                     </div>
@@ -152,15 +154,17 @@ const Chatbox = () => {
                         </div>
 
                         <div className="profile-top profile-top-xsmall">
+                            <img className="profile-picture profile-picture-xsmall" src={ProfileImage} alt="Profile" />
                         </div>
                     </div>
 
                     <div className="chat-bottom chat-bottom-xsmall">
                         <input className="chatbox-bottom chatbox-bottom-xsmall" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
-                        <button className="btn-send" onClick={sendMessage}>Send</button>
+                        <button className="btn-send-xsmall" onClick={sendMessage}>Send</button>
 
-                       <div className="profile-bottom profile-bottom-xsmall">
-                       </div>
+                        <div className="profile-bottom profile-bottom-xsmall">
+                            <img className="profile-picture profile-picture-xsmall" src={ProfileImage} alt="Profile" />
+                        </div>
                     </div>
                 </div>
             </Breakpoint>
@@ -172,21 +176,22 @@ const Chatbox = () => {
                 </Link>
 
                 <div className="chat-top">
-                    <div className="chatbox-top">
+                    <div className="chatbox-top chatbox-top-small">
                         {(chatHistory.length > 0) ? (
                             <div style={{height: "480px", overflow: "auto"}}>
                                 {chatHistory.map((message) => {
                                     return (
                                         <div key={message.id} ref={scrollRef}>
                                             {(message.sender === sender[0].email) ? (
-                                                <div>
-                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="sender">
+                                                    {/* <p style={{fontWeight: "bold", marginBottom: "0"}}>Me</p> */}
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     <p style={{margin: "0"}}>{message.message}</p>
                                                     <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
                                                 </div>
                                             ) : (
-                                                <div>
-                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="receiver">
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     {<p style={{margin: "0"}}>{message.message}</p>}
                                                     {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
                                                 </div>
@@ -201,7 +206,8 @@ const Chatbox = () => {
                         {errMsg && <p className="has-text-centered">{errMsg}</p>}
                     </div>
 
-                    <div className="profile-top">
+                    <div className="profile-top profile-top-small">
+                        <img className="profile-picture profile-picture-small" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
 
@@ -209,7 +215,8 @@ const Chatbox = () => {
                     <input className="chatbox-bottom" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
                     <button className="btn-send" onClick={sendMessage}>Send</button>
 
-                    <div className="profile-bottom">
+                    <div className="profile-bottom profile-bottom-small">
+                        <img className="profile-picture profile-picture-small" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
             </div>
@@ -222,21 +229,22 @@ const Chatbox = () => {
                 </Link>
 
                 <div className="chat-top">
-                    <div className="chatbox-top">
+                    <div className="chatbox-top chatbox-top-medium">
                         {(chatHistory.length > 0) ? (
-                            <div style={{height: "480px", overflow: "auto"}}>
+                            <div style={{height: "45rem", overflow: "auto"}}>
                                 {chatHistory.map((message) => {
                                     return (
                                         <div key={message.id} ref={scrollRef}>
                                             {(message.sender === sender[0].email) ? (
-                                                <div>
-                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="sender">
+                                                    {/* <p style={{fontWeight: "bold", marginBottom: "0"}}>Me</p> */}
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     <p style={{margin: "0"}}>{message.message}</p>
                                                     <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
                                                 </div>
                                             ) : (
-                                                <div>
-                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="receiver">
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     {<p style={{margin: "0"}}>{message.message}</p>}
                                                     {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
                                                 </div>
@@ -251,15 +259,17 @@ const Chatbox = () => {
                         {errMsg && <p className="has-text-centered">{errMsg}</p>}
                     </div>
 
-                    <div className="profile-top">
+                    <div className="profile-top profile-top-medium">
+                        <img className="profile-picture profile-picture-medium" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
 
-                <div className="chat-bottom">
+                <div className="chat-bottom chat-bottom-medium">
                     <input className="chatbox-bottom" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
-                    <button className="btn-send" onClick={sendMessage}>Send</button>
+                    <button className="btn-send-medium" onClick={sendMessage}>Send</button>
 
-                    <div className="profile-bottom">
+                    <div className="profile-bottom profile-bottom-medium">
+                        <img className="profile-picture profile-picture-medium" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
             </div>
@@ -274,19 +284,20 @@ const Chatbox = () => {
                 <div className="chat-top chat-top-large">
                     <div className="chatbox-top chatbox-top-large">
                         {(chatHistory.length > 0) ? (
-                            <div style={{height: "480px", overflow: "auto"}}>
+                            <div style={{height: "30rem", overflow: "auto"}}>
                                 {chatHistory.map((message) => {
                                     return (
                                         <div key={message.id} ref={scrollRef}>
                                             {(message.sender === sender[0].email) ? (
-                                                <div>
-                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="sender">
+                                                    {/* <p style={{fontWeight: "bold", marginBottom: "0"}}>Me</p> */}
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     <p style={{margin: "0"}}>{message.message}</p>
                                                     <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
                                                 </div>
                                             ) : (
-                                                <div>
-                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="receiver">
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     {<p style={{margin: "0"}}>{message.message}</p>}
                                                     {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
                                                 </div>
@@ -302,6 +313,7 @@ const Chatbox = () => {
                     </div>
 
                     <div className="profile-top profile-top-large">
+                        <img className="profile-picture profile-picture-large" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
 
@@ -310,6 +322,7 @@ const Chatbox = () => {
                     <button className="btn-send" onClick={sendMessage}>Send</button>
 
                     <div className="profile-bottom profile-bottom-large">
+                        <img className="profile-picture profile-picture-large" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
             </div>
@@ -324,19 +337,20 @@ const Chatbox = () => {
                 <div className="chat-top chat-top-xlarge">
                     <div className="chatbox-top chatbox-top-xlarge">
                         {(chatHistory.length > 0) ? (
-                            <div style={{height: "480px", overflow: "auto"}}>
+                            <div style={{height: "30rem", overflow: "auto"}}>
                                 {chatHistory.map((message) => {
                                     return (
                                         <div key={message.id} ref={scrollRef}>
                                             {(message.sender === sender[0].email) ? (
-                                                <div>
-                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="sender">
+                                                    {/* <p style={{fontWeight: "bold", marginBottom: "0"}}>Me</p> */}
+                                                    {(sender[0].nickname && sender[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{sender[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     <p style={{margin: "0"}}>{message.message}</p>
                                                     <p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>
                                                 </div>
                                             ) : (
-                                                <div>
-                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname}</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender}</p>)}
+                                                <div className="receiver">
+                                                    {(receiver[0].nickname && receiver[0].email === message.sender) ? (<p style={{fontWeight: "bold", marginBottom: "0"}}>{receiver[0].nickname} says:</p>) : (<p style={{fontWeight: "bold", marginBottom: "0"}}>{message.sender} says:</p>)}
                                                     {<p style={{margin: "0"}}>{message.message}</p>}
                                                     {<p style={{fontSize: "0.7rem", marginTop: "0"}}><TimeAgo date={message.sent_at} /></p>}
                                                 </div>
@@ -352,14 +366,16 @@ const Chatbox = () => {
                     </div>
 
                     <div className="profile-top profile-top-xlarge">
+                        <img className="profile-picture profile-picture-xlarge" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
 
                 <div className="chat-bottom chat-bottom-xlarge">
                     <input className="chatbox-bottom chatbox-bottom-xlarge" placeholder="Say something..." name="newMessage" onChange={(e) => handleChange(e)} />
-                    <button className="btn-send" onClick={sendMessage}>Send</button>
+                    <button className="btn-send-xlarge" onClick={sendMessage}>Send</button>
 
                     <div className="profile-bottom profile-bottom-xlarge">
+                        <img className="profile-picture profile-picture-xlarge" src={ProfileImage} alt="Profile" />
                     </div>
                 </div>
             </div>
