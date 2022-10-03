@@ -35,9 +35,8 @@ io.on('connection', (socket) => {
   //New user connects via socket
   socket.on('add_user', (username) => {
     socket.username = username;
-    console.log("New user: " + username);
-    console.log("New user socket id: " + socket.id);
-    socket.broadcast.emit('user joined', socket.username);
+    console.log("New user: " + username + " with socket id: " + socket.id );
+    // socket.broadcast.emit('user joined', socket.username);
   });
 
   //New message

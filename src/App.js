@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BreakpointProvider } from 'react-socks';
-import {Login, Dashboard, Chatbox, Register, About, Landing_Page, Bejeweled} from './pages';
+import {Login, Dashboard, Chatbox, Register, About, LandingPage, Bejeweled} from './pages';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
             <BreakpointProvider>
                 <Router>
                     <Routes>
-                        <Route path="/" element={<Landing_Page />} />
+                        <Route path="/" element={<LandingPage />} />
                         <Route path="About" element={<About />} />
                         <Route path="/Login" element={<Login />} />
                         <Route path="/Register" element={<Register />} />

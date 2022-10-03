@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breakpoint } from 'react-socks'
 import {Navbar, Footer} from '../components'
-import '../styles/Landing_Page.scss';
+import '../styles/LandingPage.scss';
 import msnLogo from '../assets/images/msnLogo.png';
 import {Link} from "react-router-dom";
 

@@ -6,7 +6,6 @@ import url from 'url';
 const getChatHistory = (req, res) => {
     const queryObject = url.parse(req.url, true).query;
     // console.log(queryObject);
-    // console.log("chicken");
 
     (async () => {
 
@@ -31,7 +30,6 @@ const getChatHistory = (req, res) => {
 
 /// Get id for user
 const getUser = (user) => {
-    // console.log("goat");
     // console.log(user);
     return new Promise((resolve, reject) => {
         dbConnection.query('SELECT * FROM users WHERE email = ?', user,
@@ -45,7 +43,6 @@ const getUser = (user) => {
 
 /// Get chat history as list
 const getChatList = (sender, receiver) => {
-    // console.log("dog");
     return new Promise((resolve, reject) => {
         dbConnection.query('SELECT * FROM chat_messages WHERE members LIKE ? OR members LIKE ?', [`%${sender},${receiver}%`, `%${receiver},${sender}%`],
             (err, result) => {
@@ -73,7 +70,7 @@ const addChat = (req, res) => {
         // Call 3rd function to add message to DB
         const chatMessage = await addChatMessage(sender[0].email, sender[0].id, receiver[0].id, req.body.message);
         // console.log(chatMessage);
-        res.send("success");
+        res.send("success:" + chatMessage);
 
     })()
 }

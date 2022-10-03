@@ -29,7 +29,6 @@ const Dashboard = () => {
     // Update Dashboard when loaded
 
     const getDashboardInfo = () => {
-        // console.log(localStorage.getItem(process.env.REACT_APP_KEY));
         axios.get("http://localhost:3001/dashboard", {
             params: {
                 user: localStorage.getItem(process.env.REACT_APP_KEY),
@@ -37,8 +36,6 @@ const Dashboard = () => {
         })
             .then(response => {
                 // console.log(response.data);
-                // console.log(response.data.friendList);
-                // console.log(response.data.user[0].status);
                 setCurrentNickname(response.data.nickname);
                 setFriendList(response.data.friendList);
                 setCurrentNickname(response.data.user[0].nickname);
@@ -76,7 +73,6 @@ const Dashboard = () => {
                 const friendSearch = await axios.post("http://localhost:3001/search", {
                     userEmail: userEmail,
                 });
-                // console.log(friendSearch.data);
                 if(friendSearch.data.search === 'True'){
                     setSearchResult(`${userEmail} exists`);
                 } else {
@@ -125,9 +121,7 @@ const Dashboard = () => {
     }
 
     // Open chatbox
-
     const changeCurrentChat = (index, friend) => {
-        // console.log(index, friend);
         localStorage.setItem(process.env.REACT_APP_CHAT, friend.email);
         setCurrentSelected(index);
 
@@ -137,7 +131,6 @@ const Dashboard = () => {
     // Logout button
     const Logout = async (event) => {
         event.preventDefault();
-        // console.log("Logout clicked");
         try {
             const email = localStorage.getItem(process.env.REACT_APP_KEY);
             await axios.post('http://localhost:3001/logout', {

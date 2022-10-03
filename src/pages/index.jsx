@@ -3,7 +3,7 @@ import Dashboard from './Dashboard';
 import Chatbox from './Chatbox';
 import Register from './Register';
 import About from './About';
-import Landing_Page from './Landing_Page';
+import LandingPage from './LandingPage';
 import Bejeweled from './Bejeweled';
 
 export {
@@ -12,6 +12,6 @@ export {
     Chatbox,
     Register,
     About,
-    Landing_Page,
+    LandingPage,
     Bejeweled
 }

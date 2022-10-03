@@ -39,7 +39,7 @@
   border-radius: 0.75rem;
   border: 1px solid #2D2D2D;
   margin-right: 2vw;
-  margin-left: 2vw;
+  margin-left: 1vw;
   max-height: 25%;
 }
 .chatbox-body .chat-top .sender {
@@ -70,7 +70,7 @@
   border-radius: 0.75rem;
   border: 1px solid #2D2D2D;
   margin-right: 2vw;
-  margin-left: 2vw;
+  margin-left: 1vw;
 }
 
 .chatbox-top-xsmall {
